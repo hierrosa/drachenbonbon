@@ -704,109 +704,130 @@ export const DRACHEN = {
 // Steht im Regal rechts. Die harten Regeln, aus denen der
 // Spieler den poetischen Wunsch übersetzt.
 
+// text darf HTML enthalten: <p> für Absätze, <strong> für Schlüsselbegriffe.
 export const BUCHWISSEN = {
   zutatenkunde: {
     buch: "Von Zutaten und ihrer Art",
     text:
-      "Gewitterzucker und Funkenpollen fielen beide aus dem Himmel und " +
-      "knistern auf der Zunge — der Zucker ist bloß warm, der Pollen glüht. " +
-      "Aschenkirsche kam aus der Erde und glüht ebenso, bleibt dabei aber " +
-      "stumm. Nebelbeere und Eiszahnminze stammen aus dem Wasser: die Beere " +
-      "ist kühl und schweigt, die Minze ist eisig und knirscht. Wurzelholz " +
-      "kam von der Erde, ist mild und knirscht wie die Minze. " +
-      "Achte auch darauf, wie sich eine Zutat anfühlt: manches ist glatt " +
-      "wie Wachs, manches rauh und splittrig, manches pudrig wie Staub. " +
-      "Aschenkirsche und Nebelbeere sind glatt; Gewitterzucker, Eiszahn­minze " +
-      "und Wurzelholz sind rauh; Funkenpollen ist pudrig. Selteneres, das " +
-      "Drachen und Einhorn dalassen, hat oft eine ganz eigene, glatte Art.",
+      "<p><strong>Gewitterzucker</strong> und <strong>Funkenpollen</strong> " +
+      "fielen beide aus dem <strong>Himmel</strong> und <strong>knistern</strong> " +
+      "auf der Zunge — der Zucker ist bloß <strong>warm</strong>, der Pollen " +
+      "<strong>glüht</strong>. <strong>Aschenkirsche</strong> kam aus der " +
+      "<strong>Erde</strong> und glüht ebenso, bleibt dabei aber " +
+      "<strong>stumm</strong>.</p>" +
+      "<p><strong>Nebelbeere</strong> und <strong>Eiszahnminze</strong> stammen " +
+      "aus dem <strong>Wasser</strong>: die Beere ist <strong>kühl</strong> und " +
+      "schweigt, die Minze ist <strong>eisig</strong> und " +
+      "<strong>knirscht</strong>. <strong>Wurzelholz</strong> kam von der " +
+      "<strong>Erde</strong>, ist mild und knirscht wie die Minze.</p>" +
+      "<p>Achte auch darauf, wie sich eine Zutat anfühlt: " +
+      "<strong>glatt</strong> wie Wachs sind Aschenkirsche und Nebelbeere; " +
+      "<strong>rauh</strong> und splittrig sind Gewitterzucker, Eiszahn­minze " +
+      "und Wurzelholz; <strong>pudrig</strong> wie Staub ist Funkenpollen. " +
+      "Selteneres, das Drachen und Einhorn dalassen, hat oft eine ganz " +
+      "eigene, glatte Art.</p>",
   },
   binderkunde: {
     buch: "Von Bindern und ihrer Wirkung",
     text:
-      "Mondkaramell verändert nichts — es lässt jeder Zutat ihren " +
-      "eigenen Klang und ihre eigene Wärme. Daunensirup dämpft " +
-      "jedes Geräusch zu Stille, ganz gleich was darin steckt. Frostharz " +
-      "zieht die Wärme heraus: aus Glut wird Wärme, aus Wärme wird Kühle.",
+      "<p><strong>Mondkaramell</strong> verändert nichts — es lässt jeder " +
+      "Zutat ihren eigenen Klang und ihre eigene Wärme.</p>" +
+      "<p><strong>Daunensirup</strong> dämpft jedes Geräusch zu " +
+      "<strong>Stille</strong>, ganz gleich was darin steckt.</p>" +
+      "<p><strong>Frostharz</strong> zieht die <strong>Wärme</strong> heraus: " +
+      "aus Glut wird Wärme, aus Wärme wird Kühle.</p>",
   },
   drachen_der_luft: {
     buch: "Von den Drachen der Luft",
     text:
-      "Rauchdrachen tragen ihr Feuer offen. Alles Kalte löscht sie von " +
-      "innen, und sie verzeihen es nicht. Auch hören sie schlecht: was sie " +
-      "nicht knistern hören, halten sie für Betrug.",
+      "<p>Rauchdrachen tragen ihr Feuer offen. Alles <strong>Kalte</strong> " +
+      "löscht sie von innen, und sie verzeihen es nicht.</p>" +
+      "<p>Auch hören sie schlecht: was sie nicht <strong>knistern</strong> " +
+      "hören, halten sie für Betrug.</p>",
   },
   drachen_des_wassers: {
     buch: "Von den Drachen des Wassers",
     text:
-      "Nebeldrachen sind kaum mehr als feuchte Luft mit einer Meinung. " +
-      "Hitze löst sie auf, und sie nehmen nur, was aus dem Wasser kommt — " +
-      "alles andere fällt durch sie hindurch, als wäre es nie dagewesen. " +
-      "Wer einen schlafenden Drachen weckt, wird kein zweites Mal an sein " +
-      "Astloch gebeten.",
+      "<p>Nebeldrachen sind kaum mehr als feuchte Luft mit einer Meinung. " +
+      "<strong>Hitze</strong> löst sie auf, und sie nehmen nur, was aus dem " +
+      "<strong>Wasser</strong> kommt — alles andere fällt durch sie hindurch, " +
+      "als wäre es nie dagewesen.</p>" +
+      "<p>Wer einen schlafenden Drachen <strong>weckt</strong>, wird kein " +
+      "zweites Mal an sein Astloch gebeten.</p>",
   },
   drachen_der_erde: {
     buch: "Vom Wachsen der Drachen",
     text:
-      "Die Feuerkammer bildet sich erst im dritten Jahrzehnt. Bis dahin " +
-      "verbrennt Glühendes sie von innen. Junge Wurzeldrachen misstrauen " +
-      "zudem allem, was geflogen ist — sie sagen, es habe den Boden " +
-      "vergessen.",
+      "<p>Die Feuerkammer bildet sich erst im dritten Jahrzehnt. Bis dahin " +
+      "verbrennt <strong>Glühendes</strong> sie von innen.</p>" +
+      "<p>Junge Wurzeldrachen misstrauen zudem allem, was " +
+      "<strong>geflogen</strong> ist — sie sagen, es habe den Boden " +
+      "vergessen.</p>",
   },
   sonnendrachen: {
     buch: "Von den Drachen der Sonne",
     text:
-      "Sonnendrachen kennen keine halben Sachen. Was ihnen vorgesetzt " +
-      "wird, muss durch und durch glühen — alles andere schmeckt ihnen " +
-      "nach Asche. Ein Krachen zwischen den Zähnen stört das Licht.",
+      "<p>Sonnendrachen kennen keine halben Sachen. Was ihnen vorgesetzt " +
+      "wird, muss durch und durch <strong>glühen</strong> — alles andere " +
+      "schmeckt ihnen nach Asche.</p>" +
+      "<p>Ein <strong>Krachen</strong> zwischen den Zähnen stört das Licht.</p>",
   },
   staubdrachen: {
     buch: "Von den Drachen des Staubs",
     text:
-      "Staubdrachen sind alt und trocken wie vergessene Wege. Wärme " +
-      "lässt sie zerfallen, darum nehmen sie nur, was kühl geblieben ist. " +
-      "Ein Knistern versetzt sie in helle Aufregung — das mögen sie nicht.",
+      "<p>Staubdrachen sind alt und trocken wie vergessene Wege. " +
+      "<strong>Wärme</strong> lässt sie zerfallen, darum nehmen sie nur, " +
+      "was <strong>kühl</strong> geblieben ist.</p>" +
+      "<p>Ein <strong>Knistern</strong> versetzt sie in helle Aufregung — " +
+      "das mögen sie nicht.</p>",
   },
   walddrachen: {
     buch: "Von den Drachen des Waldes",
     text:
-      "Walddrachen trauen nichts, was je den Himmel gesehen hat. Sie " +
-      "leben von der Stille zwischen den Bäumen und wittern jedes " +
-      "Geräusch, das nicht dorthin gehört.",
+      "<p>Walddrachen trauen nichts, was je den <strong>Himmel</strong> " +
+      "gesehen hat.</p>" +
+      "<p>Sie leben von der <strong>Stille</strong> zwischen den Bäumen und " +
+      "wittern jedes Geräusch, das nicht dorthin gehört.</p>",
   },
   herzchendrachen: {
     buch: "Von den Drachen des Herzens",
     text:
-      "Herzchendrachen brauchen Wärme wie andere Luft; alles Kalte lässt " +
-      "ihren Herzschlag stocken. Sie mögen nur, was aus der Erde kommt, und " +
-      "es muss glatt sein — das kleinste Kratzen tut ihnen weh. Reine " +
-      "Erdzutaten, die warm und glatt zugleich sind, sind selten; es lohnt " +
-      "sich, das aufzuheben, was die Drachen dalassen.",
+      "<p>Herzchendrachen brauchen <strong>Wärme</strong> wie andere Luft; " +
+      "alles Kalte lässt ihren Herzschlag stocken.</p>" +
+      "<p>Sie mögen nur, was aus der <strong>Erde</strong> kommt, und es muss " +
+      "<strong>glatt</strong> sein — das kleinste Kratzen tut ihnen weh.</p>" +
+      "<p>Reine Erdzutaten, die warm und glatt zugleich sind, sind selten; " +
+      "es lohnt sich, das aufzuheben, was die Drachen <strong>dalassen</strong>.</p>",
   },
   rosendrachen: {
     buch: "Von den Drachen der Rosen",
     text:
-      "Rosendrachen sind empfindlich wie ihre Knospen. Ein Geräusch lässt " +
-      "sie erschauern, darum muss ihr Bonbon vollkommen still sein — ein " +
-      "dämpfender Binder hilft. Alles aus bloßer Erde weisen sie zurück, und " +
-      "es muss glatt sein wie ein Blütenblatt. Nur wenig, das aus Himmel " +
-      "oder Wasser kommt, ist glatt genug; das Glatte, das die Sonne " +
-      "dalässt, ist ihnen am liebsten.",
+      "<p>Rosendrachen sind empfindlich wie ihre Knospen. Ein Geräusch lässt " +
+      "sie erschauern, darum muss ihr Bonbon vollkommen <strong>still</strong> " +
+      "sein — ein dämpfender Binder hilft.</p>" +
+      "<p>Alles aus bloßer <strong>Erde</strong> weisen sie zurück, und es " +
+      "muss <strong>glatt</strong> sein wie ein Blütenblatt.</p>" +
+      "<p>Nur wenig, das aus Himmel oder Wasser kommt, ist glatt genug; das " +
+      "Glatte, das die <strong>Sonne</strong> dalässt, ist ihnen am liebsten.</p>",
   },
   schneckendrachen: {
     buch: "Von den Drachen der Schnecke",
     text:
-      "Schneckendrachen haben es nie eilig. Ihr Bonbon muss still, kühl " +
-      "und vom Wasser sein — ein Geräusch schickt sie für Stunden zurück. " +
-      "Und wer die kleine Schnecke auf dem Tisch kennt: ihren Schleim " +
-      "kann man dem Drachen einfach so reichen, ganz ohne zu mischen. " +
-      "Zum Dank lässt er dann etwas Schimmerndes zurück.",
+      "<p>Schneckendrachen haben es nie eilig. Ihr Bonbon muss " +
+      "<strong>still</strong>, <strong>kühl</strong> und vom " +
+      "<strong>Wasser</strong> sein — ein Geräusch schickt sie für Stunden " +
+      "zurück.</p>" +
+      "<p>Und wer die kleine <strong>Schnecke</strong> auf dem Tisch kennt: " +
+      "ihren Schleim kann man dem Drachen einfach so reichen, ganz ohne zu " +
+      "mischen. Zum Dank lässt er dann etwas Schimmerndes zurück.</p>",
   },
   monddrachen: {
     buch: "Von den Drachen des Mondes",
     text:
-      "Monddrachen tragen kein Feuer in sich, nur Licht. Wärme lässt es " +
-      "flackern, und alles, was aus dem Boden kam, ist ihnen zu schwer " +
-      "für die Nacht.",
+      "<p>Monddrachen tragen kein Feuer in sich, nur Licht. " +
+      "<strong>Wärme</strong> lässt es flackern.</p>" +
+      "<p>Und alles, was aus dem <strong>Boden</strong> kam, ist ihnen zu " +
+      "schwer für die Nacht.</p>",
   },
 };
 

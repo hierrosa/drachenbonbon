@@ -132,7 +132,7 @@ function bluete(x, y, r, farbe, mitte = '#f7e7b0') {
 
 const GEWEIH_L = `
 <g transform="translate(68 44) scale(.75) translate(-68 -44)">
-<g fill="#c9a24a" stroke="#6d4a15" stroke-width="2.4" stroke-linejoin="round">
+<g fill="#c9a24a">
   <path d="M62 46
            C36 22, 16 -16, 20 -54
            C22 -70, 38 -78, 50 -72
@@ -173,25 +173,26 @@ const KRANZ = [
 
 const MAUS_VORN = `<svg viewBox="-24 -78 224 320">
   ${GEWEIH_L}${GEWEIH_R}
-  <!-- rechtes Ohr bleibt ruhig -->
-  <g fill="#b9a58c" stroke="#4a3a29" stroke-width="2.6" stroke-linejoin="round">
-    <ellipse cx="142" cy="64" rx="24" ry="26"/>
+  <!-- beide Ohren wackeln abwechselnd (phasenversetzt) -->
+  <g class="maus-ohr-rechts">
+    <g fill="#a08a6a">
+      <ellipse cx="142" cy="64" rx="24" ry="26"/>
+    </g>
+    <ellipse cx="142" cy="64" rx="14" ry="16" fill="#e0a9a9"/>
   </g>
-  <ellipse cx="142" cy="64" rx="14" ry="16" fill="#e0a9a9"/>
-  <!-- linkes Ohr wackelt ab und zu -->
-  <g class="maus-ohr">
-    <g fill="#b9a58c" stroke="#4a3a29" stroke-width="2.6" stroke-linejoin="round">
+  <g class="maus-ohr-links">
+    <g fill="#a08a6a">
       <ellipse cx="34" cy="64" rx="24" ry="26"/>
     </g>
     <ellipse cx="34" cy="64" rx="14" ry="16" fill="#e0a9a9"/>
   </g>
-  <rect x="40" y="150" width="96" height="80" fill="#c8b39a"/>
-  <path d="M40 178 q-8 -76 48 -76 q56 0 48 76 z" fill="#c8b39a" stroke="#4a3a29" stroke-width="2.6"/>
+  <rect x="40" y="150" width="96" height="80" fill="#b19b7f"/>
+  <path d="M40 178 q-8 -76 48 -76 q56 0 48 76 z" fill="#b19b7f"/>
   <!-- Rosa Latzhose mit sichtbaren Trägern, Ausschnitt bleibt tief -->
-  <path d="M64 132 Q88 122 112 132 L120 180 H56 Z" fill="#f2a8c4" stroke="#4a3a29" stroke-width="2"/>
-  <path d="M64 132 L60 90 Q60 84 66 84 L74 84 Q78 84 76 90 L72 132 Z" fill="#f2a8c4" stroke="#4a3a29" stroke-width="2"/>
-  <path d="M112 132 L108 90 Q108 84 114 84 L106 84 Q100 84 102 90 L106 132 Z" fill="#f2a8c4" stroke="#4a3a29" stroke-width="2"/>
-  <rect x="70" y="146" width="36" height="24" rx="4" fill="#f6c9db" stroke="#4a3a29" stroke-width="1.6"/>
+  <path d="M64 132 Q88 122 112 132 L120 180 H56 Z" fill="#f2a8c4"/>
+  <path d="M64 132 L60 90 Q60 84 66 84 L74 84 Q78 84 76 90 L72 132 Z" fill="#f2a8c4"/>
+  <path d="M112 132 L108 90 Q108 84 114 84 L106 84 Q100 84 102 90 L106 132 Z" fill="#f2a8c4"/>
+  <rect x="70" y="146" width="36" height="24" rx="4" fill="#f6c9db"/>
   <g transform="translate(80 158)">
     <g fill="#ffffff"><ellipse cx="0" cy="-5" rx="2.2" ry="3.4"/><ellipse cx="0" cy="5" rx="2.2" ry="3.4"/><ellipse cx="-5" cy="0" rx="3.4" ry="2.2"/><ellipse cx="5" cy="0" rx="3.4" ry="2.2"/></g>
     <circle r="2" fill="#f4c430"/>
@@ -200,27 +201,28 @@ const MAUS_VORN = `<svg viewBox="-24 -78 224 320">
     <g fill="#ffffff"><ellipse cx="0" cy="-5" rx="2.2" ry="3.4"/><ellipse cx="0" cy="5" rx="2.2" ry="3.4"/><ellipse cx="-5" cy="0" rx="3.4" ry="2.2"/><ellipse cx="5" cy="0" rx="3.4" ry="2.2"/></g>
     <circle r="2" fill="#f4c430"/>
   </g>
-  <ellipse cx="88" cy="80" rx="44" ry="40" fill="#c8b39a" stroke="#4a3a29" stroke-width="2.6"/>
+  <ellipse cx="88" cy="80" rx="44" ry="40" fill="#c8b39a"/>
   ${ZWEIGE}${KRANZ}
   <g class="maus-augen">
     <ellipse cx="72" cy="80" rx="4.6" ry="5.4" fill="#241a10"/>
     <ellipse cx="104" cy="80" rx="4.6" ry="5.4" fill="#241a10"/>
   </g>
   <g class="maus-nase">
-    <ellipse cx="88" cy="97" rx="6" ry="4.6" fill="#d99191" stroke="#4a3a29" stroke-width="1.6"/>
-    <g stroke="#4a3a29" stroke-width="1.6" stroke-linecap="round">
+    <g class="maus-schnurrhaare" stroke="#4a3a29" stroke-width="1.6" stroke-linecap="round">
       <path d="M78 99 q-24 -5 -32 -12"/><path d="M78 103 q-24 2 -33 1"/>
       <path d="M98 99 q24 -5 32 -12"/><path d="M98 103 q24 2 33 1"/>
     </g>
+    <!-- eigenständige Ellipse: fill-box-Mitte = exakt der Nasenpunkt -->
+    <ellipse class="maus-naseknopf" cx="88" cy="97" rx="6" ry="4.6" fill="#d99191"/>
   </g>
   <!-- Beine (Hosenbeine der Latzhose) und Füße — im Stehen hinter dem Tisch verdeckt,
        nur sichtbar, wenn die Maus im Sessel sitzt -->
-  <g stroke="#4a3a29" stroke-width="2.4" stroke-linejoin="round">
+  <g>
     <path d="M62 178 q-5 26 -2 46 h24 q2 -24 -1 -48 z" fill="#f2a8c4"/>
     <path d="M114 178 q5 26 2 46 h-24 q-2 -24 1 -48 z" fill="#f2a8c4"/>
   </g>
-  <ellipse cx="65" cy="226" rx="19" ry="10" fill="#d8c6ae" stroke="#4a3a29" stroke-width="2.2"/>
-  <ellipse cx="111" cy="226" rx="19" ry="10" fill="#d8c6ae" stroke="#4a3a29" stroke-width="2.2"/>
+  <ellipse cx="65" cy="226" rx="19" ry="10" fill="#d8c6ae"/>
+  <ellipse cx="111" cy="226" rx="19" ry="10" fill="#d8c6ae"/>
   <g stroke="#4a3a29" stroke-width="1.2" opacity=".45" stroke-linecap="round">
     <path d="M55 228 v5 M65 229 v5 M75 228 v5 M101 228 v5 M111 229 v5 M121 228 v5"/>
   </g>
@@ -273,13 +275,13 @@ const KRANZ_HINTEN = [
 
 const MAUS_HINTEN = `<svg viewBox="-24 -78 224 320">
   <g opacity=".82">${GEWEIH_L}${GEWEIH_R}</g>
-  <g fill="#a08d75" stroke="#4a3a29" stroke-width="2.6">
+  <g fill="#8d7a5c">
     <ellipse cx="34" cy="64" rx="23" ry="25"/>
     <ellipse cx="142" cy="64" rx="23" ry="25"/>
   </g>
-  <rect x="40" y="150" width="96" height="80" fill="#b7a289"/>
-  <path d="M40 178 q-8 -76 48 -76 q56 0 48 76 z" fill="#b7a289" stroke="#4a3a29" stroke-width="2.6"/>
-  <ellipse cx="88" cy="80" rx="44" ry="40" fill="#b7a289" stroke="#4a3a29" stroke-width="2.6"/>
+  <rect x="40" y="150" width="96" height="80" fill="#a08a6d"/>
+  <path d="M40 178 q-8 -76 48 -76 q56 0 48 76 z" fill="#a08a6d"/>
+  <ellipse cx="88" cy="80" rx="44" ry="40" fill="#b7a289"/>
   ${KRANZ_HINTEN}
   <path d="M132 168 q42 -6 30 -44 q-10 -30 -34 -22" fill="none"
         stroke="#c8b39a" stroke-width="7" stroke-linecap="round"/>
@@ -309,7 +311,6 @@ const VOGELKAEFIG = `<svg viewBox="0 -59 120 219" preserveAspectRatio="xMidYMid 
   <!-- Kuppel -->
   <path d="M24 66 Q24 27 60 27 Q96 27 96 66" fill="none" stroke="#9a7b45" stroke-width="3.6"/>
   <path d="M38 41 Q60 31 82 41" fill="none" stroke="#7a5f36" stroke-width="2" opacity=".8"/>
-  <path d="M60 27 V66" stroke="#7a5f36" stroke-width="1.8" opacity=".5"/>
   <!-- obere und untere Reifen -->
   <path d="M22 66 H98" stroke="#9a7b45" stroke-width="3.6" stroke-linecap="round"/>
   <path d="M24 121 H96" stroke="#9a7b45" stroke-width="3.6" stroke-linecap="round"/>
@@ -318,8 +319,6 @@ const VOGELKAEFIG = `<svg viewBox="0 -59 120 219" preserveAspectRatio="xMidYMid 
     <path d="M30 66 V121"/><path d="M42 66 V121"/><path d="M54 66 V121"/>
     <path d="M66 66 V121"/><path d="M78 66 V121"/><path d="M90 66 V121"/>
   </g>
-  <!-- Sitzstange -->
-  <path d="M36 100 H84" stroke="#5a4327" stroke-width="3.4" stroke-linecap="round"/>
   <!-- Boden -->
   <ellipse cx="60" cy="127" rx="40" ry="8" fill="#5a4327" stroke="#3a2a18" stroke-width="2.4"/>
   <path d="M28 127 Q60 138 92 127" fill="none" stroke="#3a2a18" stroke-width="2" opacity=".6"/>
@@ -332,25 +331,25 @@ const VOGEL = `<svg viewBox="0 0 78 84" preserveAspectRatio="xMidYMid meet">
   <!-- Beine (kurz, unter dem Körper) -->
   <path d="M28 44 v8 M34 44 v8" stroke="#e0a53a" stroke-width="2" stroke-linecap="round"/>
   <!-- Schwanz -->
-  <path d="M8 32 l-6 -5 l4 8 z" fill="#2f6fce" stroke="#22508f" stroke-width="1"/>
+  <path d="M8 32 l-6 -5 l4 8 z" fill="#2f6fce"/>
   <!-- Körper -->
-  <ellipse cx="30" cy="34" rx="18" ry="15" fill="#3f83e0" stroke="#22508f" stroke-width="1.6"/>
+  <ellipse cx="30" cy="34" rx="18" ry="15" fill="#3f83e0"/>
   <!-- Flügel (gelb) -->
   <g class="vogel-fluegel">
-    <path d="M30 30 q-15 -7 -23 6 q9 8 23 3 z" fill="#f4c430" stroke="#c99a20" stroke-width="1.4"/>
+    <path d="M30 30 q-15 -7 -23 6 q9 8 23 3 z" fill="#f4c430"/>
     <path d="M12 33 q6 3 14 1" fill="none" stroke="#c99a20" stroke-width="1" opacity=".7"/>
   </g>
   <!-- Kopf samt Schnabel und dem daran hängenden Körbchen — wackelt im Sitzen -->
   <g class="vogel-kopf">
-    <circle cx="46" cy="24" r="10" fill="#3f83e0" stroke="#22508f" stroke-width="1.6"/>
+    <circle cx="46" cy="24" r="10" fill="#3f83e0"/>
     <path d="M41 30 q-1 6 5 6 q-3 -4 -1 -7 z" fill="#f4c430" opacity=".85"/>
-    <path d="M55 23 l9 -1 l-9 5 z" fill="#f0a028" stroke="#c07a18" stroke-width="1"/>
+    <path d="M55 23 l9 -1 l-9 5 z" fill="#f0a028"/>
     <circle cx="49" cy="22" r="2.3" fill="#14243a"/>
     <circle cx="49.8" cy="21.2" r=".8" fill="#fff"/>
     <!-- Körbchen direkt am Schnabel (5px nach rechts, 30% größer um den Schnabelanker) -->
     <g transform="translate(5 0) translate(54 33) scale(1.3) translate(-54 -33)">
       <path d="M44 35 Q53 24 61 32" fill="none" stroke="#7a5326" stroke-width="1.8"/>
-      <path d="M41 35 h22 l-3 20 h-16 z" fill="#c99a5a" stroke="#7a5326" stroke-width="2.2"/>
+      <path d="M41 35 h22 l-3 20 h-16 z" fill="#c99a5a"/>
       <path d="M39 35 h26" stroke="#7a5326" stroke-width="2.6" stroke-linecap="round"/>
       <g stroke="#a67c40" stroke-width="1" opacity=".55">
         <path d="M43 42 h18 M44 49 h16"/>
@@ -364,8 +363,8 @@ const VOGEL = `<svg viewBox="0 0 78 84" preserveAspectRatio="xMidYMid meet">
 // Zielpunkte des Vogels als Transform (Ausgangspunkt = Käfigtür).
 const VOGEL_WEG = {
   heim:   'translate(0px, 0px)',
-  topf:   'translate(276px, 353px)',   // hinunter zur Maus / zum Topf
-  drache: 'translate(276px, 73px)',    // hinauf, mittig unter das Bonbon
+  topf:   'translate(276px, 345px)',   // hinunter zur Maus / zum Topf
+  drache: 'translate(276px, 65px)',    // hinauf, mittig unter das Bonbon
 };
 let vogelPos = VOGEL_WEG.heim;
 
@@ -587,12 +586,6 @@ function zutatFreischalten(id) {
 // Manche schimmern (deko-schimmer), funkeln (deko-funkel) oder
 // spielen in Regenbogenfarben (deko-regenbogen) — nicht alle.
 const DEKOS = [
-  // Schleife — schimmert leise
-  (x, y) => `<g class="deko-schimmer" transform="translate(${x} ${y}) scale(2)">
-    <path d="M-14 0 Q-24 -14 -10 -18 Q0 -14 0 0 Q0 -14 10 -18 Q24 -14 14 0 Q0 8 -14 0z"
-          fill="#d9455a" stroke="#7a1c2c" stroke-width="1.6" opacity=".9"/>
-    <circle r="3" fill="#f4c430"/>
-  </g>`,
   // Sternenpaar — funkelt
   (x, y) => `<g class="deko-funkel" transform="translate(${x} ${y}) scale(2)" fill="#ffe9a8" opacity=".9">
     <path d="M0 -14 l3 9 l9 0 l-7 6 l3 9 l-8 -6 l-8 6 l3 -9 l-7 -6 l9 0z"/>
@@ -851,8 +844,9 @@ function buchZeichnen() {
   if (!b) return;
   $('#buch .buch-reihe').textContent = 'Aus der Sammlung';
   $('#buch .buch-titel').textContent = b.buch;
-  $('#buch .buch-text').textContent = b.text;
-  $('#buch').classList.toggle('lang', b.text.length > 300);
+  $('#buch .buch-text').innerHTML = b.text;   // Absätze + fette Begriffe
+  const reinerText = b.text.replace(/<[^>]+>/g, '');
+  $('#buch').classList.toggle('lang', reinerText.length > 300);
   $('#buch .buch-fuss').textContent =
     `Blatt ${buchIndex + 1} von ${buchSeiten.length}`;
   $('#buch .blaettern.zurueck').disabled = buchIndex === 0;
@@ -1323,7 +1317,7 @@ $('#mischen').addEventListener('click', async () => {
   $('#topf').classList.add('aktiv');
   await warte(1100);
   $('#maus').classList.remove('ruehrt');
-  $('#topf').classList.remove('aktiv');
+  // Der Topf bleibt vor der Maus stehen, bis der Vogel bei ihr war.
 
   // 0b. Der Vogel fliegt aus dem Käfig zur Maus und sammelt das Bonbon ein
   await vogelHolt();
@@ -1333,8 +1327,14 @@ $('#mischen').addEventListener('click', async () => {
   $('#maus').classList.add('gedreht');
   await warte(700);
 
-  // 1b. Der Vogel trägt das Bonbon hinauf zum Drachen
-  await vogelBringt();
+  // 1b. Der Vogel fliegt mit dem Bonbon los — die Schale ist jetzt leer
+  // und rückt zur Seite, während er hinauf zum Drachen trägt.
+  $('#topf-inhalt').innerHTML = '';
+  $('#topf').classList.remove('gefuellt');
+  const bringt = vogelBringt();
+  await warte(250);
+  $('#topf').classList.remove('aktiv');   // leer → zurück an die Seite
+  await bringt;
 
   // 2. Das Bonbon wird groß vor dem Drachen präsentiert (Übergabe aus dem Körbchen)
   vogelBonbonVerstecken();

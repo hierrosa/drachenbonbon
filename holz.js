@@ -186,14 +186,14 @@ export function wandSVG() {
   return `
 <defs>
   <radialGradient id="stammlicht" cx="50%" cy="88%" r="76%">
-    <stop offset="0%"   stop-color="#5c3d1d"/>
-    <stop offset="46%"  stop-color="#33210f"/>
-    <stop offset="100%" stop-color="#160e06"/>
+    <stop offset="0%"   stop-color="#4a3016"/>
+    <stop offset="46%"  stop-color="#28190b"/>
+    <stop offset="100%" stop-color="#100a04"/>
   </radialGradient>
   <radialGradient id="wulstlicht" cx="50%" cy="16%" r="74%">
-    <stop offset="0%"   stop-color="#8a6431"/>
-    <stop offset="68%"  stop-color="#3b2610"/>
-    <stop offset="100%" stop-color="#1d1207"/>
+    <stop offset="0%"   stop-color="#6e5026"/>
+    <stop offset="68%"  stop-color="#2e1e0c"/>
+    <stop offset="100%" stop-color="#150d05"/>
   </radialGradient>
 
   <!-- Maske: alles sichtbar außer dem Loch -->
