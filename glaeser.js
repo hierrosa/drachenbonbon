@@ -7,7 +7,7 @@
 
 export const FARBEN = {
   karamell:       ['#f0d79a', '#a8813c'],
-  sirup:          ['#9ed184', '#3f6b34'],
+  sirup:          ['#f8f7f2', '#c4bfb2'],
   gewitterzucker: ['#cfe4f8', '#4d79b4'],
   funkenpollen:   ['#ffd371', '#d1631a'],
   aschenkirsche:  ['#d1504c', '#3d1210'],

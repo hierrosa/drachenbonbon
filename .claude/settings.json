@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp data.js /tmp/data.mjs)",
+      "Bash(cp glaeser.js /tmp/glaeser.mjs)",
+      "Bash(cp spiel.js /tmp/spiel_check.mjs)",
+      "Bash(node --check /tmp/data.mjs)",
+      "Bash(node --check /tmp/glaeser.mjs)",
+      "PowerShell($env:Path -split ';' | Where-Object { $_ -match 'node' }; \\(Get-Command node -ErrorAction SilentlyContinue\\).Source)"
+    ]
+  }
+}

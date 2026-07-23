@@ -1,4 +1,4 @@
-import { BINDER, ZUTATEN, DRACHEN, BUCHWISSEN, MAUSREAKTIONEN, EINHORN } from './data.js';
+import { BINDER, ZUTATEN, DRACHEN, DRACHEN_ALT, DRACHEN_ABHAENGIG, BUCHWISSEN, MAUSREAKTIONEN, EINHORN } from './data.js';
 import { DRACHEN_SVG, EINHORN_SVG, kringel } from './drachen-grafik.js';
 import { glasSVG, FARBEN } from './glaeser.js';
 import { wandSVG, LOCH_PFAD } from './holz.js';
@@ -173,12 +173,18 @@ const KRANZ = [
 
 const MAUS_VORN = `<svg viewBox="-24 -78 224 320">
   ${GEWEIH_L}${GEWEIH_R}
+  <!-- rechtes Ohr bleibt ruhig -->
   <g fill="#b9a58c" stroke="#4a3a29" stroke-width="2.6" stroke-linejoin="round">
-    <ellipse cx="34" cy="64" rx="24" ry="26"/>
     <ellipse cx="142" cy="64" rx="24" ry="26"/>
   </g>
-  <ellipse cx="34" cy="64" rx="14" ry="16" fill="#e0a9a9"/>
   <ellipse cx="142" cy="64" rx="14" ry="16" fill="#e0a9a9"/>
+  <!-- linkes Ohr wackelt ab und zu -->
+  <g class="maus-ohr">
+    <g fill="#b9a58c" stroke="#4a3a29" stroke-width="2.6" stroke-linejoin="round">
+      <ellipse cx="34" cy="64" rx="24" ry="26"/>
+    </g>
+    <ellipse cx="34" cy="64" rx="14" ry="16" fill="#e0a9a9"/>
+  </g>
   <rect x="40" y="150" width="96" height="80" fill="#c8b39a"/>
   <path d="M40 178 q-8 -76 48 -76 q56 0 48 76 z" fill="#c8b39a" stroke="#4a3a29" stroke-width="2.6"/>
   <!-- Rosa Latzhose mit sichtbaren Trägern, Ausschnitt bleibt tief -->
@@ -281,6 +287,147 @@ const MAUS_HINTEN = `<svg viewBox="-24 -78 224 320">
 
 
 // ============================================================
+//  Vogel & Käfig — der blaue Bote mit den gelben Flügeln
+//
+//  Vor dem Astloch, im linken Viertel, hängt ein Käfig mit offener
+//  Tür. Der Vogel sitzt darin. Sobald die Maus ein Bonbon angerührt
+//  hat, fliegt er mit seinem Körbchen zu ihr, sammelt das fertige
+//  Bonbon ein und trägt es hinauf zum Drachen.
+// ============================================================
+const VOGELKAEFIG = `<svg viewBox="0 -59 120 219" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- Kette faded nach oben aus (wegen des Drachentextes) und endet am Ring -->
+    <linearGradient id="kaefigKette" gradientUnits="userSpaceOnUse" x1="60" y1="-59" x2="60" y2="14">
+      <stop offset="0%"   stop-color="#2a1d10" stop-opacity="0"/>
+      <stop offset="55%"  stop-color="#2a1d10" stop-opacity=".8"/>
+      <stop offset="100%" stop-color="#2a1d10" stop-opacity="1"/>
+    </linearGradient>
+  </defs>
+  <!-- Aufhängekette: fadet oben aus, endet am Ring -->
+  <path d="M60 -59 V14" stroke="url(#kaefigKette)" stroke-width="3"/>
+  <circle cx="60" cy="19" r="6" fill="none" stroke="#9a7b45" stroke-width="3"/>
+  <!-- Kuppel -->
+  <path d="M24 66 Q24 27 60 27 Q96 27 96 66" fill="none" stroke="#9a7b45" stroke-width="3.6"/>
+  <path d="M38 41 Q60 31 82 41" fill="none" stroke="#7a5f36" stroke-width="2" opacity=".8"/>
+  <path d="M60 27 V66" stroke="#7a5f36" stroke-width="1.8" opacity=".5"/>
+  <!-- obere und untere Reifen -->
+  <path d="M22 66 H98" stroke="#9a7b45" stroke-width="3.6" stroke-linecap="round"/>
+  <path d="M24 121 H96" stroke="#9a7b45" stroke-width="3.6" stroke-linecap="round"/>
+  <!-- senkrechte Stäbe (rundum, keine Tür) -->
+  <g stroke="#7a5f36" stroke-width="2.4" opacity=".9" stroke-linecap="round">
+    <path d="M30 66 V121"/><path d="M42 66 V121"/><path d="M54 66 V121"/>
+    <path d="M66 66 V121"/><path d="M78 66 V121"/><path d="M90 66 V121"/>
+  </g>
+  <!-- Sitzstange -->
+  <path d="M36 100 H84" stroke="#5a4327" stroke-width="3.4" stroke-linecap="round"/>
+  <!-- Boden -->
+  <ellipse cx="60" cy="127" rx="40" ry="8" fill="#5a4327" stroke="#3a2a18" stroke-width="2.4"/>
+  <path d="M28 127 Q60 138 92 127" fill="none" stroke="#3a2a18" stroke-width="2" opacity=".6"/>
+</svg>`;
+
+// Der Vogel: blauer Körper, gelbe Flügel, ein Körbchen an den Füßen.
+// Er schaut nach rechts — zur Maus und zum Drachen. Das leere Feld
+// `.vogel-bonbon` füllt sich, sobald er ein Bonbon eingesammelt hat.
+const VOGEL = `<svg viewBox="0 0 78 84" preserveAspectRatio="xMidYMid meet">
+  <!-- Beine (kurz, unter dem Körper) -->
+  <path d="M28 44 v8 M34 44 v8" stroke="#e0a53a" stroke-width="2" stroke-linecap="round"/>
+  <!-- Schwanz -->
+  <path d="M8 32 l-6 -5 l4 8 z" fill="#2f6fce" stroke="#22508f" stroke-width="1"/>
+  <!-- Körper -->
+  <ellipse cx="30" cy="34" rx="18" ry="15" fill="#3f83e0" stroke="#22508f" stroke-width="1.6"/>
+  <!-- Flügel (gelb) -->
+  <g class="vogel-fluegel">
+    <path d="M30 30 q-15 -7 -23 6 q9 8 23 3 z" fill="#f4c430" stroke="#c99a20" stroke-width="1.4"/>
+    <path d="M12 33 q6 3 14 1" fill="none" stroke="#c99a20" stroke-width="1" opacity=".7"/>
+  </g>
+  <!-- Kopf samt Schnabel und dem daran hängenden Körbchen — wackelt im Sitzen -->
+  <g class="vogel-kopf">
+    <circle cx="46" cy="24" r="10" fill="#3f83e0" stroke="#22508f" stroke-width="1.6"/>
+    <path d="M41 30 q-1 6 5 6 q-3 -4 -1 -7 z" fill="#f4c430" opacity=".85"/>
+    <path d="M55 23 l9 -1 l-9 5 z" fill="#f0a028" stroke="#c07a18" stroke-width="1"/>
+    <circle cx="49" cy="22" r="2.3" fill="#14243a"/>
+    <circle cx="49.8" cy="21.2" r=".8" fill="#fff"/>
+    <!-- Körbchen direkt am Schnabel (5px nach rechts, 30% größer um den Schnabelanker) -->
+    <g transform="translate(5 0) translate(54 33) scale(1.3) translate(-54 -33)">
+      <path d="M44 35 Q53 24 61 32" fill="none" stroke="#7a5326" stroke-width="1.8"/>
+      <path d="M41 35 h22 l-3 20 h-16 z" fill="#c99a5a" stroke="#7a5326" stroke-width="2.2"/>
+      <path d="M39 35 h26" stroke="#7a5326" stroke-width="2.6" stroke-linecap="round"/>
+      <g stroke="#a67c40" stroke-width="1" opacity=".55">
+        <path d="M43 42 h18 M44 49 h16"/>
+        <path d="M47 36 v18 M52 36 v19 M57 36 v18"/>
+      </g>
+      <g class="vogel-bonbon"></g>
+    </g>
+  </g>
+</svg>`;
+
+// Zielpunkte des Vogels als Transform (Ausgangspunkt = Käfigtür).
+const VOGEL_WEG = {
+  heim:   'translate(0px, 0px)',
+  topf:   'translate(276px, 353px)',   // hinunter zur Maus / zum Topf
+  drache: 'translate(276px, 73px)',    // hinauf, mittig unter das Bonbon
+};
+let vogelPos = VOGEL_WEG.heim;
+
+// Der Käfig schwingt kurz, wenn der Vogel losfliegt oder zurückkommt.
+function kaefigSchwingen() {
+  const k = $('#vogelkaefig');
+  k.classList.remove('schwingt');
+  void k.offsetWidth;
+  k.classList.add('schwingt');
+}
+
+// Ein Flugabschnitt: von der aktuellen Position zum Ziel. Der Basiszustand
+// wird sofort auf das Ziel gesetzt, damit der Vogel nach der Animation
+// (die ohne fill läuft) dort ruht — kein Zurückschnappen. `flip` dreht ihn
+// für den Rückweg nach links.
+function vogelLeg(nach, dauer, flip = false) {
+  const v = $('#vogel');
+  const zielT = flip ? nach + ' scaleX(-1)' : nach;
+  const vonT = vogelPos;
+  vogelPos = zielT;
+  v.style.transform = zielT;
+  const reduziert = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduziert || !v.animate) return Promise.resolve();
+  return v.animate(
+    [{ transform: vonT }, { transform: zielT }],
+    { duration: dauer, easing: 'cubic-bezier(.35,.1,.3,1)' }
+  ).finished.catch(() => {});
+}
+
+function vogelBonbonZeigen() {
+  const ziel = $('#vogel .vogel-bonbon');
+  if (ziel) ziel.innerHTML = `<g transform="translate(32 78) scale(.8)">${getBonbon().markup}</g>`;
+}
+function vogelBonbonVerstecken() {
+  const ziel = $('#vogel .vogel-bonbon');
+  if (ziel) ziel.innerHTML = '';
+}
+
+// Vogel fliegt aus dem Käfig zur Maus und sammelt das fertige Bonbon ein.
+async function vogelHolt() {
+  $('#vogel').classList.add('fliegt');
+  kaefigSchwingen();                    // der leere Käfig schwingt nach
+  await vogelLeg(VOGEL_WEG.topf, 1300);
+  await warte(420);   // kurz beim Topf verweilen (das Bonbon erscheint später oben)
+}
+// Vogel trägt das Bonbon hinauf zum Drachen.
+async function vogelBringt() {
+  await vogelLeg(VOGEL_WEG.drache, 1200);
+  await warte(180);
+}
+// Vogel fliegt zurück in seinen Käfig (nach links gewandt) und setzt sich.
+async function vogelHeim() {
+  const v = $('#vogel');
+  vogelBonbonVerstecken();
+  await vogelLeg(VOGEL_WEG.heim, 1300, true);
+  v.style.transform = VOGEL_WEG.heim;   // im Käfig wieder nach rechts gewandt
+  vogelPos = VOGEL_WEG.heim;
+  v.classList.remove('fliegt');
+  kaefigSchwingen();                    // der zurückkehrende Vogel bringt den Käfig zum Schwingen
+}
+
+// ============================================================
 //  Zustand
 // ============================================================
 
@@ -291,19 +438,97 @@ const state = {
   mausHatZahn: false,      // trägt die Maus den Wackelzahn des Jungdrachen?
   zahnZeremonieAusstehend: false,  // Kette-Einblendung läuft noch
   gesehen: new Set(),      // schon untersuchte Zutaten
-  reihenfolge: [
-    'rauchdrachin', 'schlaefer', 'jungdrache',
-    'sonnendrache', 'staubdrache', 'walddrache',
-    'herzchendrache', 'rosendrache',
-    'schneckendrache', 'monddrache',
-    'feuerschlangendrache', 'wasserschlangendrache', 'zweikopfdrache',
-  ],
+  // Drei Kapitel à 5 Drachen (zufällige Auswahl) — als flache Sequenz.
+  sequenz: [],
+  kapitelGrenzen: [5, 10], // vor diesen Indizes geht die Maus schlafen
+  auftritte: {},           // wie oft jeder Drache schon dran war → Variantenwahl
+  aktVariante: null,       // { wunsch, bedingungen, belohnung } des aktuellen Auftritts
   index: 0,
   wartet: false,
   freigeschaltet: new Set(),   // Zutaten, die Drachen schon dagelassen haben
-  seitEinhorn: 0,              // erfolgreiche Drachen seit dem letzten Einhorn-Besuch
-  naechstesEinhorn: 4 + Math.floor(Math.random() * 3), // nach dem ersten Besuch alle 4–6 Drachen
 };
+
+// ============================================================
+//  Kapitel bauen — 3 × 5 Drachen, zufällig ausgewählt
+// ============================================================
+function mischeArray(a) {
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+// Baut die drei Kapitel als flache Liste von Einträgen { id, dep }.
+// Feste Platzierungen:
+//   Kapitel 1: Jungdrache (nicht unter den ersten zwei) + die drei Geber
+//              Sonnen-, Staub- und Walddrache.
+//   Kapitel 2: Schneckendrache + Herzchendrache (braucht Wüstenglas).
+//   Kapitel 3: Rosendrache (braucht Sonnentränen) + Zweikopfdrache (Tannenharz).
+// Die restlichen Plätze füllt eine zufällige Auswahl der übrigen Drachen.
+function kapitelBauen() {
+  const K = [Array(5).fill(null), Array(5).fill(null), Array(5).fill(null)];
+
+  const setze = (kap, id, dep = false, posErlaubt = null) => {
+    const frei = [];
+    for (let i = 0; i < 5; i++) {
+      if (!K[kap][i] && (!posErlaubt || posErlaubt.includes(i))) frei.push(i);
+    }
+    const i = frei[Math.floor(Math.random() * frei.length)];
+    K[kap][i] = { id, dep };
+  };
+
+  setze(0, 'jungdrache', false, [2, 3, 4]);
+  setze(0, 'sonnendrache');
+  setze(0, 'staubdrache');
+  setze(0, 'walddrache');
+  setze(1, 'schneckendrache');
+  setze(1, 'herzchendrache', true);   // braucht Wüstenglas (Staubdrache, Kap1)
+  setze(2, 'rosendrache', true);      // braucht Sonnentränen (Sonnendrache, Kap1)
+  setze(2, 'zweikopfdrache', true);   // braucht Tannenharz (Walddrache, Kap1)
+
+  const fest = new Set(['jungdrache', 'sonnendrache', 'staubdrache', 'walddrache',
+    'schneckendrache', 'herzchendrache', 'rosendrache', 'zweikopfdrache']);
+  const pool = Object.keys(DRACHEN).filter((id) => !fest.has(id));
+  let beutel = mischeArray(pool.slice());
+  const zieh = (verbraucht) => {
+    for (let versuch = 0; versuch < 2; versuch++) {
+      const i = beutel.findIndex((id) => !verbraucht.has(id));
+      if (i !== -1) return beutel.splice(i, 1)[0];
+      beutel = mischeArray(pool.slice());   // Beutel leer/blockiert → neu mischen
+    }
+    return beutel.pop();
+  };
+
+  for (let c = 0; c < 3; c++) {
+    const verbraucht = new Set(K[c].filter(Boolean).map((e) => e.id));
+    for (let i = 0; i < 5; i++) {
+      if (K[c][i]) continue;
+      const id = zieh(verbraucht);
+      K[c][i] = { id, dep: false };
+      verbraucht.add(id);
+    }
+  }
+  return K.flat();
+}
+
+// Welchen Satz / welche Anforderung sagt der Drache bei diesem Auftritt?
+// dep-Auftritte nutzen die Story-Variante (verlangt die Geschenk-Zutat).
+function drachenVariante(entry) {
+  const id = entry.id;
+  if (entry.dep && DRACHEN_ABHAENGIG[id]) {
+    const v = DRACHEN_ABHAENGIG[id];
+    return { wunsch: v.wunsch, bedingungen: v.bedingungen, belohnung: v.belohnung };
+  }
+  const d = DRACHEN[id];
+  const n = state.auftritte[id] || 0;        // 0 = erster Auftritt
+  const alt = DRACHEN_ALT[id];
+  if (n > 0 && alt && alt.length) {
+    const v = alt[(n - 1) % alt.length];
+    return { wunsch: v.wunsch, bedingungen: v.bedingungen, belohnung: v.belohnung };
+  }
+  return { wunsch: d.wunsch, bedingungen: d.bedingungen, belohnung: d.belohnung };
+}
 
 const $ = (s) => document.querySelector(s);
 const buehne = $('#buehne');
@@ -391,11 +616,25 @@ const DEKOS = [
   (x, y) => `<g class="deko-schimmer" transform="translate(${x} ${y}) scale(2)">
     <path d="M0 -16 A16 16 0 1 0 0 16 A11 11 0 1 1 0 -16z" fill="#dce8f5" opacity=".8"/>
   </g>`,
-  // Herz — schlicht, ohne Animation
-  (x, y) => `<g transform="translate(${x} ${y}) scale(1.6)">
-    <path d="M0 0 q-8 -12 0 -16 q6 -3 10 4 q4 -7 10 -4 q8 4 0 16 q-5 6 -10 10 q-5 -4 -10 -10z"
-          fill="#e88ba0" opacity=".85"/>
-  </g>`,
+  // Blüte — volle Blüte mit Blütenblättern rundherum, schimmert leise
+  (x, y) => {
+    let blaetter = '';
+    const n = 8;
+    for (let i = 0; i < n; i++) {
+      const a = (i / n) * Math.PI * 2;
+      const px = (Math.cos(a) * 13).toFixed(1);
+      const py = (Math.sin(a) * 13).toFixed(1);
+      const dreh = (a * 180 / Math.PI + 90).toFixed(1);
+      blaetter += `<ellipse cx="${px}" cy="${py}" rx="6.5" ry="10.5" ` +
+                  `transform="rotate(${dreh} ${px} ${py})" fill="#f2a7bd" ` +
+                  `stroke="#d9758f" stroke-width=".8"/>`;
+    }
+    return `<g class="deko-schimmer" transform="translate(${x} ${y}) scale(1.5)">
+      ${blaetter}
+      <circle r="7.5" fill="#f4c430"/>
+      <circle r="3.6" fill="#e8873a"/>
+    </g>`;
+  },
 ];
 
 // Deko schmückt zwei gemütliche Wandflächen: über dem Ohrensessel (unten
@@ -410,6 +649,20 @@ const DEKO_ZONEN = [
   { x0: 109, x1: 149, y0: 435, y1: 475 },
 ];
 
+// Füllt das Nacht-Overlay einmalig mit Mond und einem Feld funkelnder Sterne.
+function nachthimmelBauen() {
+  let s = '<div class="mond"></div>';
+  for (let i = 0; i < 80; i++) {
+    const x = Math.random() * 1280;
+    const y = Math.random() * 520;
+    const tw = (2 + Math.random() * 3).toFixed(1);
+    const gr = (Math.random() < 0.3 ? 3 : 2);
+    s += `<span class="stern" style="left:${x.toFixed(0)}px;top:${y.toFixed(0)}px;` +
+         `width:${gr}px;height:${gr}px;--tw:${tw}s"></span>`;
+  }
+  $('#nacht').innerHTML = s;
+}
+
 // Setzt eine zufällige Deko in eine der freien Zonen der Wand.
 function zufaelligeDeko() {
   const gen = DEKOS[Math.floor(Math.random() * DEKOS.length)];
@@ -419,15 +672,11 @@ function zufaelligeDeko() {
   $('#deko-schicht').insertAdjacentHTML('beforeend', gen(x, y));
 }
 
-// Das Einhorn erscheint am Astloch wie ein Drache, aber ohne Rätsel —
-// Klick irgendwo auf die Bühne lässt es ziehen. Was es dalässt, bleibt
-// sichtbar im Raum (Regal oder Wand), kein Zwischenfenster nötig.
-let einhornErstesMal = true;
-
-async function einhornBesuch() {
-  const ersterBesuch = einhornErstesMal;   // beim ersten Mal nie eine Zutat dalassen
+// Das Einhorn taucht am Astloch auf und schwebt dabei leise (schweb-1).
+function einhornErscheint() {
   const svg = $('#drache-svg');
-  svg.innerHTML = EINHORN_SVG;
+  svg.innerHTML = `<g class="dr-schweben schweb-1">${EINHORN_SVG}</g>`;
+  partikelFreistellen(svg);
   svg.classList.remove('kommt');
   void svg.offsetWidth;
   svg.classList.add('kommt');
@@ -435,6 +684,70 @@ async function einhornBesuch() {
   $('#loch-glut').style.setProperty('--drachenfarbe', '214,180,230');
   $('#schlitz').classList.add('aktiv');
   $('#loch-glut').classList.add('aktiv');
+}
+async function einhornZiehtWeiter() {
+  const svg = $('#drache-svg');
+  svg.classList.add('geht');
+  $('#schlitz').classList.add('geht');
+  $('#loch-glut').classList.add('geht');
+  await warte(850);
+  svg.classList.remove('geht');
+  $('#schlitz').classList.remove('geht');
+  $('#loch-glut').classList.remove('geht');
+  svg.innerHTML = '';
+  $('#schlitz').classList.remove('aktiv');
+  $('#loch-glut').classList.remove('aktiv');
+  $('#rede').classList.remove('da');
+}
+
+// Kurzer Einhorn-Auftritt mit einem Satz — für den Morgengruß und das
+// Schlusswort. Bringt nichts mit.
+async function einhornKurz(text, cta = 'Klick zum Weitermachen') {
+  einhornErscheint();
+  await zeigeKarteKlick(`„${text}“`, cta, true);
+  await einhornZiehtWeiter();
+}
+
+// Kapitelwechsel: die Maus geht in den Ohrensessel schlafen, der
+// Sternenhimmel legt sich über die Szene, ein Text erscheint. Am Morgen
+// schaut das Einhorn kurz vorbei (ohne etwas mitzubringen).
+async function schlafenGehen(kapNr) {
+  const maus = $('#maus');
+  maus.classList.add('geht-sessel', 'sitzt');   // ab in den Sessel
+  await warte(900);
+  const nacht = $('#nacht');
+  nacht.classList.add('da');
+  await warte(1500);
+  await zeigeKarteKlick(EINHORN.schlafText[kapNr], 'Klick, um weiterzuträumen', true);
+  await warte(500);
+  nacht.classList.remove('da');                 // der Morgen dämmert
+  await warte(1300);
+  maus.classList.add('geht-sessel');
+  maus.classList.remove('sitzt');               // die Maus steht auf
+  setTimeout(() => maus.classList.remove('geht-sessel'), 1600);
+  await einhornKurz(EINHORN.morgenText[kapNr], 'Klick, um in den Tag zu starten');
+  await warte(400);
+}
+
+// Nach allen drei Kapiteln: Einhorn-Schlusswort, dann setzt sich die Maus
+// in den Ohrensessel und schläft ein.
+async function spielEnde() {
+  await warte(500);
+  await einhornKurz(EINHORN.schlusswort, 'Klick zum Weitermachen');
+  const maus = $('#maus');
+  maus.classList.add('geht-sessel', 'sitzt');
+  await warte(1700);
+  await zeigeKarteKlick(EINHORN.ende, 'Ende');
+}
+
+// Das Einhorn erscheint am Astloch wie ein Drache, aber ohne Rätsel —
+// Klick irgendwo auf die Bühne lässt es ziehen. Was es dalässt, bleibt
+// sichtbar im Raum (Regal oder Wand), kein Zwischenfenster nötig.
+let einhornErstesMal = true;
+
+async function einhornBesuch() {
+  const ersterBesuch = einhornErstesMal;   // beim ersten Mal nie eine Zutat dalassen
+  einhornErscheint();
 
   // Text des Einhorns läuft jetzt über dieselbe Karte wie alles andere.
   // Karte tief und ohne Abdunklung, damit das Einhorn oben sichtbar bleibt.
@@ -450,18 +763,7 @@ async function einhornBesuch() {
   }
   einhornErstesMal = false;
 
-  // Abflug — wie bei den Drachen
-  svg.classList.add('geht');
-  $('#schlitz').classList.add('geht');
-  $('#loch-glut').classList.add('geht');
-  await warte(850);
-  svg.classList.remove('geht');
-  $('#schlitz').classList.remove('geht');
-  $('#loch-glut').classList.remove('geht');
-  svg.innerHTML = '';
-  $('#schlitz').classList.remove('aktiv');
-  $('#loch-glut').classList.remove('aktiv');
-  $('#rede').classList.remove('da');
+  await einhornZiehtWeiter();   // Abflug — wie bei den Drachen
 
   const geheimeZutaten = Object.keys(ZUTATEN)
     .filter((id) => ZUTATEN[id].geheim && !state.freigeschaltet.has(id));
@@ -678,14 +980,13 @@ function inSchale(id, typ) {
 // Verstoß, Grün heißt aktiv erfüllte Forderung.
 function zahnOrakel(zutatId) {
   if (!state.mausHatZahn) return;
-  const d = DRACHEN[state.drache];
-  if (!d || !d.bedingungen) return;
+  if (!state.aktVariante || !state.aktVariante.bedingungen) return;
   if (Math.random() > 0.45) return;            // reagiert nur manchmal
   const z = ZUTATEN[zutatId];
   if (!z) return;
 
   let rot = false, gruen = false;
-  for (const b of d.bedingungen) {
+  for (const b of state.aktVariante.bedingungen) {
     switch (b.typ) {
       case 'verbiete_waerme_ueber': if (z.waerme >  b.wert) rot = true; break;
       case 'verbiete_waerme_unter': if (z.waerme <  b.wert) rot = true; break;
@@ -851,25 +1152,22 @@ function wetterVerstecken() {
   wetter.className = '';
 }
 
-// Knopf zum direkten Geben von Schneckenschleim — kein Mischen nötig.
-function schleimKnopfAktualisieren() {
+// Kann dem aktuellen Drachen gerade Schneckenschleim direkt gereicht werden?
+// (Er nimmt Schleim, der Spieler hat welchen, und der Drache hat sein
+//  Dankgeschenk noch nicht dagelassen.)
+function kannSchleimGeben() {
   const d = state.drache && DRACHEN[state.drache];
-  const zeigen = !!(d && d.extraSchleim
+  return !!(d && d.extraSchleim
     && state.freigeschaltet.has('schneckenschleim')
     && !state.freigeschaltet.has(d.extraSchleim)
     && !state.wartet);
-  $('#schleim-geben').hidden = !zeigen;
 }
 
-$('#schleim-geben').addEventListener('click', async (e) => {
-  e.stopPropagation();
-  const d = state.drache && DRACHEN[state.drache];
-  if (!d || !d.extraSchleim || state.wartet) return;
-  $('#schleim-geben').hidden = true;
-  state.freigeschaltet.add(d.extraSchleim);
-  zutatFreischalten(d.extraSchleim);
-  await zeigeGeschenk(d.extraSchleim, d.name);
-});
+// Hint: die Tischschnecke leuchtet grünlich, sobald man dem Drachen ihren
+// Schleim reichen könnte — ohne Knopf, ohne Text.
+function schneckenHintAktualisieren() {
+  $('#schnecke').classList.toggle('hint', kannSchleimGeben());
+}
 
 // Feinjustierung einzelner Drachen: Größe (scale, um die Loch-Mitte 380|178)
 // und Verschiebung (dx/dy in Loch-Koordinaten). Alles andere bleibt 1:1.
@@ -885,17 +1183,38 @@ const DRACHEN_ANPASSUNG = {
   schneckendrache: { dy: -5 },
 };
 
-function drachenAuftritt(id) {
+// Hebt die Partikel (Schwaden, Teilchen, Staub) aus der schwebenden Gruppe
+// zu ihrem Elternteil — so behalten sie ihre Anpassung (Skalierung/Position),
+// bewegen sich aber NICHT mit dem sanften Schweben des Kopfes mit.
+function partikelFreistellen(svg) {
+  const float = svg.querySelector('.dr-schweben');
+  if (!float) return;
+  const elternteil = float.parentNode;
+  float.querySelectorAll('.dr-schwaden, .dr-teilchen, .dr-partikel, .staubteilchen')
+    .forEach((el) => elternteil.appendChild(el));
+}
+
+function drachenAuftritt(eintrag) {
+  const entry = typeof eintrag === 'string' ? { id: eintrag, dep: false } : eintrag;
+  const id = entry.id;
   state.drache = id;
   const d = DRACHEN[id];
+  state.aktVariante = drachenVariante(entry);       // Satz + Anforderung dieses Auftritts
+  state.auftritte[id] = (state.auftritte[id] || 0) + 1;
 
   const svg = $('#drache-svg');
   const a = DRACHEN_ANPASSUNG[id] || {};
   const k = a.scale || 1, dx = a.dx || 0, dy = a.dy || 0;
+  // Ganz subtiles Schweben — Variante deterministisch aus dem Namen, damit
+  // jeder Drache immer dieselbe, zu ihm passende Bewegung hat. Die Schwebe-
+  // Gruppe liegt INNEN, damit die Partikel danach freigestellt werden können.
+  const schwebIndex = [...id].reduce((s, c) => s + c.charCodeAt(0), 0) % 3;
+  const kern = `<g class="dr-schweben schweb-${schwebIndex}">${DRACHEN_SVG[id]}</g>`;
   svg.innerHTML =
     (k !== 1 || dx || dy)
-      ? `<g transform="translate(${380 + dx} ${178 + dy}) scale(${k}) translate(-380 -178)">${DRACHEN_SVG[id]}</g>`
-      : DRACHEN_SVG[id];
+      ? `<g transform="translate(${380 + dx} ${178 + dy}) scale(${k}) translate(-380 -178)">${kern}</g>`
+      : kern;
+  partikelFreistellen(svg);
   svg.classList.remove('kommt');
   svg.classList.toggle('ohne-partikel', id === 'schlaefer');   // Nebeldrache: keine Schwaden-Partikel
   void svg.offsetWidth;
@@ -908,13 +1227,13 @@ function drachenAuftritt(id) {
 
   const rede = $('#rede');
   rede.classList.remove('da');
-  $('#wunsch').innerHTML = `„${d.wunsch}“`;
+  $('#wunsch').innerHTML = `„${state.aktVariante.wunsch}“`;
   rede.classList.toggle('hell', d.stimme === 'hell');
   rede.classList.toggle('mitte', d.stimme === 'hell');
   requestAnimationFrame(() => rede.classList.add('da'));
 
   buecherBauen(d);
-  schleimKnopfAktualisieren();
+  schneckenHintAktualisieren();
 }
 
 // ============================================================
@@ -938,7 +1257,7 @@ function bonbonEigenschaften() {
 function pruefen() {
   const teile = bonbonEigenschaften();
 
-  for (const b of DRACHEN[state.drache].bedingungen) {
+  for (const b of state.aktVariante.bedingungen) {
     let ok = true;
     switch (b.typ) {
       case 'verbiete_waerme_ueber':  ok = teile.every((t) => t.waerme <= b.wert); break;
@@ -952,21 +1271,32 @@ function pruefen() {
     }
     if (!ok) return { erfolg: false, text: b.grund };
   }
-  return { erfolg: true, text: DRACHEN[state.drache].belohnung };
+  return { erfolg: true, text: state.aktVariante.belohnung };
 }
 
 // ============================================================
 //  Übergabe — die Maus dreht sich um
 // ============================================================
-// Schnecke auf dem Tisch: Klick streift Schneckenschleim ab — einmalig.
+// Schnecke auf dem Tisch: Leuchtet sie grün (Hint), reicht ein Klick ihren
+// Schleim direkt dem Schneckendrachen — ganz ohne Text. Sonst streift der
+// erste Klick einmalig Schneckenschleim ab (mit kurzer Erklärung).
 $('#schnecke').addEventListener('click', (e) => {
   e.stopPropagation();
   if (state.wartet) return;
+
+  if (kannSchleimGeben()) {                       // Schleim dem Drachen reichen — kein Text
+    const d = DRACHEN[state.drache];
+    state.freigeschaltet.add(d.extraSchleim);
+    zutatFreischalten(d.extraSchleim);
+    schneckenHintAktualisieren();
+    return;
+  }
+
   if (state.freigeschaltet.has('schneckenschleim')) return;   // schon abgestrichen
   state.freigeschaltet.add('schneckenschleim');
   zutatFreischalten('schneckenschleim');
   zeigeGeschenk('schneckenschleim', 'Die Schnecke');
-  schleimKnopfAktualisieren();
+  schneckenHintAktualisieren();
 });
 
 // Ohrensessel: Klick lässt die Maus sich hinsetzen, erneuter Klick auf.
@@ -986,7 +1316,7 @@ $('#mischen').addEventListener('click', async () => {
   $('#mischen').disabled = true;
   buehne.classList.add('wartet');
   $('#maus').classList.remove('sitzt');   // falls sie im Sessel saß: aufstehen
-  $('#schleim-geben').hidden = true;
+  schneckenHintAktualisieren();           // Hint aus, solange gemischt wird
 
   // 0. Rühren — kein Arm, nur der Topf vor ihr dampft und glitzert
   $('#maus').classList.add('ruehrt');
@@ -995,15 +1325,22 @@ $('#mischen').addEventListener('click', async () => {
   $('#maus').classList.remove('ruehrt');
   $('#topf').classList.remove('aktiv');
 
-  // 1. Umdrehen
+  // 0b. Der Vogel fliegt aus dem Käfig zur Maus und sammelt das Bonbon ein
+  await vogelHolt();
+
+  // 1. Umdrehen — die Maus dreht sich um und schaut dem Boten nach
   $('#maus').innerHTML = MAUS_HINTEN;
   $('#maus').classList.add('gedreht');
-  await warte(900);
+  await warte(700);
 
-  // 2. Das Bonbon erscheint mittig im Astloch
+  // 1b. Der Vogel trägt das Bonbon hinauf zum Drachen
+  await vogelBringt();
+
+  // 2. Das Bonbon wird groß vor dem Drachen präsentiert (Übergabe aus dem Körbchen)
+  vogelBonbonVerstecken();
   $('#zunge-svg').innerHTML = bonbonSVG();
   $('#zunge-svg').classList.add('raus');
-  await warte(1800);   // Bonbon liegt einen Moment sichtbar da, bevor das Urteil kommt
+  await warte(1500);   // Bonbon liegt einen Moment sichtbar da, bevor das Urteil kommt
 
   // 3. Urteil
   const e = pruefen();
@@ -1027,6 +1364,7 @@ $('#mischen').addEventListener('click', async () => {
 
   // 4. Aufräumen
   $('#zunge-svg').classList.remove('raus');
+  vogelHeim();                        // der Vogel fliegt zurück in seinen Käfig
   mausVornZeichnen();                 // Maus dreht sich um (Kette folgt gleich)
   $('#maus').classList.remove('gedreht');
 
@@ -1076,23 +1414,17 @@ $('#mischen').addEventListener('click', async () => {
     $('#loch-glut').classList.remove('aktiv');
     $('#rede').classList.remove('da');
     wetterVerstecken();
-    $('#schleim-geben').hidden = true;
+    $('#schnecke').classList.remove('hint');
 
-    if (state.index < state.reihenfolge.length) {
+    if (state.index < state.sequenz.length) {
       await warte(500);
-      state.seitEinhorn++;
-      if (state.seitEinhorn >= state.naechstesEinhorn) {
-        state.seitEinhorn = 0;
-        state.naechstesEinhorn = 4 + Math.floor(Math.random() * 3);
-        await einhornBesuch();
-      }
-      drachenAuftritt(state.reihenfolge[state.index]);
+      // Kapitelwechsel: die Maus geht schlafen, morgens schaut das Einhorn vorbei.
+      const kapNr = state.kapitelGrenzen.indexOf(state.index);
+      if (kapNr !== -1) await schlafenGehen(kapNr);
+      drachenAuftritt(state.sequenz[state.index]);
     } else {
-      $('#wunsch').innerHTML =
-        `<span id="auftritt">Der Schlitz ist leer. Draußen wird es hell.</span>` +
-        `Für heute kommt keiner mehr.`;
-      $('#rede').classList.remove('hell', 'mitte');
-      requestAnimationFrame(() => $('#rede').classList.add('da'));
+      // Alle drei Kapitel geschafft — Schlusswort und Abspann.
+      await spielEnde();
     }
   }
   schaleZeichnen();
@@ -1145,59 +1477,35 @@ async function zahnFaellt() {
 // ============================================================
 mausVornZeichnen();
 
+// Der Vogel sitzt von Anfang an im Käfig vor dem Astloch.
+$('#vogelkaefig').innerHTML = VOGELKAEFIG;
+$('#vogel').innerHTML = VOGEL;
+
 // Holzwand zeichnen und das Loch in seine gewachsene Form bringen
 $('#wand').innerHTML = wandSVG();
 $('#schlitz').style.clipPath = `path("${LOCH_PFAD}")`;
 $('#loch-glut').innerHTML =
   `<path d="${LOCH_PFAD}" fill="none" stroke="rgba(255,255,255,.10)" stroke-width="3"/>`;
 
-// Reihenfolge der Drachen mischen — jedes Mal anders, aber so, dass ein
-// Drache, der eine Geschenk-Zutat braucht (voraussetzung), immer NACH dem
-// Drachen kommt, der sie dalässt. Randomisierte topologische Sortierung.
-function reihenfolgeMischen(keys) {
-  const geberVon = {};   // Zutat-Id -> Drache, der sie schenkt
-  keys.forEach((k) => { if (DRACHEN[k].geschenk) geberVon[DRACHEN[k].geschenk] = k; });
+// Drei Kapitel à 5 Drachen zufällig zusammenstellen (Jungdrache in Kapitel 1,
+// Schneckendrache in Kapitel 2 — siehe kapitelBauen).
+state.sequenz = kapitelBauen();
 
-  const nachfolger = {}; // Drache -> [Drachen, die auf ihn warten]
-  const offen = {};      // Drache -> Zahl noch offener Voraussetzungen
-  keys.forEach((k) => { nachfolger[k] = []; offen[k] = 0; });
-  keys.forEach((k) => {
-    const geber = DRACHEN[k].voraussetzung && geberVon[DRACHEN[k].voraussetzung];
-    if (geber && geber !== k) { nachfolger[geber].push(k); offen[k]++; }
-  });
-
-  const bereit = keys.filter((k) => offen[k] === 0);
-  const ergebnis = [];
-  while (bereit.length) {
-    const i = Math.floor(Math.random() * bereit.length);
-    const k = bereit.splice(i, 1)[0];
-    ergebnis.push(k);
-    for (const n of nachfolger[k]) { if (--offen[n] === 0) bereit.push(n); }
-  }
-  return ergebnis.length === keys.length ? ergebnis : keys.slice();
-}
-// Der Jungdrache darf nicht als Erster oder Zweiter kommen — neu mischen,
-// bis er weiter hinten steht (mit Sicherheits-Limit gegen Endlosschleife).
-let gemischt = reihenfolgeMischen(state.reihenfolge);
-for (let v = 0; v < 50; v++) {
-  const ji = gemischt.indexOf('jungdrache');
-  if (ji !== 0 && ji !== 1) break;
-  gemischt = reihenfolgeMischen(state.reihenfolge);
-}
-state.reihenfolge = gemischt;
+// Sternenhimmel für die Schlaf-Übergänge vorbereiten.
+nachthimmelBauen();
 
 regalBauen();
 schaleZeichnen();
 
 // Die Bücher des ersten Drachen stehen schon im Regal, bevor überhaupt
 // irgendwer am Astloch erscheint — auch während des Einhorn-Besuchs.
-buecherBauen(DRACHEN[state.reihenfolge[0]]);
+buecherBauen(DRACHEN[state.sequenz[0].id]);
 
-// Das Einhorn schaut immer als Erstes vorbei, danach nur noch selten.
+// Das Einhorn schaut immer als Erstes vorbei und erklärt das Spiel.
 let testModusBereit = false;
 (async () => {
   await einhornBesuch();
-  drachenAuftritt(state.reihenfolge[0]);
+  drachenAuftritt(state.sequenz[0]);
   testModusBereit = true;
 })();
 
