@@ -68,8 +68,8 @@ html,body{
   width:100%; height:100%;
   pointer-events:none;
   z-index:0;
-  opacity:.8;
-  filter:drop-shadow(0 0 3px rgba(255,240,210,.4));   /* leichter Glow auf der Deko */
+  opacity:.7;
+  filter:drop-shadow(0 0 3px rgba(255,240,210,.6));   /* leichter Glow auf der Deko */
 }
 
 /* ============================================================
@@ -78,7 +78,7 @@ html,body{
    ============================================================ */
 #lichtkegel{
   position:absolute; left:50%; top:84px;
-  width:660px; height:490px; margin-left:-330px;
+  width:700px; height:490px; margin-left:-330px;
   background:radial-gradient(ellipse 60% 55% at 50% 8%,
       rgba(255,214,140,.34) 0%,
       rgba(255,190,100,.16) 35%,
@@ -400,14 +400,20 @@ html,body{
   opacity:0;
   transition:opacity 1.2s ease;
   z-index:2;
+  /* Blur wird EINMAL gerastert; das "Atmen" laeuft ueber opacity (GPU),
+     statt den drop-shadow pro Frame neu zu berechnen. */
+  filter:drop-shadow(0 0 30px rgba(var(--drachenfarbe, 214,180,230),.5));
 }
 #loch-glut.aktiv{
   opacity:1;
-  animation:atmen 7s ease-in-out infinite;
+  will-change:opacity;
+  /* 1.2s Verzoegerung, damit erst die opacity-Transition (Einblenden)
+     durchlaeuft; das 0%-Keyframe (opacity:1) schliesst nahtlos an. */
+  animation:atmen 7s ease-in-out 1.2s infinite;
 }
 @keyframes atmen{
-  0%,100%{ filter:drop-shadow(0 0 16px rgba(var(--drachenfarbe),.30)); }
-  50%    { filter:drop-shadow(0 0 42px rgba(var(--drachenfarbe),.62)); }
+  0%,100%{ opacity:1;   }
+  50%    { opacity:.62; }
 }
 
 /* Abflug: ein kurzes Aufglühen in der Drachenfarbe, das die Animation trägt */
@@ -431,6 +437,7 @@ html,body{
   100%{ opacity:0; transform:scale(1.6) translateX(-26%); }
 }
 @media (prefers-reduced-motion: reduce){
+  #loch-glut.aktiv{ animation:none; opacity:1; }
   #loch-glut.geht, #schlitz.geht .schwaden{ animation:none; }
 }
 
@@ -516,12 +523,23 @@ html,body{
 @media (prefers-reduced-motion: reduce){ #vogelkaefig.schwingt{ animation:none; } }
 
 #vogel{
-  position:absolute; left:321px; top:145px;
-  width:86px; height:92px;
+  position:absolute; left:301px; top:120px;
+  width:129px; height:138px;   /* Vogel samt Korb (um 25% verkleinert) */
   z-index:8; pointer-events:none; will-change:transform;
   filter:drop-shadow(0 3px 5px rgba(0,0,0,.5));
 }
 #vogel svg{ width:100%; height:100%; display:block; }
+/* Das Bonbon im Körbchen glimmt warm (statischer Schein). */
+#vogel .vogel-bonbon{ filter:drop-shadow(0 0 2px rgba(255,238,180,.85)); }
+/* Bei der Übergabe glüht es kräftig auf. */
+#vogel.uebergabe .vogel-bonbon{ animation:bonbonUebergabe 1.3s ease-in-out infinite; }
+@keyframes bonbonUebergabe{
+  0%,100%{ filter:drop-shadow(0 0 3px rgba(255,238,180,.85)); }
+  50%    { filter:drop-shadow(0 0 10px rgba(255,238,180,1)); }
+}
+@media (prefers-reduced-motion: reduce){
+  #vogel.uebergabe .vogel-bonbon{ animation:none; filter:drop-shadow(0 0 8px rgba(255,238,180,.95)); }
+}
 /* Sitzt er im Käfig, wippt er leise; fliegt er, schlägt er mit den Flügeln
    und liegt über allem anderen. */
 /* Im Sitzen wackelt er ab und zu mit dem Kopf und zuckt mit dem Flügel
@@ -564,8 +582,8 @@ html,body{
    REDE — Text auf Qualm
    ============================================================ */
 #rede{
-  position:absolute; left:50%; margin-left:-390px;
-  width:780px; top:-8px;
+  position:absolute; left:0; right:0; top:-8px;
+  box-sizing:border-box;
   padding:26px 46px 20px;
   text-align:center;
   z-index:36;
@@ -750,11 +768,15 @@ html,body{
   50%    { opacity:1; transform:translateY(-1.5px); }
 }
 
-/* Manche Zutaten glühen leise im Glas */
-.zutat-leuchtet{ animation:zutatLeuchtet 2.6s ease-in-out infinite; }
+/* Manche Zutaten glühen leise im Glas.
+   Statischer Glow (einmal gerastert), das Pulsieren laeuft ueber opacity. */
+.zutat-leuchtet{
+  filter:drop-shadow(0 0 5px var(--zutatglut)) drop-shadow(0 3px 4px rgba(0,0,0,.55));
+  animation:zutatLeuchtet 2.6s ease-in-out infinite;
+}
 @keyframes zutatLeuchtet{
-  0%,100%{ filter:drop-shadow(0 0 2px var(--zutatglut)) drop-shadow(0 3px 4px rgba(0,0,0,.55)); }
-  50%    { filter:drop-shadow(0 0 7px var(--zutatglut)) drop-shadow(0 3px 4px rgba(0,0,0,.55)); }
+  0%,100%{ opacity:.72; }
+  50%    { opacity:1;   }
 }
 @media (prefers-reduced-motion: reduce){
   .zutat-schimmer, .zutat-leuchtet{ animation:none; }
@@ -820,11 +842,13 @@ html,body{
   }
 }
 
-/* Kurzes Aufleuchten der Kette, sobald sie am Hals sitzt */
+/* Die Kette glimmt dauerhaft golden — statischer Schein, GPU-freundlich. */
+.maus-zahnkette{ filter:drop-shadow(0 0 5px rgba(255,238,180,.9)); }
+/* Kurzes, kräftiges Aufleuchten, sobald sie am Hals sitzt */
 #maus.zahn-neu .maus-zahnkette{ animation:kettenGlow 1.5s ease-out; }
 @keyframes kettenGlow{
-  0%   { filter:drop-shadow(0 0 9px rgba(255,238,180,.95)); }
-  100% { filter:drop-shadow(0 0 0 rgba(255,238,180,0)); }
+  0%   { filter:drop-shadow(0 0 16px rgba(255,238,180,1)) drop-shadow(0 0 6px rgba(255,238,180,.95)); }
+  100% { filter:drop-shadow(0 0 5px rgba(255,238,180,.9)); }
 }
 
 /* Orakel-Puls: grün = passt, rot = Verstoß */
@@ -913,14 +937,15 @@ html,body{
 
 /* Blinzeln und gelegentliches Naserümpfen/Schnuppern */
 .maus-augen{
-  animation:mausBlinzelt 13s ease-in-out infinite;
+  animation:mausBlinzelt 6s ease-in-out infinite;
   transform-box:fill-box; transform-origin:50% 50%;
 }
 @keyframes mausBlinzelt{
-  0%, 96%, 100%{ transform:scaleY(1); }
-  98%          { transform:scaleY(.1); }
+  0%, 93%, 100%{ transform:scaleY(1); }
+  95.5%        { transform:scaleY(.08); }
+  98%          { transform:scaleY(1); }
 }
-/* Ohren wackeln kräftig, aber mal das eine, mal das andere (phasenversetzt) */
+/* Ohren wackeln leise, mal das eine, mal das andere (phasenversetzt) */
 .maus-ohr-links, .maus-ohr-rechts{
   transform-box:fill-box; transform-origin:50% 100%;
   animation:ohrWackelt 21s ease-in-out infinite;
@@ -928,9 +953,9 @@ html,body{
 .maus-ohr-rechts{ animation-delay:-10.5s; }
 @keyframes ohrWackelt{
   0%, 91%, 100%{ transform:rotate(0deg); }
-  93%          { transform:rotate(-8deg); }
-  95.5%        { transform:rotate(7deg); }
-  98%          { transform:rotate(-3deg); }
+  93%          { transform:rotate(-3deg); }
+  95.5%        { transform:rotate(2.5deg); }
+  98%          { transform:rotate(-1deg); }
 }
 /* Der Nasenknopf ist eine eigenständige Ellipse — seine fill-box-Mitte ist
    exakt der Nasenpunkt, also pulst er zuverlässig genau um seine Mitte. */
@@ -1143,17 +1168,6 @@ html,body{
 @keyframes mausWippt{
   0%,100%{ transform:translateY(0); }
   50%    { transform:translateY(-3px); }
-}
-
-#maus-notiz{
-  position:absolute; left:50%; top:372px; margin-left:-330px;
-  width:660px; text-align:center;
-  font-size:19px; font-style:italic;
-  color:#b99a63;
-  text-shadow:0 1px 5px #000, 0 0 14px rgba(0,0,0,.8);
-  opacity:0; transition:opacity .45s ease;
-  pointer-events:none;
-  z-index:36;
 }
 
 /* --- Mischschale: drei Mulden auf der Platte --- */
@@ -1704,7 +1718,6 @@ html,body{
     <div id="wunsch"></div>
     <div id="rede-cta"></div>
   </div>
-  <div id="maus-notiz"></div>
 
   <div class="regal" id="regal-links">
     <div class="brett-titel">Binder</div>

@@ -6,7 +6,11 @@
       "Bash(cp spiel.js /tmp/spiel_check.mjs)",
       "Bash(node --check /tmp/data.mjs)",
       "Bash(node --check /tmp/glaeser.mjs)",
-      "PowerShell($env:Path -split ';' | Where-Object { $_ -match 'node' }; \\(Get-Command node -ErrorAction SilentlyContinue\\).Source)"
+      "PowerShell($env:Path -split ';' | Where-Object { $_ -match 'node' }; \\(Get-Command node -ErrorAction SilentlyContinue\\).Source)",
+      "Bash(node --check data.js)",
+      "Bash(node --check spiel.js)",
+      "Bash(node --check glaeser.js)",
+      "PowerShell($node = \\(Get-Command node -ErrorAction SilentlyContinue\\); if \\($node\\) { node --check data.js; if \\($?\\) { \"data.js OK\" }; node --check spiel.js; if \\($?\\) { \"spiel.js OK\" } } else { \"node nicht installiert\" })"
     ]
   }
 }

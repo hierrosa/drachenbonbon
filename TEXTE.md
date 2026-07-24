@@ -12,64 +12,64 @@ ist Erzähltext (verspielte, serifenlose Schrift).
 ## Binder (`data.js` → `BINDER`)
 
 **Mondkaramell** (`karamell.name` / `.beschreibung`)
-> Zäh und blass wie ein bewölkter Mond. Riecht nach fast nichts, und genau das macht es brauchbar: es lässt jeder Zutat ihren Willen.
+> Zähflüssig und blass. Riecht und schmeckt nach fast nichts, die perfekte neutrale Basis.
 
 **Daunensirup** (`sirup`)
-> Weich wie ein Daunenkissen und fast geräuschlos. Wer ihn hinunterschluckt, hört für einen Moment sein eigenes Herz nicht mehr.
+> Weich auf der Zunge und komplett geräuschlos. Wer ihn hinunterschluckt, hört für einen kurzen Moment nur noch den eigenen Herzschlag.
 
-**Frostharz** (`frostharz`)
-> Kalt wie ein Winterast, noch bevor die Sonne ihn erreicht. Zieht die Wärme aus allem, was hineingerührt wird.
+**Eiszapfenharz** (`frostharz`)
+> Kälter als Wassereis. Zieht die Wärme aus allem, womit man es mischt.
 
 ---
 
 ## Zutaten (`data.js` → `ZUTATEN`)
 
 **Gewitterzucker** (`gewitterzucker`)
-> Scharfkantige Kristalle, die auf der Zunge kleine Blitze schlagen. Gesammelt in der Minute, bevor der Regen kommt.
+> Scharfkantige Kristalle, die auf der Zunge kleine Blitze schlagen. Geerntet kurz bevor der Regen fällt.
 
-**Funkenpollen** (`funkenpollen`)
-> Aus Blüten, die nur auf Brandflächen wachsen. Feiner Staub, der beim Öffnen des Glases aufwirbelt und nach heißem Blech riecht.
+**Funkenrollis** (`funkenpollen`)
+> Große Pollen von Blüten, die ausschließlich auf Brandflächen wachsen. Feiner Staub, der nach heißem Blech riecht.
 
 **Aschenkirsche** (`aschenkirsche`)
-> Außen verkohlt, innen noch süß und glatt wie Wachs. Sie gibt keinen Laut von sich, aber sie ist warm, wenn man sie zu lange hält.
+> Außen glatt und hart verkohlt. Innen aber noch süß und warm. Sie gibt keinen Laut von sich.
 
 **Nebelbeere** (`nebelbeere`)
-> Man sieht sie nur aus dem Augenwinkel. Kühl und glatt wie ein Morgen am Wasser und vollkommen still.
+> Kühl und glatt wie ein Morgen am Wasser und vollkommen still. Sehr schwer zu finden.
 
 **Eiszahnminze** (`eiszahnminze`)
-> Rauhe Eiskristalle, die die Zähne knacken lassen. Wächst nur dort, wo das Wasser im Schatten steht und morgens eine Haut hat.
+> Voller rauher Eiskristalle, die zwischen den Zähne knirschen. Wächst nur dort, wo Wasser dauerhaft im Schatten liegt.
 
 **Wurzelholzsplitter** (`wurzelholz`)
-> Schmeckt nach altem Keller. Rauh und splittrig zwischen den Backenzähnen, und war noch nie in seinem Leben oben.
+> Schmecken nach altem Keller. Hinterlassen ein rauhes und splittriges Gefühl auf den Zähnen.
 
 ### Geschenk-Zutaten (erscheinen erst, wenn ein Drache/das Einhorn sie dalässt)
 
 **Sturmkraut** (`sturmkraut`)
-> Ein Bündel silbriger Blätter, kopfüber an der Wand getrocknet. Raschelt trocken zwischen den Pfoten, riecht nach aufziehendem Wind.
+> Ein Bündel silbriger Blätter, kopfüber getrocknet. Sie rascheln trocken zwischen den Pfoten und riechen nach aufziehendem Wind.
 
 **Schattenmelisse** (`schattenmelisse`)
-> Wächst nur dort, wo nie die Sonne hinkommt. Getrocknet zerfällt sie fast zu Staub zwischen den Fingern, kühl und vollkommen still.
+> Wächst nur, wo die Sonne nie scheint. Getrocknet zerfällt sie schnell zu Staub. Dabei bleibt sie kühl und ganz leise.
 
 **Glutfenchel** (`glutfenchel`)
-> Federige orangerote Blätter, die selbst getrocknet noch warm wirken. Zwischen den Zähnen knistert er wie glimmende Asche.
+> Gefiederte orangerote Blätter, die selbst getrocknet noch warm wirken. Zwischen den Zähnen knistern sie wie glimmende Kohle.
 
 **Sonnentränen** (`sonnentraenen`)
-> Klare, glatte Tropfen, als hätte die Mittagssonne selbst geweint. Warm und still, bis man näher hinhört — dann knistern sie leise.
+> Schimmernde, glatte Tropfen. Warm und still aber wenn man näher hinhört knistern sie doch leise.
 
 **Wüstenglas** (`wuestenglas`)
-> Sand, der einmal so heiß wurde, dass er schmolz und wieder erstarrte. Glatt, warm und vollkommen lautlos.
+> Sand, der einmal so heiß wurde, dass er flüssig wurde und wieder erstarrte. Glatt, warm und ohne jedes Geräusch.
 
-**Tannenharz** (`tannenharz`)
-> Zäh und kühl, aus der Rinde eines Baums getreten, der nie die Sonne sah. Splittert rauh und leise zwischen den Zähnen.
+**Harzhannes** (`tannenharz`)
+> Spröde und immer kühl. Aus der Rinde eines Baums gewonnen, der im Schnee gewachsen ist. Splittert rauh und leise zwischen den Zähnen.
 
-**Sternenstaub** (`sternenstaub`)
-> Niemand weiß, wo er herkommt, nur dass er manchmal am Astloch liegt, nachdem etwas Seltenes vorbeigekommen ist. Glatt und kühl in der Hand, und er knistert wie ferne Feuerwerke.
+**Einhornkacke** (`sternenstaub`)
+> Niemand weiß, wo sie genau herkommt, nur dass sie manchmal am Astloch liegt, nachdem das Einhorn vorbeigekommen ist. Sanft und kühl in der Hand, und knattert wie ferne Püpse.
 
 **Schneckenschleim** (`schneckenschleim`)
-> Frisch von der Tischschnecke abgestrichen. Kühl, glatt und vollkommen lautlos — er dämpft jedes Geräusch im Bonbon.
+> Frisch von der Tischschnecke. Ziemlich kalt, glitschig glatt und unglaublich leise. Er dämpft jedes Geräusch im Bonbon.
 
 **Schneckenperle** (`schneckenperle`)
-> Eine glatte, schimmernde Perle, die der Schneckendrache in vielen stillen Jahren gerollt hat. Sie knistert kaum hörbar.
+> Eine glatte, schimmernde Perle, die der Schneckendrache in irmeliger Arbeit gerollt hat. Sie raschelt kaum hörbar.
 
 ---
 
@@ -78,35 +78,35 @@ ist Erzähltext (verspielte, serifenlose Schrift).
 **Erklärung beim ersten Besuch** (`erklaerung[0]`, `[1]`)
 > „Hallo Bonbonwaldmaus. Du machst die besten Drachenbonbons weit und breit."
 
-> „Drachen, die Hilfe brauchen, kommen zu dir, und du machst ihnen ein Bonbon aus einem Binder und zwei Zutaten. Die Bücher hast du immer parat, falls du mal was vergessen hast."
+> „Drachen, die Hilfe brauchen, kommen zu dir, und du machst ihnen ein Bonbon aus einem Binder und zwei Zutaten. Deine schlauen Bücher hast du immer parat, falls du mal was vergessen hast."
 
 **Auftritt** (`auftritt`)
-> Ein Schimmer im Astloch, der nichts mit Feuer zu tun hat. Etwas Weißes, Falsches-hier-Wirkendes schiebt sich neugierig hindurch.
+> Ein Schimmer im Astloch. Etwas Elegantes, strahlend weißes schiebt sich neugierig heran.
 
 **Wunsch** (`wunsch`)
-> Es will nichts Bestimmtes. Es schaut sich einfach nur um — und hinterlässt beim Gehen eine Kleinigkeit.
+> Das Einhorn will nichts Bestimmtes. Es schaut sich einfach nur um und lässt dir eine kleine Erinnerung da.
 
 **Abschied (selten, mit Geschenk)** (`abschiedSelten`)
-> Es schnaubt leise, lässt etwas Glänzendes am Rand des Lochs zurück und ist verschwunden, bevor die Maus sich umdreht.
+> Es schnaubt frech, lässt etwas am Baumloch zurück und ist verschwunden, bevor die Maus sich umdreht.
 
 **Abschied (häufig, mit Deko)** (`abschiedHaeufig`)
-> Bevor es geht, streift es mit der Mähne über die Wand — irgendwo im Holz bleibt etwas von seinem Glanz zurück.
+> Bevor es geht, streift es mit der Mähne über das Baumloch und irgendwo im Holz bleibt etwas von seinem Glanz zurück.
 
 **Schlaf-Übergänge** (`schlafText[0]`, `[1]`)
-> Die Maus hängt den letzten Kessel an den Haken. Draußen wird es dunkel, die Sterne treten hervor, und sie kuschelt sich in den Ohrensessel. Ein guter erster Tag.
+> Die Maus hängt macht noch kurz die Schüssel sauber. Draußen ist es schon dunkel, noch dunkler als sowieso. Die Sterne leuchten und sie kuschelt sich in ihren alten Ohrensessel. Ein guter erster Tag.
 
-> Wieder eine lange Reihe Drachen, wieder ein Bonbon nach dem anderen. Müde und zufrieden schließt die Maus die Augen unter dem Sternenhimmel.
+> Wieder viele Drachen heute, ein Bonbon nach dem anderen. Müde schließt die Maus die Augen und sinkt in ihren geliebten Sessel.
 
 **Morgengruß** (`morgenText[0]`, `[1]`) — wird als „…" gesprochen
-> Guten Morgen! Heute kommen wieder ein paar Drachen vorbei. Du schaffst das mit links.
+> Guten Morgen Maus wie geht's dir? Ich habe schon die ersten Drachen im Anflug gesehen. Hab einen schönen Tag!
 
-> Fast geschafft, kleine Bonbonwaldmaus. Nur noch dieses letzte Kapitel, dann hast du sie alle.
+> Fast geschafft, kleine Bonbonwaldmaus. Wenn du heute alle Drachen versorgst, kannst du erstmal Urlaub machen!
 
 **Schlusswort** (`schlusswort`) — wird als „…" gesprochen
-> Alle Drachen im Wald sind versorgt. Keiner bekommt bessere Drachenbonbons als von dir. Ruh dich jetzt aus — du hast es dir verdient.
+> Alle Drachen sind für's erste versorgt. Ruh dich jetzt aus, du hast es dir echt verdient.
 
 **Abspann** (`ende`)
-> Die Maus klettert in den Ohrensessel, zieht die Decke bis zum Kinn und schläft zufrieden ein. Der Vogel schlummert in seinem Käfig, die Kerze flackert leise. Ende.
+> Die Maus schnuffelt sich in den Ohrensessel und zieht die Decke bis zum Kinn. Wie es wohl den Drachen dort draußen gerade geht? Über diesem Gedanken schläft sie zufrieden ein. 
 
 ---
 
@@ -116,104 +116,104 @@ Für jeden Drachen: Name, Auftritts-Beschreibung, Wunsch (wird als „…" gespr
 die Ablehnungs-Gründe je Bedingung, und die Belohnung bei Erfolg.
 
 ### Die alte Rauchdrachin (`rauchdrachin`)
-- **Auftritt:** Der Schlitz füllt sich mit einem einzigen gelben Auge. Rauch legt sich auf die Tischplatte.
-- **Wunsch:** „Gib mir etwas, das schmeckt wie kurz bevor es blitzt."
-- **Grund (nicht kalt):** Sie zischt. Von innen löscht sie so etwas.
-- **Grund (knistern):** Sie legt den Kopf schief. Sie hat nichts gehört.
-- **Grund (Himmel):** Sie schnaubt. Das hier hat nie den Boden verlassen.
-- **Grund (nicht glatt):** Zu glatt. Das rutscht ihr einfach von der Zunge.
-- **Belohnung:** Sie schließt das Auge und lässt den Rauch langsam entweichen. Ein Geräusch wie ein sehr zufriedener Ofen.
+- **Auftritt:** Der Schlitz füllt sich mit einem großen Maul und einem gelben Auge. Rauch legt sich auf die Tischplatte.
+- **Wunsch:** „Gib mir ein Bonbon, das schmeckt wie es kurz vor dem Gewitter riecht."
+- **Grund (nicht kalt):** Sie zischt. Sie will nicht durch Kaltes gelöscht werden.
+- **Grund (knistern):** Sie legt den Kopf schief. War da überhaupt ein Geräusch?.
+- **Grund (Himmel):** Sie schnaubt. Das hier hat den Boden geküsst.
+- **Grund (nicht glatt):** So glatt. Das rutscht ihr einfach von der Zunge.
+- **Belohnung:** Die Rauchdrachin schließt die Augen und lässt Rauch entweichen. Ein Geräusch wie ein zufriedener Ofen.
 
 ### Der Schläfer (`schlaefer`)
-- **Auftritt:** Kein Kopf. Nur ein geschlossenes Lid im Dunkeln und Nebel, der über die Kante kriecht.
-- **Wunsch:** „Ich schlafe seit vierzig Jahren. Weck mich nicht."
-- **Grund (nicht warm):** Der Nebel dünnt aus. Etwas darin erlischt.
-- **Grund (stumm):** Ein Knacken. Das Lid hebt sich einen Spalt.
-- **Grund (Wasser):** Der Nebel weicht zurück. Das hier hat nie im Wasser gestanden.
-- **Belohnung:** Nichts passiert. Der Nebel wird dichter, das Lid bleibt zu. Das ist alles, was er zu geben hat — und es ist genug.
+- **Auftritt:** Ein halbgeschlossenes Augenlid im Nebel.
+- **Wunsch:** „Ich schlafe schon seit vierzig Jahren durch, also weck mich nicht auf."
+- **Grund (nicht warm):** Der Nebel kühlt ab und dünnt aus..
+- **Grund (stumm):** Ein Knacken ist zu hören. Das Lid hebt sich einen Spalt.
+- **Grund (Wasser):** Der Nebel bebt. Das hier war nie im Wasser.
+- **Belohnung:** Nichts passiert aber der Nebel wird etwas dichter. Das ist alles, was der Schäfer zu geben hat und es reicht.
 
 ### Der Jungdrache (`jungdrache`)
 - **Auftritt:** Zu klein für den Schlitz. Er klettert halb hinein, rutscht ab, versucht es nochmal. Ein Zahn wackelt.
-- **Wunsch:** „Ich will was zum Draufbeißen! Aber nichts, was geflogen ist."
-- **Grund (knirschen):** Er kaut zweimal und guckt enttäuscht. Es hat nicht geknackt.
-- **Grund (nicht zu heiß):** Er hustet und reibt sich den Bauch. Zu heiß für ihn.
-- **Grund (nicht Himmel):** Er schiebt es mit der Schnauze weg. Das kam von oben.
-- **Grund (rauh):** Zu glatt. Da ist nichts zum Draufbeißen.
-- **Belohnung:** Er beißt zu, das Knirschen hallt im Baum. Der Wackelzahn landet auf der Tischplatte. Er merkt es nicht.
+- **Wunsch:** „Ich brauch' was zum Draufbeißen! Aber bloß nichts, was geflogen ist."
+- **Grund (knirschen):** Er kaut zweimal und guckt enttäuscht. Nichts hat geknackt.
+- **Grund (nicht zu heiß):** Er hustet laut. Das war zu heiß für ihn.
+- **Grund (nicht Himmel):** Er spuckt es aus. Das kam ja wohl von weit oben.
+- **Grund (rauh):** Zu rutschig. Da gibt's nichts zum Draufbeißen.
+- **Belohnung:** Er beißt zu, das Knirschen hallt im Baum. Ein Wackelzahn landet auf der Tischplatte. Ein zufriedener Jungdrache.
 
 ### Der Sonnendrache (`sonnendrache`)
-- **Auftritt:** Ein Schlitz voller gleißendem Licht. Man kann kaum hinsehen, so heiß glüht seine Haut von innen.
-- **Wunsch:** „Gib mir etwas, das schmeckt wie Mittagslicht auf der Haut."
+- **Auftritt:** Ein Schlitz voll gleißendem Licht. Man kann kaum hinsehen, so hell glüht seine Haut.
+- **Wunsch:** „Ich mag was, das schmeckt wie Mittagslicht auf der Haut."
 - **Grund (glühend):** Er schnaubt enttäuscht. Das war nur lauwarm.
 - **Grund (nicht knirschen):** Es soll auf der Zunge schmelzen, nicht krachen.
-- **Grund (nicht rauh):** Zu rauh. Das kratzt statt zu schmelzen.
-- **Belohnung:** Seine Haut leuchtet einen Moment heller auf, dann wird das Licht weich. Es ist, als würde die Mittagssonne kurz lächeln.
+- **Grund (nicht rauh):** Zu rauh. Das kratzt mich im Hals.
+- **Belohnung:** Die Haut des Sonnendrachen leuchtet einen Moment hell auf. Es ist, als würde die Mittagssonne dir zulächeln.
 
 ### Der Staubdrache (`staubdrache`)
 - **Auftritt:** Feiner Staub rieselt aus dem Schlitz, bevor überhaupt ein Kopf sichtbar wird. Er bewegt sich, als wäre er aus loser Erde gefügt.
-- **Wunsch:** „Gib mir etwas, das nach kühlem, altem Boden schmeckt."
-- **Grund (kühl):** Er zerfällt zu Sand. Das hier war ihm zu warm.
-- **Grund (nicht knistern):** Ein Knistern wirbelt ihn auf. Er will es ruhig.
-- **Belohnung:** Er sackt in sich zusammen wie eine Sanddüne im Wind — zufrieden, nicht zerstört. Der Staub legt sich langsam wieder.
+- **Wunsch:** „Ich brauche etwas, das nach kühlem, altem Boden schmeckt."
+- **Grund (kühl):** Er scheint zu zerbröseln. Das war ihm zu warm.
+- **Grund (nicht knistern):** Ein Knistern wirbelt ihn zu sehr auf.
+- **Belohnung:** Der Staubdrache sackt leicht in sich zusammen. Zufrieden und gesetzt.
 
 ### Der Walddrache (`walddrache`)
 - **Auftritt:** Moos wächst am Rand des Lochs. Zwischen den Zähnen hängen Farnwedel, die er gar nicht zu bemerken scheint.
-- **Wunsch:** „Gib mir etwas, das nach Erde nach dem Regen schmeckt. Leise, bitte."
-- **Grund (nicht Himmel):** Er wittert es und schüttelt sich. Das kam nie unter Bäumen vor.
-- **Grund (stumm):** Ein Geräusch, und die Vögel im Geäst stieben auseinander.
-- **Grund (glatt):** Etwas Rauhes. Er schreckt zurück, als hätte es geknackt.
-- **Belohnung:** Er sinkt zurück ins Moos, lautlos wie er kam. Nur ein Farnwedel wippt noch nach.
+- **Wunsch:** „Gib mir etwas, das wie Erde nach dem Regen schmeckt. Aber leise, bitte."
+- **Grund (nicht Himmel):** Nein, das kam nicht von der Erde.
+- **Grund (stumm):** Ein Geräusch, fast wäre er davongerannt.
+- **Grund (glatt):** So rauh! Er weicht zurück.
+- **Belohnung:** Der Walddrache entspannt sich. Er verschwindet so lautlos wie er kam, nur ein paar Blätter wirbeln noch.
 
 ### Der Herzchendrache (`herzchendrache`) — Grundvariante
 - **Auftritt:** Aus dem Schlitz schlägt ein Herzschlag, viel zu laut für ein so kleines Wesen. Kleine Wärmewolken pulsieren im Takt dazu.
-- **Wunsch:** „Gib mir etwas durch und durch Warmes, das nie im Wasser lag."
-- **Grund (nicht kalt):** Es fühlt sich kalt an. Sein Herzschlag stockt kurz.
+- **Wunsch:** „Gib mir etwas ganz und gar Warmes, das sicher nie im Wasser lag."
+- **Grund (nicht kalt):** Es fühlt sich kalt an. Sein Herzschlag setzt kurz aus.
 - **Grund (nicht Wasser):** Es schmeckt nach Teich. Sein Herz mag nichts Nasses.
-- **Belohnung:** Der Herzschlag wird ruhig und satt. Für einen Moment glüht der ganze Schlitz rosig.
+- **Belohnung:** Der Herzdrache ist ruhig und zufrieden. Für einen Moment glüht der ganze Schlitz in warmem Licht.
 
-### Der Rosendrache (`rosendrache`) — Grundvariante
+### Die Rosendrachin (`rosendrache`) — Grundvariante
 - **Auftritt:** Zwischen aufgeplatzten Knospen schiebt sich eine Schnauze ins Licht. Der Duft kommt an, bevor er selbst zu sehen ist.
-- **Wunsch:** „Gib mir etwas vollkommen Stilles und ganz Glattes — sanft wie ein Blütenblatt."
-- **Grund (stumm):** Ein Geräusch, und die Blütenblätter fallen erschrocken ab.
-- **Grund (glatt):** Etwas Rauhes kratzt über die Blüten. Er schaudert.
-- **Belohnung:** Neue Knospen öffnen sich rund um den Schlitz, eine nach der anderen. Er duftet zufrieden vor sich hin.
+- **Wunsch:** „Gib mir etwas vollkommen Stilles und Glattes, so zart wie ein junges Blütenblatt."
+- **Grund (stumm):** Ein Geräusch, die Blütenblätter zittern.
+- **Grund (glatt):** Etwas kratzt an den Rosen. Sie schaudert.
+- **Belohnung:** Neue Knospen öffnen sich an der Krone der Rosendrachin und sie duftet ganz wunderbar.
 
 ### Der Schneckendrache (`schneckendrache`)
 - **Auftritt:** Es dauert. Erst rutscht eine glänzende Spur über die Kante, dann, viel später, der Rest von ihm.
-- **Wunsch:** „Gib mir etwas Stilles, Kühles vom Wasser. Ich habe Zeit."
-- **Grund (stumm):** Ein Geräusch, und er zieht sich einen halben Tag lang zurück.
-- **Grund (Wasser):** Er weicht zurück. Das kam aus der Luft oder dem Boden, nicht vom Wasser.
-- **Grund (nicht warm):** Zu warm. Er zieht die Fühler ein.
-- **Belohnung:** Er zieht sich in aller Ruhe zurück, eine glänzende Spur bleibt am Rand des Lochs zurück.
+- **Wunsch:** „Gib mir etwas Stilles, Kühles vom Wasser. Und lass dir ruhig Zeit."
+- **Grund (stumm):** Ein Geräusch, und er zieht sich kurz zurück.
+- **Grund (Wasser):** Er weicht zurück. Das kam doch aus der Luft oder dem Boden, oder? Jedenfalls nicht vom Wasser.
+- **Grund (nicht warm):** Zu warm. Da trocknet er zu schnell aus.
+- **Belohnung:** Er zieht in aller Ruhe weiter, eine glänzende Spur hinter sich herziehend.
 - **Extra:** Reicht man ihm direkt Schneckenschleim (grün leuchtende Schnecke anklicken), lässt er eine Schneckenperle da.
 
 ### Der Monddrache (`monddrache`)
-- **Auftritt:** Blasses Licht sickert aus dem Schlitz, kühl und ohne Wärme. Kleine Funken schweben darin wie Staub im Mondlicht.
-- **Wunsch:** „Gib mir etwas Kühles, das nie den Boden berührt hat."
-- **Grund (nicht warm):** Es wärmt ihn. Das Licht in ihm flackert unruhig.
-- **Grund (nicht Erde):** Er zieht sich zurück. Das kam aus dem Boden.
-- **Belohnung:** Das Licht im Schlitz wird ruhig und silbern. Für einen Moment spiegelt sich der ganze Baum darin.
+- **Auftritt:** Blasses Licht am Baumloch, kühl und ohne Wärme. Kleine Funken schweben darin wie Staub im Mondlicht.
+- **Wunsch:** Ich möchte etwas Kühles, das nie den Boden berührt hat."
+- **Grund (nicht warm):** Es wärmt ihn. Das mag er nicht.
+- **Grund (nicht Erde):** Er schüttelt sich. Das kam vom Boden.
+- **Belohnung:** Das Licht im Schlitz wird ruhig und ganz silbern. Für einen Moment ist der ganze Raum davon erfüllt.
 
 ### Der Feuerschlangendrache (`feuerschlangendrache`)
 - **Auftritt:** Ein dünner, glühender Faden windet sich durchs Astloch — winzig, kaum größer als die Maus selbst, aber er riecht nach heißem Blech.
-- **Wunsch:** „Gib mir etwas, das knistert wie ein Funke, der gerade erst springt."
-- **Grund (warm):** Zu lau. Er züngelt enttäuscht in die Luft.
-- **Grund (knistern):** Es soll knistern, nicht schweigen.
-- **Belohnung:** Er schnellt einmal kurz hoch, als hätte ihn selbst ein Funke erwischt, und züngelt zufrieden zurück ins Dunkel.
+- **Wunsch:** „Gib mir etwas, das knistert wie ein frischer Funke."
+- **Grund (warm):** Zu lau. Er züngelt enttäuscht.
+- **Grund (knistern):** Es soll knistern, nicht leise sein.
+- **Belohnung:** Er schnellt einmal kurz hoch, als hätte ihn selbst ein Funke erwischt, und schlängelt sich zufrieden zurück ins Dunkel.
 
 ### Der Wasserschlangendrache (`wasserschlangendrache`)
 - **Auftritt:** Ein schmaler, kühler Schatten gleitet lautlos durchs Astloch — winzig wie sein feuriger Gegenpart, aber ganz still.
-- **Wunsch:** „Gib mir etwas, das kühl und still ist wie Wasser im Schatten."
-- **Grund (kühl):** Zu warm. Er zuckt zurück ins Dunkel.
-- **Grund (Wasser):** Das kam nicht aus dem Wasser. Er misstraut es.
-- **Belohnung:** Er kringelt sich einmal zufrieden zusammen und gleitet dann ebenso lautlos zurück, wie er kam.
+- **Wunsch:** „Gib mir ein Bonbon, das kühl und still ist wie Wasser im Schatten."
+- **Grund (kühl):** Zu warm. Er zuckt zurück.
+- **Grund (Wasser):** Das kam nicht aus dem Wasser.
+- **Belohnung:** Er kringelt sich einmal zufrieden zusammen und gleitet dann lautlos davon.
 
 ### Der Zweikopfdrache (`zweikopfdrache`) — Grundvariante
-- **Auftritt:** Zwei Köpfe drängen sich durchs Astloch, einer knapp hinter dem anderen, und beide mustern die Maus mit demselben Blick.
-- **Wunsch:** „Wir wollen etwas Rauhes, das nicht vom Himmel kam. Wir beide."
-- **Grund (rauh):** Zu glatt. Beide Köpfe schütteln sich gleichzeitig.
-- **Grund (nicht Himmel):** Das kam von oben. Keiner der beiden Köpfe traut dem Himmel.
-- **Belohnung:** Beide Köpfe nicken, kurz versetzt, als könnten sie sich nicht einmal beim Zufriedensein einigen — dann ziehen sie sich zurück.
+- **Auftritt:** Zwei Köpfe drängen sich ans Astloch, einer knapp hinter dem anderen, und beide mustern die Maus mit demselben Blick.
+- **Wunsch:** „Wir wollen beide etwas Rauhes, das nicht von oben kommt."
+- **Grund (rauh):** Zu glatt. Beide Köpfe schütteln sich.
+- **Grund (nicht Himmel):** Das kam doch eindeutig von oben.
+- **Belohnung:** Beide Köpfe nicken wohlwollend, dann ziehen sie weiter.
 
 ---
 
@@ -222,69 +222,69 @@ die Ablehnungs-Gründe je Bedingung, und die Belohnung bei Erfolg.
 Kommt ein Drache in einem späteren Kapitel noch einmal, sagt er etwas anderes.
 
 ### Rauchdrachin
-- **Wunsch:** „Diesmal etwas, das durch und durch glüht — und nicht zwischen den Zähnen knirscht."
-- **Grund (glühend):** Nur lauwarm. Sie faucht enttäuscht.
-- **Grund (nicht knirschen):** Es knirscht. Das mag sie heute nicht.
-- **Belohnung:** Sie lässt eine heiße Rauchwolke steigen — endlich glühend genug.
+- **Wunsch:** „Diesmal etwas, das durch und durch glüht aber nicht zwischen den Zähnen knirscht."
+- **Grund (glühend):** Nur lauwarm. Sie faucht.
+- **Grund (nicht knirschen):** Es knirscht. Das mag sie heute einfach nicht.
+- **Belohnung:** Sie lässt eine heiße, dankbare Rauchwolke steigen.
 
 ### Schläfer
 - **Wunsch:** „Etwas Stilles und Kühles, ganz gleich woher."
-- **Grund (nicht warm):** Zu warm. Der Nebel dünnt aus.
-- **Grund (stumm):** Ein Laut. Das Lid zuckt kurz.
-- **Belohnung:** Der Nebel legt sich dichter über die Kante. Er schläft weiter.
+- **Grund (nicht warm):** Warm mag er nicht, der Nebel dünnt dann aus.
+- **Grund (stumm):** Ein Laut? Seine Lider zucken.
+- **Belohnung:** Der Nebel schwallt über die Kante. Er schläft und schwebt weiter.
 
 ### Jungdrache
-- **Wunsch:** „Diesmal was richtig Eisiges zum Knacken!"
+- **Wunsch:** „Diesmal was richtig Eisiges mit großem Knall!"
 - **Grund (knirschen):** Es hat nicht geknackt. Er guckt enttäuscht.
-- **Grund (nicht warm):** Zu warm. Er will es eiskalt.
+- **Grund (nicht warm):** Zu warm. Er will es wirklich eiskalt.
 - **Belohnung:** Es knackt eisig zwischen seinen Zähnen. Er quietscht vor Freude.
 
 ### Sonnendrache
-- **Wunsch:** „Heute etwas Heißes, das vom Himmel zu mir kam."
+- **Wunsch:** „Heute bitte etwas Heißes, das vom Himmel kam."
 - **Grund (Himmel):** Das hat nie den Himmel gesehen.
-- **Grund (warm):** Zu kühl fürs Mittagslicht.
-- **Belohnung:** Sein Licht flammt kurz auf und wird dann sanft und satt.
+- **Grund (warm):** Zu kühl für die Mittagssonne.
+- **Belohnung:** Sein Licht strahlt und wärmt deine Mausenase bevor er weiterzieht.
 
 ### Staubdrache
-- **Wunsch:** „Gib mir etwas Rauhes und Kühles — wie trockener Boden im Schatten."
-- **Grund (rauh):** Zu glatt. Es rieselt ihm davon.
-- **Grund (kühl):** Zu warm. Er zerfällt zu Sand.
-- **Belohnung:** Der Staub legt sich zufrieden. Ein trockenes, altes Seufzen.
+- **Wunsch:** „Gib mir heute etwas Rauhes und Kühles, so wie sich trockener Boden im Schatten anfühlt."
+- **Grund (rauh):** Zu glatt. Es rutscht ihm davon.
+- **Grund (kühl):** Zu warm. Er löst sich davon auf.
+- **Belohnung:** Der Staub sammelt sich zufrieden und mit frischer Energie.
 
 ### Walddrache
-- **Wunsch:** „Diesmal etwas Stilles und Kühles, das nie den Himmel sah."
-- **Grund (nicht Himmel):** Das kam von oben. Er schüttelt sich.
-- **Grund (nicht warm):** Zu warm zwischen den Bäumen.
-- **Grund (stumm):** Ein Geräusch — die Vögel stieben auf.
-- **Belohnung:** Moos wächst zufrieden über die Kante. Ganz still.
+- **Wunsch:** „Diesmal etwas Stilles und Kühles, das den Boden nie verlassen hat."
+- **Grund (nicht Himmel):** Das ist nicht vom Boden. Er schüttelt sich.
+- **Grund (nicht warm):** Zu warm ist nicht gut für den Wald .
+- **Grund (stumm):** Ein Geräusch, Waldtiere mögen das nicht.
+- **Belohnung:** Moos wächst um sein Geweih. Neues Grün überall.
 
 ### Herzchendrache
-- **Wunsch:** „Etwas Warmes, das aus dem Himmel zu mir fiel."
-- **Grund (warm):** Zu kalt. Sein Herz stockt.
-- **Grund (Himmel):** Das kam nicht von oben.
-- **Belohnung:** Der ganze Schlitz glüht warm und rosig auf.
+- **Wunsch:** „Etwas Warmes, das aus dem Himmel in mein Herz kam."
+- **Grund (warm):** Zu kalt. Sein Herz setzt aus.
+- **Grund (Himmel):** Das kam nicht aus dem Himmel.
+- **Belohnung:** Herzen fliegen und große Freude macht sich breit.
 
-### Rosendrache
-- **Wunsch:** „Etwas ganz Glattes, das nicht vom Himmel kam."
-- **Grund (glatt):** Etwas Rauhes kratzt die Blüten.
-- **Grund (nicht Himmel):** Zu luftig. Er wendet sich ab.
-- **Belohnung:** Neue Knospen öffnen sich rund um den Schlitz, eine nach der anderen.
+### Rosendrachin
+- **Wunsch:** „Etwas ganz Glattes, das nicht aus dem Himmel kam."
+- **Grund (glatt):** Das Rauhe macht die Blüten kaputt.
+- **Grund (nicht Himmel):** Zu luftig. Sie wendet sich ab.
+- **Belohnung:** Neue Knospen öffnen sich an ihrer Krone, sie seufzt zufrieden.
 
 ### Schneckendrache
 - **Wunsch:** „Etwas Kühles vom Wasser. Der Klang ist mir diesmal gleich."
 - **Grund (Wasser):** Das kam nicht vom Wasser.
-- **Grund (nicht warm):** Zu warm. Er zieht die Fühler ein.
-- **Belohnung:** Er zieht sich gemächlich zurück, eine glänzende Spur bleibt.
+- **Grund (nicht warm):** Zu warm. Das verträgt er nicht.
+- **Belohnung:** Er zieht sich entspannt und gemächlich zurück.
 
 ### Monddrache
-- **Wunsch:** „Etwas Kühles und Stilles, das den Boden nie berührt hat."
-- **Grund (nicht Erde):** Das kam aus dem Boden.
-- **Grund (nicht warm):** Zu warm. Sein Licht flackert.
-- **Grund (stumm):** Ein Laut stört das Mondlicht.
-- **Belohnung:** Das Licht im Schlitz wird ruhig und silbern.
+- **Wunsch:** „Etwas Kühles und Stilles, das die Luft gut kennt."
+- **Grund (nicht Erde):** Das kam vom Boden.
+- **Grund (nicht warm):** Zu warm. Sein Schein schwächt sich ab.
+- **Grund (stumm):** Ein Laut stört das Mondlicht beim Scheinen.
+- **Belohnung:** Das Licht im Schlitz wird ruhig, silbern und zufrieden.
 
 ### Feuerschlangendrache
-- **Wunsch:** „Etwas vom Himmel, das nicht schweigt."
+- **Wunsch:** „Etwas aus dem Himmel, das man hört."
 - **Grund (Himmel):** Das kam nicht von oben.
 - **Grund (nicht stumm):** Es schweigt. Er will es zischen hören.
 - **Belohnung:** Er züngelt zufrieden und verschwindet zurück ins Dunkel.
@@ -292,14 +292,14 @@ Kommt ein Drache in einem späteren Kapitel noch einmal, sagt er etwas anderes.
 ### Wasserschlangendrache
 - **Wunsch:** „Etwas ganz Stilles und Kaltes."
 - **Grund (stumm):** Ein Geräusch. Er zuckt zurück.
-- **Grund (kalt):** Zu warm. Er weicht ins Dunkel.
-- **Belohnung:** Er kringelt sich zufrieden und gleitet lautlos davon.
+- **Grund (kalt):** Zu warm. 
+- **Belohnung:** Er kringelt sich zufrieden ein und gleitet davon.
 
 ### Zweikopfdrache
-- **Wunsch:** „Diesmal etwas Stilles und Kühles. Wir beide, wie immer."
-- **Grund (stumm):** Beide Köpfe zucken beim Geräusch.
+- **Wunsch:** „Diesmal etwas Stilles und Kühles. Für uns beide, wie immer."
+- **Grund (stumm):** Beide Köpfe zucken bei dem Geräusch.
 - **Grund (nicht warm):** Zu warm. Beide schütteln sich.
-- **Belohnung:** Beide Köpfe nicken, kurz versetzt, und ziehen sich zurück.
+- **Belohnung:** Beide Köpfe nicken anerkennend und ziehen sich schnell zurück.
 
 ---
 
@@ -310,63 +310,63 @@ Diese drei Auftritte brauchen eine Zutat, die ein früherer Drache dagelassen ha
 ### Herzchendrache — braucht Wüstenglas (vom Staubdrachen)
 - **Wunsch:** „Gib mir etwas Warmes und Glattes vom Boden — wie ein Stein, der noch die Sonne hält."
 - **Grund (nicht kalt):** Es fühlt sich kalt an. Sein Herzschlag stockt kurz.
-- **Grund (Erde):** Es schmeckt nach Himmel oder Teich. Es will Bodenständiges.
-- **Grund (glatt):** Etwas kratzt. Es presst das Herz zusammen.
-- **Belohnung:** Der Herzschlag wird ruhig und satt. Für einen Moment glüht der ganze Schlitz rosig.
+- **Grund (Erde):** Es schmeckt nach Wolken oder Wasser. 
+- **Grund (glatt):** Etwas kratzt. Sein Herzmuskel spannt sich an.
+- **Belohnung:** Der Herzdrache wird ruhig. Für einen Augenblick glüht der ganze Baum rosig.
 
-### Rosendrache — braucht Sonnentränen (vom Sonnendrachen)
-- **Wunsch:** „Gib mir etwas Stilles und Glattes, das nie den Boden berührt hat — sanft wie ein Blütenblatt."
-- **Grund (stumm):** Ein Geräusch, und die Blütenblätter fallen erschrocken ab.
-- **Grund (nicht Erde):** Es riecht nach Erde, nicht nach Blüte. Er wendet sich ab.
+### Rosendrachin — braucht Sonnentränen (vom Sonnendrachen)
+- **Wunsch:** „Gib mir etwas, das lautlos und glatt ist und nie den Boden berührt hat — so wie ein frisches Blütenblatt."
+- **Grund (stumm):** Ein Geräusch, ihre Blütenblätter zittern.
+- **Grund (nicht Erde):** Es riecht nach Erde, nicht nach Blüte. Sie wendet sich ab.
 - **Grund (glatt):** Etwas Rauhes kratzt über die Blüten. Er schaudert.
 - **Belohnung:** Neue Knospen öffnen sich rund um den Schlitz, eine nach der anderen.
 
 ### Zweikopfdrache — braucht Tannenharz (vom Walddrachen)
 - **Wunsch:** „Wir wollen etwas Rauhes und Kaltes, das nicht vom Himmel kam. Wir beide."
-- **Grund (rauh):** Zu glatt. Beide Köpfe schütteln sich gleichzeitig.
-- **Grund (nicht Himmel):** Das kam von oben. Keiner der beiden traut dem Himmel.
-- **Grund (kalt):** Zu warm. Beide ziehen sich zurück.
-- **Belohnung:** Beide Köpfe nicken zufrieden, kurz versetzt, und ziehen sich dann zurück.
+- **Grund (rauh):** Zu glatt. Beide Köpfe schütteln sich.
+- **Grund (nicht Himmel):** Das kam von weit oben. Keiner der beiden mag den Himmel.
+- **Grund (kalt):** Zu warm. Beide verziehen ihr Gesicht.
+- **Belohnung:** Beide Köpfe nicken zufrieden und ziehen sich dann zurück.
 
 ---
 
 ## Bücher (`data.js` → `BUCHWISSEN`)
 
 **Von Zutaten und ihrer Art** (`zutatenkunde`)
-> Gewitterzucker und Funkenpollen fielen beide aus dem Himmel und knistern auf der Zunge — der Zucker ist bloß warm, der Pollen glüht. Aschenkirsche kam aus der Erde und glüht ebenso, bleibt dabei aber stumm. Nebelbeere und Eiszahnminze stammen aus dem Wasser: die Beere ist kühl und schweigt, die Minze ist eisig und knirscht. Wurzelholz kam von der Erde, ist mild und knirscht wie die Minze. Achte auch darauf, wie sich eine Zutat anfühlt: manches ist glatt wie Wachs, manches rauh und splittrig, manches pudrig wie Staub. Aschenkirsche und Nebelbeere sind glatt; Gewitterzucker, Eiszahnminze und Wurzelholz sind rauh; Funkenpollen ist pudrig. Selteneres, das Drachen und Einhorn dalassen, hat oft eine ganz eigene, glatte Art.
+> Gewitterzucker und Funkenpollen fielen beide aus dem Himmel und knistern auf der Zunge — der Zucker ist bloß warm, der Pollen glüht richtig. Aschenkirsche kam aus der Erde und glüht auch, bleibt dabei aber leise. Nebelbeere und Eiszahnminze stammen aus dem Wasser: die Beere ist kühl und schweigt, die Minze ist eisig und knirscht. Wurzelholz kam von der Erde, ist mild und knirscht wie die Minze. Achte auch darauf, wie sich eine Zutat anfühlt: manches ist glatt wie eine Perle, manches rauh und splittrig, manches pudrig wie Staub. Aschenkirsche und Nebelbeere sind glatt; Gewitterzucker, Eiszahnminze und Wurzelholz sind rauh; Funkenpollen ist pudrig. Selteneres, das Drachen und Einhorn dalassen, hat oft eine ganz eigene, glatte Art.
 
 **Von Bindern und ihrer Wirkung** (`binderkunde`)
-> Mondkaramell verändert nichts — es lässt jeder Zutat ihren eigenen Klang und ihre eigene Wärme. Daunensirup dämpft jedes Geräusch zu Stille, ganz gleich was darin steckt. Frostharz zieht die Wärme heraus: aus Glut wird Wärme, aus Wärme wird Kühle.
+> Mondkaramell verändert nichts — es lässt jeder Zutat ihren eigenen Klang und ihre eigene Temperatur. Daunensirup dämpft jedes Geräusch. Frostharz entzieht die Wärme: aus Glut wird Wärme, aus Wärme wird Kühle.
 
 **Von den Drachen der Luft** (`drachen_der_luft`)
-> Rauchdrachen tragen ihr Feuer offen. Alles Kalte löscht sie von innen, und sie verzeihen es nicht. Auch hören sie schlecht: was sie nicht knistern hören, halten sie für Betrug.
+> Rauchdrachen tragen Feuer in sich. Alles Kalte löscht sie von innen, das mögen sie nicht. Auch hören sie schlecht: was sie nicht knistern hören, halten sie für Betrug.
 
 **Von den Drachen des Wassers** (`drachen_des_wassers`)
-> Nebeldrachen sind kaum mehr als feuchte Luft mit einer Meinung. Hitze löst sie auf, und sie nehmen nur, was aus dem Wasser kommt — alles andere fällt durch sie hindurch, als wäre es nie dagewesen. Wer einen schlafenden Drachen weckt, wird kein zweites Mal an sein Astloch gebeten.
+> Nebeldrachen sind kaum mehr als feuchte Luft, auch wenn sie das wohl anders sehen. Hitze löst sie auf und sie nehmen nur an, was aus dem Wasser kommt. Wer einen schlafenden Nebeldrachen weckt, wird sein blaues Wunder erleben, also Vorsicht!
 
-**Vom Wachsen der Drachen** (`drachen_der_erde`)
-> Die Feuerkammer bildet sich erst im dritten Jahrzehnt. Bis dahin verbrennt Glühendes sie von innen. Junge Wurzeldrachen misstrauen zudem allem, was geflogen ist — sie sagen, es habe den Boden vergessen.
+**Von den Drachen der Erde** (`drachen_der_erde`)
+> Die Feuerkammer bildet sich bei ihnen erst im dritten Jahrzehnt. Bis dahin verbrennt Glühendes sie von innen. Junge Wurzeldrachen misstrauen zudem allem, was geflogen ist — sie sagen, es habe den Boden betrogen.
 
 **Von den Drachen der Sonne** (`sonnendrachen`)
-> Sonnendrachen kennen keine halben Sachen. Was ihnen vorgesetzt wird, muss durch und durch glühen — alles andere schmeckt ihnen nach Asche. Ein Krachen zwischen den Zähnen stört das Licht.
+> Sonnendrachen kennen keine halben Sachen. Was ihnen vorgesetzt wird, muss durch und durch glühen — alles andere schmeckt ihnen zu fad. Ein Krachen zwischen den Zähnen stört allerdings das Licht.
 
 **Von den Drachen des Staubs** (`staubdrachen`)
-> Staubdrachen sind alt und trocken wie vergessene Wege. Wärme lässt sie zerfallen, darum nehmen sie nur, was kühl geblieben ist. Ein Knistern versetzt sie in helle Aufregung — das mögen sie nicht.
+> Staubdrachen sind alt und etwas spröde aber sehr gutmütig. Wärme lässt sie zerfallen, darum nehmen sie nur, was kühl ist. Ein Knistern versetzt sie in helle Aufregung und das mögen sie nicht.
 
 **Von den Drachen des Waldes** (`walddrachen`)
-> Walddrachen trauen nichts, was je den Himmel gesehen hat. Sie leben von der Stille zwischen den Bäumen und wittern jedes Geräusch, das nicht dorthin gehört.
+> Walddrachen trauen nichts, was aus der Luft kommt. Sie lieben die Stille zwischen den Bäumen und reagieren auf jedes Geräusch extrem sensibel.
 
-**Von den Drachen des Herzens** (`herzchendrachen`)
-> Herzchendrachen brauchen Wärme wie andere Luft; alles Kalte lässt ihren Herzschlag stocken. Sie mögen nur, was aus der Erde kommt, und es muss glatt sein — das kleinste Kratzen tut ihnen weh. Reine Erdzutaten, die warm und glatt zugleich sind, sind selten; es lohnt sich, das aufzuheben, was die Drachen dalassen.
+**Von den Drachinnen des Herzens** (`herzchendrachen`)
+> Herzchendrachinnen brauchen Wärme wie andere die Luft zum atmen; alles Kalte lässt ihren Herzschlag kurz aussetzen. Sie mögen nur, was aus der Erde kommt, und es muss unbedingt glatt sein — das kleinste Kratzen kann ihr Herz leicht verletzen. Reine Erdzutaten, die warm und glatt zugleich sind, sind selten; es lohnt sich also aufzuheben, was die Drachen dalassen.
 
-**Von den Drachen der Rosen** (`rosendrachen`)
-> Rosendrachen sind empfindlich wie ihre Knospen. Ein Geräusch lässt sie erschauern, darum muss ihr Bonbon vollkommen still sein — ein dämpfender Binder hilft. Alles aus bloßer Erde weisen sie zurück, und es muss glatt sein wie ein Blütenblatt. Nur wenig, das aus Himmel oder Wasser kommt, ist glatt genug; das Glatte, das die Sonne dalässt, ist ihnen am liebsten.
+**Von den Drachinnen der Rosen** (`rosendrachen`)
+> Rosendrachinnen sind empfindlich wie ihre Knospen. Ein Geräusch lässt sie erschauern, darum muss ihr Bonbon vollkommen still sein — ein dämpfender Binder wirkt da Wunder. Alles aus dem Boden weisen sie zurück, und es muss glatt und sanft sein wie ein Blütenblatt. Nur wenig, das aus Himmel oder Wasser kommt, ist glatt genug für sie; das Glatte, das die Sonne hinterlässt, ist ihnen am liebsten.
 
 **Von den Drachen der Schnecke** (`schneckendrachen`)
-> Schneckendrachen haben es nie eilig. Ihr Bonbon muss still, kühl und vom Wasser sein — ein Geräusch schickt sie für Stunden zurück. Und wer die kleine Schnecke auf dem Tisch kennt: ihren Schleim kann man dem Drachen einfach so reichen, ganz ohne zu mischen. Zum Dank lässt er dann etwas Schimmerndes zurück.
+> Schneckendrachen haben es niemals eilig. Ihr Bonbon muss still, kühl und aus dem Wasser sein — ein Geräusch lässt sie zurückweichen. Und wer die kleine Schnecke auf dem Tisch schon kennt: ihren Schleim kann man dem Drachen einfach so reichen, ganz ohne zu mischen. Zum Dank lässt er dann vielleicht etwas zurück.
 
 **Von den Drachen des Mondes** (`monddrachen`)
-> Monddrachen tragen kein Feuer in sich, nur Licht. Wärme lässt es flackern, und alles, was aus dem Boden kam, ist ihnen zu schwer für die Nacht.
+> Monddrachen tragen kein Feuer in sich, nur blasses, reines Licht. Wärme lässt es flackern, und alles, was aus dem Boden kam, ist ihnen zu schwer für die klare Nacht.
 
 ---
 

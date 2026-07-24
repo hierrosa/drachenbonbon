@@ -15,8 +15,8 @@ export const BINDER = {
     name: "Mondkaramell",
     bild: "karamell",
     beschreibung:
-      "Zäh und blass wie ein bewölkter Mond. Riecht nach fast nichts, " +
-      "und genau das macht es brauchbar: es lässt jeder Zutat ihren Willen.",
+      "Zähflüssig und blass. Riecht und schmeckt nach fast nichts, " +
+      "die perfekte neutrale Basis.",
     // verändert nichts
     effekt: null,
   },
@@ -24,17 +24,17 @@ export const BINDER = {
     name: "Daunensirup",
     bild: "sirup",
     beschreibung:
-      "Weich wie ein Daunenkissen und fast geräuschlos. Wer ihn " +
-      "hinunterschluckt, hört für einen Moment sein eigenes Herz nicht mehr.",
+      "Weich auf der Zunge und komplett geräuschlos. Wer ihn " +
+      "hinunterschluckt, hört für einen kurzen Moment nur noch den " +
+      "eigenen Herzschlag.",
     // dämpft alle Geräusche im Bonbon
     effekt: "daempft_klang",
   },
   frostharz: {
-    name: "Frostharz",
+    name: "Eiszapfenharz",
     bild: "frostharz",
     beschreibung:
-      "Kalt wie ein Winterast, noch bevor die Sonne ihn erreicht. Zieht " +
-      "die Wärme aus allem, was hineingerührt wird.",
+      "Kälter als Wassereis. Zieht die Wärme aus allem, womit man es mischt.",
     // kühlt beide Zutaten um eine Stufe ab
     effekt: "kuehlt_ab",
   },
@@ -46,18 +46,18 @@ export const ZUTATEN = {
     bild: "gewitterzucker",
     beschreibung:
       "Scharfkantige Kristalle, die auf der Zunge kleine Blitze schlagen. " +
-      "Gesammelt in der Minute, bevor der Regen kommt.",
+      "Geerntet kurz bevor der Regen fällt.",
     waerme: 1,
     klang: "knistern",
     herkunft: "himmel",
     oberflaeche: "rauh",
   },
   funkenpollen: {
-    name: "Funkenpollen",
+    name: "Funkenrollis",
     bild: "funkenpollen",
     beschreibung:
-      "Aus Blüten, die nur auf Brandflächen wachsen. Feiner Staub, der " +
-      "beim Öffnen des Glases aufwirbelt und nach heißem Blech riecht.",
+      "Große Pollen von Blüten, die ausschließlich auf Brandflächen " +
+      "wachsen. Feiner Staub, der nach heißem Blech riecht.",
     waerme: 2,
     klang: "knistern",
     herkunft: "himmel",
@@ -67,8 +67,8 @@ export const ZUTATEN = {
     name: "Aschenkirsche",
     bild: "aschenkirsche",
     beschreibung:
-      "Außen verkohlt, innen noch süß und glatt wie Wachs. Sie gibt keinen " +
-      "Laut von sich, aber sie ist warm, wenn man sie zu lange hält.",
+      "Außen glatt und hart verkohlt. Innen aber noch süß und warm. " +
+      "Sie gibt keinen Laut von sich.",
     waerme: 2,
     klang: "stumm",
     herkunft: "erde",
@@ -78,8 +78,8 @@ export const ZUTATEN = {
     name: "Nebelbeere",
     bild: "nebelbeere",
     beschreibung:
-      "Man sieht sie nur aus dem Augenwinkel. Kühl und glatt wie ein " +
-      "Morgen am Wasser und vollkommen still.",
+      "Kühl und glatt wie ein Morgen am Wasser und vollkommen still. " +
+      "Sehr schwer zu finden.",
     waerme: -1,
     klang: "stumm",
     herkunft: "wasser",
@@ -89,8 +89,8 @@ export const ZUTATEN = {
     name: "Eiszahnminze",
     bild: "eiszahnminze",
     beschreibung:
-      "Rauhe Eiskristalle, die die Zähne knacken lassen. Wächst nur dort, " +
-      "wo das Wasser im Schatten steht und morgens eine Haut hat.",
+      "Voller rauher Eiskristalle, die zwischen den Zähne knirschen. " +
+      "Wächst nur dort, wo Wasser dauerhaft im Schatten liegt.",
     waerme: -2,
     klang: "knirschen",
     herkunft: "wasser",
@@ -100,8 +100,8 @@ export const ZUTATEN = {
     name: "Wurzelholzsplitter",
     bild: "wurzelholz",
     beschreibung:
-      "Schmeckt nach altem Keller. Rauh und splittrig zwischen den " +
-      "Backenzähnen, und war noch nie in seinem Leben oben.",
+      "Schmecken nach altem Keller. Hinterlassen ein rauhes und " +
+      "splittriges Gefühl auf den Zähnen.",
     waerme: 0,
     klang: "knirschen",
     herkunft: "erde",
@@ -113,8 +113,8 @@ export const ZUTATEN = {
     name: "Sturmkraut",
     bild: "sturmkraut",
     beschreibung:
-      "Ein Bündel silbriger Blätter, kopfüber an der Wand getrocknet. " +
-      "Raschelt trocken zwischen den Pfoten, riecht nach aufziehendem Wind.",
+      "Ein Bündel silbriger Blätter, kopfüber getrocknet. Sie rascheln " +
+      "trocken zwischen den Pfoten und riechen nach aufziehendem Wind.",
     waerme: 0,
     klang: "knirschen",
     herkunft: "himmel",
@@ -125,8 +125,8 @@ export const ZUTATEN = {
     name: "Schattenmelisse",
     bild: "schattenmelisse",
     beschreibung:
-      "Wächst nur dort, wo nie die Sonne hinkommt. Getrocknet zerfällt " +
-      "sie fast zu Staub zwischen den Fingern, kühl und vollkommen still.",
+      "Wächst nur, wo die Sonne nie scheint. Getrocknet zerfällt sie " +
+      "schnell zu Staub. Dabei bleibt sie kühl und ganz leise.",
     waerme: -1,
     klang: "stumm",
     herkunft: "erde",
@@ -137,8 +137,8 @@ export const ZUTATEN = {
     name: "Glutfenchel",
     bild: "glutfenchel",
     beschreibung:
-      "Federige orangerote Blätter, die selbst getrocknet noch warm " +
-      "wirken. Zwischen den Zähnen knistert er wie glimmende Asche.",
+      "Gefiederte orangerote Blätter, die selbst getrocknet noch warm " +
+      "wirken. Zwischen den Zähnen knistern sie wie glimmende Kohle.",
     waerme: 2,
     klang: "knistern",
     herkunft: "erde",
@@ -149,8 +149,8 @@ export const ZUTATEN = {
     name: "Sonnentränen",
     bild: "sonnentraenen",
     beschreibung:
-      "Klare, glatte Tropfen, als hätte die Mittagssonne selbst geweint. " +
-      "Warm und still, bis man näher hinhört — dann knistern sie leise.",
+      "Schimmernde, glatte Tropfen. Warm und still aber wenn man näher " +
+      "hinhört knistern sie doch leise.",
     waerme: 2,
     klang: "knistern",
     herkunft: "himmel",
@@ -161,8 +161,8 @@ export const ZUTATEN = {
     name: "Wüstenglas",
     bild: "wuestenglas",
     beschreibung:
-      "Sand, der einmal so heiß wurde, dass er schmolz und wieder " +
-      "erstarrte. Glatt, warm und vollkommen lautlos.",
+      "Sand, der einmal so heiß wurde, dass er flüssig wurde und wieder " +
+      "erstarrte. Glatt, warm und ohne jedes Geräusch.",
     waerme: 1,
     klang: "stumm",
     herkunft: "erde",
@@ -170,11 +170,11 @@ export const ZUTATEN = {
     geheim: true,
   },
   tannenharz: {
-    name: "Tannenharz",
+    name: "Harzhannes",
     bild: "tannenharz",
     beschreibung:
-      "Zäh und kühl, aus der Rinde eines Baums getreten, der nie die " +
-      "Sonne sah. Splittert rauh und leise zwischen den Zähnen.",
+      "Spröde und immer kühl. Aus der Rinde eines Baums gewonnen, der im " +
+      "Schnee gewachsen ist. Splittert rauh und leise zwischen den Zähnen.",
     waerme: -1,
     klang: "knirschen",
     herkunft: "erde",
@@ -182,12 +182,12 @@ export const ZUTATEN = {
     geheim: true,
   },
   sternenstaub: {
-    name: "Sternenstaub",
+    name: "Einhornkacke",
     bild: "sternenstaub",
     beschreibung:
-      "Niemand weiß, wo er herkommt, nur dass er manchmal am Astloch " +
-      "liegt, nachdem etwas Seltenes vorbeigekommen ist. Glatt und kühl " +
-      "in der Hand, und er knistert wie ferne Feuerwerke.",
+      "Niemand weiß, wo sie genau herkommt, nur dass sie manchmal am " +
+      "Astloch liegt, nachdem das Einhorn vorbeigekommen ist. Sanft und " +
+      "kühl in der Hand, und knattert wie ferne Püpse.",
     waerme: 1,
     klang: "knistern",
     herkunft: "himmel",
@@ -199,8 +199,8 @@ export const ZUTATEN = {
     name: "Schneckenschleim",
     bild: "schneckenschleim",
     beschreibung:
-      "Frisch von der Tischschnecke abgestrichen. Kühl, glatt und " +
-      "vollkommen lautlos — er dämpft jedes Geräusch im Bonbon.",
+      "Frisch von der Tischschnecke. Ziemlich kalt, glitschig glatt und " +
+      "unglaublich leise. Er dämpft jedes Geräusch im Bonbon.",
     waerme: 0,
     klang: "stumm",
     herkunft: "wasser",
@@ -213,7 +213,7 @@ export const ZUTATEN = {
     bild: "schneckenperle",
     beschreibung:
       "Eine glatte, schimmernde Perle, die der Schneckendrache in " +
-      "vielen stillen Jahren gerollt hat. Sie knistert kaum hörbar.",
+      "irmeliger Arbeit gerollt hat. Sie raschelt kaum hörbar.",
     waerme: 0,
     klang: "knistern",
     herkunft: "wasser",
@@ -231,48 +231,44 @@ export const EINHORN = {
   // Beim allerersten Erscheinen erklärt es knapp, worum es geht —
   // auf zwei Karten verteilt.
   erklaerung: [
-    "„Hallo Bonbonwaldmaus. Du machst die besten Drachenbonbons weit und breit.“",
+    "„Hallo Bonbonwaldmaus. Du machst einfach die besten Drachenbonbons weit und breit.“",
     "„Drachen, die Hilfe brauchen, kommen zu dir, und du machst ihnen ein " +
-    "Bonbon aus einem Binder und zwei Zutaten. Die Bücher hast du immer " +
-    "parat, falls du mal was vergessen hast.“",
+    "Bonbon aus einem Binder und zwei Zutaten. Die Bücher hast du " +
+    "immer parat, falls du mal was vergessen hast.“",
   ],
-  auftritt:
-    "Ein Schimmer im Astloch, der nichts mit Feuer zu tun hat. Etwas " +
-    "Weißes, Falsches-hier-Wirkendes schiebt sich neugierig hindurch.",
   wunsch:
-    "Es will nichts Bestimmtes. Es schaut sich einfach nur um — und " +
-    "hinterlässt beim Gehen eine Kleinigkeit.",
+    "Das Einhorn will nichts Bestimmtes. Es schaut sich einfach nur um und " +
+    "lässt dir eine kleine Erinnerung da.",
   abschiedSelten:
-    "Es schnaubt leise, lässt etwas Glänzendes am Rand des Lochs " +
-    "zurück und ist verschwunden, bevor die Maus sich umdreht.",
+    "Es schnaubt frech, lässt etwas am Baumloch zurück und ist verschwunden, " +
+    "bevor die Maus sich umdreht.",
   abschiedHaeufig:
-    "Bevor es geht, streift es mit der Mähne über die Wand — irgendwo " +
+    "Bevor es geht, streift es mit der Mähne über das Baumloch und irgendwo " +
     "im Holz bleibt etwas von seinem Glanz zurück.",
 
   // --- Kapitel-Übergänge: die Maus geht schlafen (zweimal) ---------
   schlafText: [
-    "Die Maus hängt den letzten Kessel an den Haken. Draußen wird es " +
-    "dunkel, die Sterne treten hervor, und sie kuschelt sich in den " +
-    "Ohrensessel. Ein guter erster Tag.",
-    "Wieder eine lange Reihe Drachen, wieder ein Bonbon nach dem anderen. " +
-    "Müde und zufrieden schließt die Maus die Augen unter dem Sternenhimmel.",
+    "Die Maus macht noch kurz die Schüssel sauber. Draußen ist es schon " +
+    "dunkel, noch dunkler als sowieso. Die Sterne leuchten und sie kuschelt " +
+    "sich in ihren alten Ohrensessel. Ein guter erster Tag.",
+    "Wieder viele Drachen heute, ein Bonbon nach dem anderen. Müde schließt " +
+    "die Maus die Augen und sinkt in ihren geliebten Sessel.",
   ],
   // Am Morgen schaut das Einhorn kurz vorbei — ohne etwas mitzubringen.
   morgenText: [
-    "Guten Morgen! Heute kommen wieder ein paar Drachen vorbei. " +
-    "Du schaffst das mit links.",
-    "Fast geschafft, kleine Bonbonwaldmaus. Nur noch dieses letzte " +
-    "Kapitel, dann hast du sie alle.",
+    "„Guten Morgen Maus wie geht's dir? Ich habe schon die ersten Drachen " +
+    "im Anflug gesehen. Hab einen schönen Tag!“",
+    "„Fast geschafft, kleine Bonbonwaldmaus. Wenn du heute alle Drachen " +
+    "versorgst, kannst du erstmal Urlaub machen!“",
   ],
   // Nach allen drei Kapiteln: Schlusswort und Abspann.
   schlusswort:
-    "Alle Drachen im Wald sind versorgt. Keiner bekommt bessere " +
-    "Drachenbonbons als von dir. Ruh dich jetzt aus — du hast es dir " +
-    "verdient.",
+    "„Alle Drachen sind für's erste versorgt. Ruh dich jetzt aus, du hast es " +
+    "dir echt verdient.“",
   ende:
-    "Die Maus klettert in den Ohrensessel, zieht die Decke bis zum Kinn " +
-    "und schläft zufrieden ein. Der Vogel schlummert in seinem Käfig, " +
-    "die Kerze flackert leise. Ende.",
+    "Die Maus schnuffelt sich in den Ohrensessel und zieht die Decke bis zum " +
+    "Kinn. Wie es wohl den Drachen dort draußen gerade geht? Über diesem " +
+    "Gedanken schläft sie zufrieden ein.",
 };
 
 // --- Drachen ------------------------------------------------
@@ -290,37 +286,34 @@ export const DRACHEN = {
     farbe: "196,138,66",
     stimme: "dunkel",
     geschenk: "sturmkraut",
-    auftritt:
-      "Der Schlitz füllt sich mit einem einzigen gelben Auge. " +
-      "Rauch legt sich auf die Tischplatte.",
-    wunsch: "Gib mir etwas, das schmeckt wie kurz bevor es blitzt.",
+    wunsch: "Gib mir ein Bonbon, das schmeckt wie es kurz vor dem Gewitter riecht.",
     buecher: ["zutatenkunde", "binderkunde", "drachen_der_luft"],
     bedingungen: [
       {
         typ: "verbiete_waerme_unter",
         wert: 0,
-        grund: "Sie zischt. Von innen löscht sie so etwas.",
+        grund: "Sie zischt. Sie will nicht durch Kaltes gelöscht werden.",
       },
       {
         typ: "verlange_klang",
         wert: "knistern",
-        grund: "Sie legt den Kopf schief. Sie hat nichts gehört.",
+        grund: "Sie legt den Kopf schief. War da überhaupt ein Geräusch?",
       },
       {
         typ: "verlange_herkunft",
         wert: "himmel",
-        grund: "Sie schnaubt. Das hier hat nie den Boden verlassen.",
+        grund: "Sie schnaubt. Das hier hat den Boden geküsst.",
       },
       {
         typ: "verbiete_oberflaeche",
         wert: "glatt",
-        grund: "Zu glatt. Das rutscht ihr einfach von der Zunge.",
+        grund: "So glatt. Das rutscht ihr einfach von der Zunge.",
       },
     ],
     loesung: ["karamell", "gewitterzucker", "funkenpollen"],
     belohnung:
-      "Sie schließt das Auge und lässt den Rauch langsam entweichen. " +
-      "Ein Geräusch wie ein sehr zufriedener Ofen.",
+      "Die Rauchdrachin schließt die Augen und lässt Rauch entweichen. " +
+      "Ein Geräusch wie ein zufriedener Ofen.",
   },
 
   schlaefer: {
@@ -328,70 +321,64 @@ export const DRACHEN = {
     bild: "schlaefer",
     farbe: "159,192,187",
     stimme: "dunkel",
-    auftritt:
-      "Kein Kopf. Nur ein geschlossenes Lid im Dunkeln und Nebel, " +
-      "der über die Kante kriecht.",
-    wunsch: "Ich schlafe seit vierzig Jahren. Weck mich nicht.",
+    wunsch: "Ich schlafe schon seit vierzig Jahren durch, also weck mich nicht auf.",
     buecher: ["zutatenkunde", "binderkunde", "drachen_des_wassers"],
     bedingungen: [
       {
         typ: "verbiete_waerme_ueber",
         wert: 0,
-        grund: "Der Nebel dünnt aus. Etwas darin erlischt.",
+        grund: "Der Nebel kühlt ab und dünnt aus.",
       },
       {
         typ: "verlange_klang",
         wert: "stumm",
-        grund: "Ein Knacken. Das Lid hebt sich einen Spalt.",
+        grund: "Ein Knacken ist zu hören. Das Lid hebt sich einen Spalt.",
       },
       {
         typ: "verlange_herkunft",
         wert: "wasser",
-        grund: "Der Nebel weicht zurück. Das hier hat nie im Wasser gestanden.",
+        grund: "Der Nebel bebt. Das hier war nie im Wasser.",
       },
     ],
     loesung: ["sirup", "nebelbeere", "eiszahnminze"],
     belohnung:
-      "Nichts passiert. Der Nebel wird dichter, das Lid bleibt zu. " +
-      "Das ist alles, was er zu geben hat — und es ist genug.",
+      "Nichts passiert aber der Nebel wird etwas dichter. Das ist alles, was " +
+      "der Schläfer zu geben hat und es reicht.",
   },
 
   jungdrache: {
-    name: "Der Jungdrache",
+    name: "Die Jungdrachin",
     bild: "jungdrache",
     farbe: "126,190,104",
     stimme: "dunkel",
-    auftritt:
-      "Zu klein für den Schlitz. Er klettert halb hinein, rutscht ab, " +
-      "versucht es nochmal. Ein Zahn wackelt.",
-    wunsch: "Ich will was zum Draufbeißen! Aber nichts, was geflogen ist.",
+    wunsch: "Ich brauch' was zum Draufbeißen! Aber bloß nichts, was geflogen ist.",
     buecher: ["zutatenkunde", "binderkunde", "drachen_der_erde"],
     bedingungen: [
       {
         typ: "verlange_klang",
         wert: "knirschen",
-        grund: "Er kaut zweimal und guckt enttäuscht. Es hat nicht geknackt.",
+        grund: "Sie kaut zweimal und guckt enttäuscht. Nichts hat geknackt.",
       },
       {
         typ: "verbiete_waerme_ueber",
         wert: 1,
-        grund: "Er hustet und reibt sich den Bauch. Zu heiß für ihn.",
+        grund: "Sie hustet laut. Das war zu heiß für sie.",
       },
       {
         typ: "verbiete_herkunft",
         wert: "himmel",
-        grund: "Er schiebt es mit der Schnauze weg. Das kam von oben.",
+        grund: "Sie spuckt es aus. Das kam ja wohl von weit oben.",
       },
       {
         typ: "verlange_oberflaeche",
         wert: "rauh",
-        grund: "Zu glatt. Da ist nichts zum Draufbeißen.",
+        grund: "Zu rutschig. Da gibt's nichts zum Draufbeißen.",
       },
     ],
     loesung: ["karamell", "wurzelholz", "eiszahnminze"],
     belohnung:
-      "Er beißt zu, das Knirschen hallt im Baum. Der Wackelzahn " +
-      "landet auf der Tischplatte. Er merkt es nicht.",
+      "Sie beißt zu, das Knirschen hallt im Baum. Ein Wackelzahn landet auf " +
+      "der Tischplatte. Eine zufriedene Jungdrachin.",
   },
 
   sonnendrache: {
@@ -400,10 +387,7 @@ export const DRACHEN = {
     farbe: "255,196,80",
     stimme: "dunkel",
     geschenk: "sonnentraenen",
-    auftritt:
-      "Ein Schlitz voller gleißendem Licht. Man kann kaum hinsehen, " +
-      "so heiß glüht seine Haut von innen.",
-    wunsch: "Gib mir etwas, das schmeckt wie Mittagslicht auf der Haut.",
+    wunsch: "Ich mag was, das schmeckt wie Mittagslicht auf der Haut.",
     buecher: ["zutatenkunde", "binderkunde", "sonnendrachen"],
     bedingungen: [
       {
@@ -419,13 +403,13 @@ export const DRACHEN = {
       {
         typ: "verbiete_oberflaeche",
         wert: "rauh",
-        grund: "Zu rauh. Das kratzt statt zu schmelzen.",
+        grund: "Zu rauh. Das kratzt mich im Hals.",
       },
     ],
     loesung: ["karamell", "funkenpollen", "aschenkirsche"],
     belohnung:
-      "Seine Haut leuchtet einen Moment heller auf, dann wird das Licht " +
-      "weich. Es ist, als würde die Mittagssonne kurz lächeln.",
+      "Die Haut des Sonnendrachen leuchtet einen Moment hell auf. Es ist, " +
+      "als würde die Mittagssonne dir zulächeln.",
   },
 
   staubdrache: {
@@ -434,27 +418,23 @@ export const DRACHEN = {
     farbe: "168,150,120",
     stimme: "dunkel",
     geschenk: "wuestenglas",
-    auftritt:
-      "Feiner Staub rieselt aus dem Schlitz, bevor überhaupt ein Kopf " +
-      "sichtbar wird. Er bewegt sich, als wäre er aus loser Erde gefügt.",
-    wunsch: "Gib mir etwas, das nach kühlem, altem Boden schmeckt.",
+    wunsch: "Ich brauche etwas, das nach kühlem, altem Boden schmeckt.",
     buecher: ["zutatenkunde", "binderkunde", "staubdrachen"],
     bedingungen: [
       {
         typ: "verbiete_waerme_ueber",
         wert: -1,
-        grund: "Er zerfällt zu Sand. Das hier war ihm zu warm.",
+        grund: "Er scheint zu zerbröseln. Das war ihm zu warm.",
       },
       {
         typ: "verbiete_klang",
         wert: "knistern",
-        grund: "Ein Knistern wirbelt ihn auf. Er will es ruhig.",
+        grund: "Ein Knistern wirbelt ihn zu sehr auf.",
       },
     ],
     loesung: ["frostharz", "wurzelholz", "nebelbeere"],
     belohnung:
-      "Er sackt in sich zusammen wie eine Sanddüne im Wind — zufrieden, " +
-      "nicht zerstört. Der Staub legt sich langsam wieder.",
+      "Der Staubdrache sackt leicht in sich zusammen. Zufrieden und gesetzt.",
   },
 
   walddrache: {
@@ -463,32 +443,29 @@ export const DRACHEN = {
     farbe: "90,120,68",
     stimme: "dunkel",
     geschenk: "tannenharz",
-    auftritt:
-      "Moos wächst am Rand des Lochs. Zwischen den Zähnen hängen " +
-      "Farnwedel, die er gar nicht zu bemerken scheint.",
-    wunsch: "Gib mir etwas, das nach Erde nach dem Regen schmeckt. Leise, bitte.",
+    wunsch: "Gib mir etwas, das wie Erde nach dem Regen schmeckt. Aber leise, bitte.",
     buecher: ["zutatenkunde", "binderkunde", "walddrachen"],
     bedingungen: [
       {
         typ: "verbiete_herkunft",
         wert: "himmel",
-        grund: "Er wittert es und schüttelt sich. Das kam nie unter Bäumen vor.",
+        grund: "Nein, das kam nicht von der Erde.",
       },
       {
         typ: "verlange_klang",
         wert: "stumm",
-        grund: "Ein Geräusch, und die Vögel im Geäst stieben auseinander.",
+        grund: "Ein Geräusch, fast wäre er davongerannt.",
       },
       {
         typ: "verlange_oberflaeche",
         wert: "glatt",
-        grund: "Etwas Rauhes. Er schreckt zurück, als hätte es geknackt.",
+        grund: "So rauh! Er weicht zurück.",
       },
     ],
     loesung: ["karamell", "aschenkirsche", "nebelbeere"],
     belohnung:
-      "Er sinkt zurück ins Moos, lautlos wie er kam. Nur ein Farnwedel " +
-      "wippt noch nach.",
+      "Der Walddrache entspannt sich. Er verschwindet so lautlos wie er kam, " +
+      "nur ein paar Blätter wirbeln noch.",
   },
 
   herzchendrache: {
@@ -497,16 +474,13 @@ export const DRACHEN = {
     farbe: "232,120,150",
     stimme: "dunkel",
     voraussetzung: "wuestenglas",
-    auftritt:
-      "Aus dem Schlitz schlägt ein Herzschlag, viel zu laut für ein so " +
-      "kleines Wesen. Kleine Wärmewolken pulsieren im Takt dazu.",
-    wunsch: "Gib mir etwas durch und durch Warmes, das nie im Wasser lag.",
+    wunsch: "Gib mir etwas ganz und gar Warmes, das sicher nie im Wasser lag.",
     buecher: ["zutatenkunde", "binderkunde", "herzchendrachen"],
     bedingungen: [
       {
         typ: "verbiete_waerme_unter",
         wert: 1,
-        grund: "Es fühlt sich kalt an. Sein Herzschlag stockt kurz.",
+        grund: "Es fühlt sich kalt an. Sein Herzschlag setzt kurz aus.",
       },
       {
         typ: "verbiete_herkunft",
@@ -516,37 +490,34 @@ export const DRACHEN = {
     ],
     loesung: ["karamell", "funkenpollen", "aschenkirsche"],
     belohnung:
-      "Der Herzschlag wird ruhig und satt. Für einen Moment glüht der " +
-      "ganze Schlitz rosig.",
+      "Der Herzdrache ist ruhig und zufrieden. Für einen Moment glüht der " +
+      "ganze Schlitz in warmem Licht.",
   },
 
   rosendrache: {
-    name: "Der Rosendrache",
+    name: "Die Rosendrachin",
     bild: "rosendrache",
     farbe: "214,90,120",
     stimme: "dunkel",
     voraussetzung: "sonnentraenen",
-    auftritt:
-      "Zwischen aufgeplatzten Knospen schiebt sich eine Schnauze ins " +
-      "Licht. Der Duft kommt an, bevor er selbst zu sehen ist.",
-    wunsch: "Gib mir etwas vollkommen Stilles und ganz Glattes — sanft wie ein Blütenblatt.",
+    wunsch: "Gib mir etwas vollkommen Stilles und Glattes, so zart wie ein junges Blütenblatt.",
     buecher: ["zutatenkunde", "binderkunde", "rosendrachen"],
     bedingungen: [
       {
         typ: "verlange_klang",
         wert: "stumm",
-        grund: "Ein Geräusch, und die Blütenblätter fallen erschrocken ab.",
+        grund: "Ein Geräusch, die Blütenblätter zittern.",
       },
       {
         typ: "verlange_oberflaeche",
         wert: "glatt",
-        grund: "Etwas Rauhes kratzt über die Blüten. Er schaudert.",
+        grund: "Etwas kratzt an den Rosen. Sie schaudert.",
       },
     ],
     loesung: ["sirup", "aschenkirsche", "nebelbeere"],
     belohnung:
-      "Neue Knospen öffnen sich rund um den Schlitz, eine nach der " +
-      "anderen. Er duftet zufrieden vor sich hin.",
+      "Neue Knospen öffnen sich an der Krone der Rosendrachin und sie duftet " +
+      "ganz wunderbar.",
   },
 
   schneckendrache: {
@@ -557,89 +528,79 @@ export const DRACHEN = {
     // Extra: gib ihm direkt Schneckenschleim (Knopf), dann lässt er eine
     // Schneckenperle da — dafür muss nichts gemischt werden.
     extraSchleim: "schneckenperle",
-    auftritt:
-      "Es dauert. Erst rutscht eine glänzende Spur über die Kante, " +
-      "dann, viel später, der Rest von ihm.",
-    wunsch: "Gib mir etwas Stilles, Kühles vom Wasser. Ich habe Zeit.",
+    wunsch: "Gib mir etwas Stilles, Kühles vom Wasser. Und lass dir ruhig Zeit.",
     buecher: ["zutatenkunde", "binderkunde", "schneckendrachen"],
     bedingungen: [
       {
         typ: "verlange_klang",
         wert: "stumm",
-        grund: "Ein Geräusch, und er zieht sich einen halben Tag lang zurück.",
+        grund: "Ein Geräusch, und er zieht sich kurz zurück.",
       },
       {
         typ: "verlange_herkunft",
         wert: "wasser",
-        grund: "Er weicht zurück. Das kam aus der Luft oder dem Boden, nicht vom Wasser.",
+        grund: "Er weicht zurück. Das kam doch aus der Luft oder dem Boden, oder? Jedenfalls nicht vom Wasser.",
       },
       {
         typ: "verbiete_waerme_ueber",
         wert: 0,
-        grund: "Zu warm. Er zieht die Fühler ein.",
+        grund: "Zu warm. Da trocknet er zu schnell aus.",
       },
     ],
     loesung: ["sirup", "nebelbeere", "eiszahnminze"],
     belohnung:
-      "Er zieht sich in aller Ruhe zurück, eine glänzende Spur bleibt " +
-      "am Rand des Lochs zurück.",
+      "Er zieht in aller Ruhe weiter, eine glänzende Spur hinter sich herziehend.",
   },
 
   monddrache: {
-    name: "Der Monddrache",
+    name: "Die Monddrachin",
     bild: "monddrache",
     farbe: "170,190,220",
     stimme: "dunkel",
-    auftritt:
-      "Blasses Licht sickert aus dem Schlitz, kühl und ohne Wärme. " +
-      "Kleine Funken schweben darin wie Staub im Mondlicht.",
-    wunsch: "Gib mir etwas Kühles, das nie den Boden berührt hat.",
+    wunsch: "Ich möchte etwas Kühles, das nie den Boden berührt hat.",
     buecher: ["zutatenkunde", "binderkunde", "monddrachen"],
     bedingungen: [
       {
         typ: "verbiete_waerme_ueber",
         wert: 0,
-        grund: "Es wärmt ihn. Das Licht in ihm flackert unruhig.",
+        grund: "Es wärmt sie. Das mag sie nicht.",
       },
       {
         typ: "verbiete_herkunft",
         wert: "erde",
-        grund: "Er zieht sich zurück. Das kam aus dem Boden.",
+        grund: "Sie schüttelt sich. Das kam vom Boden.",
       },
     ],
     loesung: ["frostharz", "gewitterzucker", "eiszahnminze"],
     belohnung:
-      "Das Licht im Schlitz wird ruhig und silbern. Für einen Moment " +
-      "spiegelt sich der ganze Baum darin.",
+      "Das Licht im Schlitz wird ruhig und ganz silbern. Für einen Moment " +
+      "ist der ganze Raum davon erfüllt.",
   },
 
   feuerschlangendrache: {
-    name: "Der Feuerschlangendrache",
+    name: "Die Feuerdrachin",
     bild: "feuerschlangendrache",
     farbe: "200,64,31",
     stimme: "dunkel",
     geschenk: "glutfenchel",
-    auftritt:
-      "Ein dünner, glühender Faden windet sich durchs Astloch — winzig, " +
-      "kaum größer als die Maus selbst, aber er riecht nach heißem Blech.",
-    wunsch: "Gib mir etwas, das knistert wie ein Funke, der gerade erst springt.",
+    wunsch: "Gib mir etwas, das knistert wie ein frischer Funke.",
     buecher: ["zutatenkunde", "binderkunde", "drachen_der_luft"],
     bedingungen: [
       {
         typ: "verbiete_waerme_unter",
         wert: 1,
-        grund: "Zu lau. Er züngelt enttäuscht in die Luft.",
+        grund: "Zu lau. Sie züngelt enttäuscht.",
       },
       {
         typ: "verlange_klang",
         wert: "knistern",
-        grund: "Es soll knistern, nicht schweigen.",
+        grund: "Es soll knistern, nicht leise sein.",
       },
     ],
     loesung: ["karamell", "gewitterzucker", "funkenpollen"],
     belohnung:
-      "Er schnellt einmal kurz hoch, als hätte ihn selbst ein Funke " +
-      "erwischt, und züngelt zufrieden zurück ins Dunkel.",
+      "Sie schnellt einmal kurz hoch, als hätte sie selbst ein Funke " +
+      "erwischt, und schlängelt sich zufrieden zurück ins Dunkel.",
   },
 
   wasserschlangendrache: {
@@ -648,27 +609,23 @@ export const DRACHEN = {
     farbe: "47,127,146",
     stimme: "dunkel",
     geschenk: "schattenmelisse",
-    auftritt:
-      "Ein schmaler, kühler Schatten gleitet lautlos durchs Astloch — " +
-      "winzig wie sein feuriger Gegenpart, aber ganz still.",
-    wunsch: "Gib mir etwas, das kühl und still ist wie Wasser im Schatten.",
+    wunsch: "Gib mir ein Bonbon, das kühl und still ist wie Wasser im Schatten.",
     buecher: ["zutatenkunde", "binderkunde", "drachen_des_wassers"],
     bedingungen: [
       {
         typ: "verbiete_waerme_ueber",
         wert: -1,
-        grund: "Zu warm. Er zuckt zurück ins Dunkel.",
+        grund: "Zu warm. Er zuckt zurück.",
       },
       {
         typ: "verlange_herkunft",
         wert: "wasser",
-        grund: "Das kam nicht aus dem Wasser. Er misstraut es.",
+        grund: "Das kam nicht aus dem Wasser.",
       },
     ],
     loesung: ["karamell", "nebelbeere", "eiszahnminze"],
     belohnung:
-      "Er kringelt sich einmal zufrieden zusammen und gleitet dann " +
-      "ebenso lautlos zurück, wie er kam.",
+      "Er kringelt sich einmal zufrieden zusammen und gleitet dann lautlos davon.",
   },
 
   zweikopfdrache: {
@@ -676,27 +633,23 @@ export const DRACHEN = {
     bild: "zweikopfdrache",
     farbe: "94,66,114",
     stimme: "dunkel",
-    auftritt:
-      "Zwei Köpfe drängen sich durchs Astloch, einer knapp hinter dem " +
-      "anderen, und beide mustern die Maus mit demselben Blick.",
-    wunsch: "Wir wollen etwas Rauhes, das nicht vom Himmel kam. Wir beide.",
+    wunsch: "Wir wollen beide etwas Rauhes, das nicht von oben kommt.",
     buecher: ["zutatenkunde", "binderkunde", "drachen_der_erde", "drachen_des_wassers"],
     bedingungen: [
       {
         typ: "verlange_oberflaeche",
         wert: "rauh",
-        grund: "Zu glatt. Beide Köpfe schütteln sich gleichzeitig.",
+        grund: "Zu glatt. Beide Köpfe schütteln sich.",
       },
       {
         typ: "verbiete_herkunft",
         wert: "himmel",
-        grund: "Das kam von oben. Keiner der beiden Köpfe traut dem Himmel.",
+        grund: "Das kam doch eindeutig von oben.",
       },
     ],
     loesung: ["karamell", "wurzelholz", "eiszahnminze"],
     belohnung:
-      "Beide Köpfe nicken, kurz versetzt, als könnten sie sich nicht " +
-      "einmal beim Zufriedensein einigen — dann ziehen sie sich zurück.",
+      "Beide Köpfe nicken wohlwollend, dann ziehen sie weiter.",
   },
 };
 
@@ -709,153 +662,127 @@ export const BUCHWISSEN = {
   zutatenkunde: {
     buch: "Von Zutaten und ihrer Art",
     text:
-      "<p><strong>Gewitterzucker</strong> und <strong>Funkenpollen</strong> " +
+      "<p><strong>Gewitterzucker</strong> und <strong>Funkenrollis</strong> " +
       "fielen beide aus dem <strong>Himmel</strong> und <strong>knistern</strong> " +
-      "auf der Zunge — der Zucker ist bloß <strong>warm</strong>, der Pollen " +
-      "<strong>glüht</strong>. <strong>Aschenkirsche</strong> kam aus der " +
-      "<strong>Erde</strong> und glüht ebenso, bleibt dabei aber " +
-      "<strong>stumm</strong>.</p>" +
+      "auf der Zunge — der Zucker ist bloß <strong>warm</strong>, die Rollis " +
+      "<strong>glühen</strong> richtig. <strong>Aschenkirsche</strong> kam aus " +
+      "der <strong>Erde</strong> und glüht auch, bleibt dabei aber " +
+      "<strong>leise</strong>.</p>" +
       "<p><strong>Nebelbeere</strong> und <strong>Eiszahnminze</strong> stammen " +
       "aus dem <strong>Wasser</strong>: die Beere ist <strong>kühl</strong> und " +
       "schweigt, die Minze ist <strong>eisig</strong> und " +
       "<strong>knirscht</strong>. <strong>Wurzelholz</strong> kam von der " +
       "<strong>Erde</strong>, ist mild und knirscht wie die Minze.</p>" +
-      "<p>Achte auch darauf, wie sich eine Zutat anfühlt: " +
-      "<strong>glatt</strong> wie Wachs sind Aschenkirsche und Nebelbeere; " +
-      "<strong>rauh</strong> und splittrig sind Gewitterzucker, Eiszahn­minze " +
-      "und Wurzelholz; <strong>pudrig</strong> wie Staub ist Funkenpollen. " +
-      "Selteneres, das Drachen und Einhorn dalassen, hat oft eine ganz " +
-      "eigene, glatte Art.</p>",
+      "<p>Achte auch darauf, wie sich eine Zutat anfühlt: manches ist " +
+      "<strong>glatt</strong> wie eine Perle, manches <strong>rauh</strong> und " +
+      "splittrig, manches <strong>pudrig</strong> wie Staub. Aschenkirsche und " +
+      "Nebelbeere sind glatt; Gewitterzucker, Eiszahn­minze und Wurzelholz sind " +
+      "rauh; Funkenrollis sind pudrig. Selteneres, das Drachen und Einhorn " +
+      "dalassen, hat oft eine ganz eigene, glatte Art.</p>",
   },
   binderkunde: {
     buch: "Von Bindern und ihrer Wirkung",
     text:
       "<p><strong>Mondkaramell</strong> verändert nichts — es lässt jeder " +
-      "Zutat ihren eigenen Klang und ihre eigene Wärme.</p>" +
+      "Zutat ihren eigenen Klang und ihre eigene Temperatur.</p>" +
       "<p><strong>Daunensirup</strong> dämpft jedes Geräusch zu " +
-      "<strong>Stille</strong>, ganz gleich was darin steckt.</p>" +
-      "<p><strong>Frostharz</strong> zieht die <strong>Wärme</strong> heraus: " +
+      "<strong>Stille</strong>.</p>" +
+      "<p><strong>Eiszapfenharz</strong> entzieht die <strong>Wärme</strong>: " +
       "aus Glut wird Wärme, aus Wärme wird Kühle.</p>",
   },
   drachen_der_luft: {
     buch: "Von den Drachen der Luft",
     text:
-      "<p>Rauchdrachen tragen ihr Feuer offen. Alles <strong>Kalte</strong> " +
-      "löscht sie von innen, und sie verzeihen es nicht.</p>" +
+      "<p>Rauchdrachen tragen Feuer in sich. Alles <strong>Kalte</strong> " +
+      "löscht sie von innen, das mögen sie nicht.</p>" +
       "<p>Auch hören sie schlecht: was sie nicht <strong>knistern</strong> " +
       "hören, halten sie für Betrug.</p>",
   },
   drachen_des_wassers: {
     buch: "Von den Drachen des Wassers",
     text:
-      "<p>Nebeldrachen sind kaum mehr als feuchte Luft mit einer Meinung. " +
-      "<strong>Hitze</strong> löst sie auf, und sie nehmen nur, was aus dem " +
-      "<strong>Wasser</strong> kommt — alles andere fällt durch sie hindurch, " +
-      "als wäre es nie dagewesen.</p>" +
-      "<p>Wer einen schlafenden Drachen <strong>weckt</strong>, wird kein " +
-      "zweites Mal an sein Astloch gebeten.</p>",
+      "<p>Nebeldrachen sind kaum mehr als feuchte Luft, auch wenn sie das wohl " +
+      "anders sehen. <strong>Hitze</strong> löst sie auf und sie nehmen nur an, " +
+      "was aus dem <strong>Wasser</strong> kommt.</p>" +
+      "<p>Wer einen schlafenden Nebeldrachen <strong>weckt</strong>, wird sein " +
+      "blaues Wunder erleben, also Vorsicht!</p>",
   },
   drachen_der_erde: {
-    buch: "Vom Wachsen der Drachen",
+    buch: "Von den Drachen der Erde",
     text:
-      "<p>Die Feuerkammer bildet sich erst im dritten Jahrzehnt. Bis dahin " +
-      "verbrennt <strong>Glühendes</strong> sie von innen.</p>" +
+      "<p>Die Feuerkammer bildet sich bei ihnen erst im dritten Jahrzehnt. Bis " +
+      "dahin verbrennt <strong>Glühendes</strong> sie von innen.</p>" +
       "<p>Junge Wurzeldrachen misstrauen zudem allem, was " +
       "<strong>geflogen</strong> ist — sie sagen, es habe den Boden " +
-      "vergessen.</p>",
+      "betrogen.</p>",
   },
   sonnendrachen: {
     buch: "Von den Drachen der Sonne",
     text:
       "<p>Sonnendrachen kennen keine halben Sachen. Was ihnen vorgesetzt " +
       "wird, muss durch und durch <strong>glühen</strong> — alles andere " +
-      "schmeckt ihnen nach Asche.</p>" +
-      "<p>Ein <strong>Krachen</strong> zwischen den Zähnen stört das Licht.</p>",
+      "schmeckt ihnen zu fad.</p>" +
+      "<p>Ein <strong>Krachen</strong> zwischen den Zähnen stört allerdings " +
+      "das Licht.</p>",
   },
   staubdrachen: {
     buch: "Von den Drachen des Staubs",
     text:
-      "<p>Staubdrachen sind alt und trocken wie vergessene Wege. " +
+      "<p>Staubdrachen sind alt und etwas spröde aber sehr gutmütig. " +
       "<strong>Wärme</strong> lässt sie zerfallen, darum nehmen sie nur, " +
-      "was <strong>kühl</strong> geblieben ist.</p>" +
-      "<p>Ein <strong>Knistern</strong> versetzt sie in helle Aufregung — " +
+      "was <strong>kühl</strong> ist.</p>" +
+      "<p>Ein <strong>Knistern</strong> versetzt sie in helle Aufregung und " +
       "das mögen sie nicht.</p>",
   },
   walddrachen: {
     buch: "Von den Drachen des Waldes",
     text:
-      "<p>Walddrachen trauen nichts, was je den <strong>Himmel</strong> " +
-      "gesehen hat.</p>" +
-      "<p>Sie leben von der <strong>Stille</strong> zwischen den Bäumen und " +
-      "wittern jedes Geräusch, das nicht dorthin gehört.</p>",
+      "<p>Walddrachen trauen nichts, was aus der <strong>Luft</strong> " +
+      "kommt.</p>" +
+      "<p>Sie lieben die <strong>Stille</strong> zwischen den Bäumen und " +
+      "reagieren auf jedes <strong>Geräusch</strong> extrem sensibel.</p>",
   },
   herzchendrachen: {
     buch: "Von den Drachen des Herzens",
     text:
-      "<p>Herzchendrachen brauchen <strong>Wärme</strong> wie andere Luft; " +
-      "alles Kalte lässt ihren Herzschlag stocken.</p>" +
+      "<p>Herzchendrachen brauchen <strong>Wärme</strong> wie andere die Luft " +
+      "zum Atmen; alles Kalte lässt ihren Herzschlag kurz aussetzen.</p>" +
       "<p>Sie mögen nur, was aus der <strong>Erde</strong> kommt, und es muss " +
-      "<strong>glatt</strong> sein — das kleinste Kratzen tut ihnen weh.</p>" +
-      "<p>Reine Erdzutaten, die warm und glatt zugleich sind, sind selten; " +
-      "es lohnt sich, das aufzuheben, was die Drachen <strong>dalassen</strong>.</p>",
+      "unbedingt <strong>glatt</strong> sein — das kleinste Kratzen kann ihr " +
+      "Herz leicht verletzen.</p>" +
+      "<p>Reine Erdzutaten, die warm und glatt zugleich sind, sind selten; es " +
+      "lohnt sich also aufzuheben, was die Drachen <strong>dalassen</strong>.</p>",
   },
   rosendrachen: {
-    buch: "Von den Drachen der Rosen",
+    buch: "Von den Drachinnen der Rosen",
     text:
-      "<p>Rosendrachen sind empfindlich wie ihre Knospen. Ein Geräusch lässt " +
-      "sie erschauern, darum muss ihr Bonbon vollkommen <strong>still</strong> " +
-      "sein — ein dämpfender Binder hilft.</p>" +
-      "<p>Alles aus bloßer <strong>Erde</strong> weisen sie zurück, und es " +
-      "muss <strong>glatt</strong> sein wie ein Blütenblatt.</p>" +
-      "<p>Nur wenig, das aus Himmel oder Wasser kommt, ist glatt genug; das " +
-      "Glatte, das die <strong>Sonne</strong> dalässt, ist ihnen am liebsten.</p>",
+      "<p>Rosendrachinnen sind empfindlich wie ihre Knospen. Ein " +
+      "<strong>Geräusch</strong> lässt sie erschauern, darum muss ihr Bonbon " +
+      "vollkommen <strong>still</strong> sein — ein dämpfender Binder wirkt da " +
+      "Wunder.</p>" +
+      "<p>Alles aus dem <strong>Boden</strong> weisen sie zurück, und es muss " +
+      "<strong>glatt</strong> und sanft sein wie ein Blütenblatt.</p>" +
+      "<p>Nur wenig, das aus Himmel oder Wasser kommt, ist glatt genug für " +
+      "sie; das Glatte, das die <strong>Sonne</strong> hinterlässt, ist ihnen " +
+      "am liebsten.</p>",
   },
   schneckendrachen: {
     buch: "Von den Drachen der Schnecke",
     text:
-      "<p>Schneckendrachen haben es nie eilig. Ihr Bonbon muss " +
-      "<strong>still</strong>, <strong>kühl</strong> und vom " +
-      "<strong>Wasser</strong> sein — ein Geräusch schickt sie für Stunden " +
-      "zurück.</p>" +
-      "<p>Und wer die kleine <strong>Schnecke</strong> auf dem Tisch kennt: " +
-      "ihren Schleim kann man dem Drachen einfach so reichen, ganz ohne zu " +
-      "mischen. Zum Dank lässt er dann etwas Schimmerndes zurück.</p>",
+      "<p>Schneckendrachen haben es niemals eilig. Ihr Bonbon muss " +
+      "<strong>still</strong>, <strong>kühl</strong> und aus dem " +
+      "<strong>Wasser</strong> sein — ein <strong>Geräusch</strong> lässt sie " +
+      "zurückweichen.</p>" +
+      "<p>Und wer die kleine <strong>Schnecke</strong> auf dem Tisch schon " +
+      "kennt: ihren Schleim kann man dem Drachen einfach so reichen, ganz ohne " +
+      "zu mischen. Zum Dank lässt er dann vielleicht etwas zurück.</p>",
   },
   monddrachen: {
     buch: "Von den Drachen des Mondes",
     text:
-      "<p>Monddrachen tragen kein Feuer in sich, nur Licht. " +
-      "<strong>Wärme</strong> lässt es flackern.</p>" +
-      "<p>Und alles, was aus dem <strong>Boden</strong> kam, ist ihnen zu " +
-      "schwer für die Nacht.</p>",
-  },
-};
-
-// --- Mausreaktionen -----------------------------------------
-// Konsistent, aber NICHT an die Lösung gekoppelt. Die Maus
-// hat eigene Vorlieben und liegt manchmal daneben.
-
-export const MAUSREAKTIONEN = {
-  zutat: {
-    funkenpollen: { pose: "niesen", text: "Sie niest. Jedes Mal." },
-    eiszahnminze: { pose: "vorsichtig", text: "Sie fasst das Glas nur am Rand an." },
-    nebelbeere: { pose: "suchen", text: "Sie greift zweimal daneben." },
-    wurzelholz: { pose: "schnuppern", text: "Sie riecht daran und zuckt mit den Ohren." },
-    aschenkirsche: { pose: "begeistert", text: "Sie nickt heftig. Sie liebt die einfach." },
-    gewitterzucker: { pose: "neugierig", text: "Sie hält sich das Glas ans Ohr." },
-  },
-  // Nur noch Posen — die Maus zeigt ihre Reaktion, statt sie zu beschreiben.
-  drache: {
-    rauchdrachin: { pose: "zittern" },
-    schlaefer: { pose: "leise" },
-    jungdrache: { pose: "entspannt" },
-    sonnendrache: { pose: "strahlt" },
-    staubdrache: { pose: "duckt" },
-    walddrache: { pose: "schnuppert" },
-    herzchendrache: { pose: "kuschelt" },
-    rosendrache: { pose: "knickst" },
-    schneckendrache: { pose: "wartet" },
-    monddrache: { pose: "staunt" },
+      "<p>Monddrachen tragen kein Feuer in sich, nur blasses, reines Licht. " +
+      "<strong>Wärme</strong> lässt es flackern, und alles, was aus dem " +
+      "<strong>Boden</strong> kam, ist ihnen zu schwer für die klare Nacht.</p>",
   },
 };
 
@@ -866,110 +793,110 @@ export const MAUSREAKTIONEN = {
 // Alle Lösungen sind mit den sechs Grundzutaten + Bindern machbar.
 export const DRACHEN_ALT = {
   rauchdrachin: [{
-    wunsch: "Diesmal etwas, das durch und durch glüht — und nicht zwischen den Zähnen knirscht.",
+    wunsch: "Diesmal etwas, das durch und durch glüht aber nicht zwischen den Zähnen knirscht.",
     bedingungen: [
-      { typ: "verbiete_waerme_unter", wert: 2, grund: "Nur lauwarm. Sie faucht enttäuscht." },
-      { typ: "verbiete_klang", wert: "knirschen", grund: "Es knirscht. Das mag sie heute nicht." },
+      { typ: "verbiete_waerme_unter", wert: 2, grund: "Nur lauwarm. Sie faucht." },
+      { typ: "verbiete_klang", wert: "knirschen", grund: "Es knirscht. Das mag sie heute einfach nicht." },
     ],
-    belohnung: "Sie lässt eine heiße Rauchwolke steigen — endlich glühend genug.",
+    belohnung: "Sie lässt eine heiße, dankbare Rauchwolke steigen.",
   }],
   schlaefer: [{
     wunsch: "Etwas Stilles und Kühles, ganz gleich woher.",
     bedingungen: [
-      { typ: "verbiete_waerme_ueber", wert: 0, grund: "Zu warm. Der Nebel dünnt aus." },
-      { typ: "verlange_klang", wert: "stumm", grund: "Ein Laut. Das Lid zuckt kurz." },
+      { typ: "verbiete_waerme_ueber", wert: 0, grund: "Warm mag er nicht, der Nebel dünnt dann aus." },
+      { typ: "verlange_klang", wert: "stumm", grund: "Ein Laut? Seine Lider zucken." },
     ],
-    belohnung: "Der Nebel legt sich dichter über die Kante. Er schläft weiter.",
+    belohnung: "Der Nebel schwallt über die Kante. Er schläft und schwebt weiter.",
   }],
   jungdrache: [{
-    wunsch: "Diesmal was richtig Eisiges zum Knacken!",
+    wunsch: "Diesmal was richtig Eisiges mit großem Knall!",
     bedingungen: [
-      { typ: "verlange_klang", wert: "knirschen", grund: "Es hat nicht geknackt. Er guckt enttäuscht." },
-      { typ: "verbiete_waerme_ueber", wert: 0, grund: "Zu warm. Er will es eiskalt." },
+      { typ: "verlange_klang", wert: "knirschen", grund: "Es hat nicht geknackt. Sie guckt enttäuscht." },
+      { typ: "verbiete_waerme_ueber", wert: 0, grund: "Zu warm. Sie will es wirklich eiskalt." },
     ],
-    belohnung: "Es knackt eisig zwischen seinen Zähnen. Er quietscht vor Freude.",
+    belohnung: "Es knackt eisig zwischen ihren Zähnen. Sie quietscht vor Freude.",
   }],
   sonnendrache: [{
-    wunsch: "Heute etwas Heißes, das vom Himmel zu mir kam.",
+    wunsch: "Heute bitte etwas Heißes, das vom Himmel kam.",
     bedingungen: [
       { typ: "verlange_herkunft", wert: "himmel", grund: "Das hat nie den Himmel gesehen." },
-      { typ: "verbiete_waerme_unter", wert: 1, grund: "Zu kühl fürs Mittagslicht." },
+      { typ: "verbiete_waerme_unter", wert: 1, grund: "Zu kühl für die Mittagssonne." },
     ],
-    belohnung: "Sein Licht flammt kurz auf und wird dann sanft und satt.",
+    belohnung: "Sein Licht strahlt und wärmt deine Mausenase bevor er weiterzieht.",
   }],
   staubdrache: [{
-    wunsch: "Gib mir etwas Rauhes und Kühles — wie trockener Boden im Schatten.",
+    wunsch: "Gib mir heute etwas Rauhes und Kühles, so wie sich trockener Boden im Schatten anfühlt.",
     bedingungen: [
-      { typ: "verlange_oberflaeche", wert: "rauh", grund: "Zu glatt. Es rieselt ihm davon." },
-      { typ: "verbiete_waerme_ueber", wert: 0, grund: "Zu warm. Er zerfällt zu Sand." },
+      { typ: "verlange_oberflaeche", wert: "rauh", grund: "Zu glatt. Es rutscht ihm davon." },
+      { typ: "verbiete_waerme_ueber", wert: 0, grund: "Zu warm. Er löst sich davon auf." },
     ],
-    belohnung: "Der Staub legt sich zufrieden. Ein trockenes, altes Seufzen.",
+    belohnung: "Der Staub sammelt sich zufrieden und mit frischer Energie.",
   }],
   walddrache: [{
-    wunsch: "Diesmal etwas Stilles und Kühles, das nie den Himmel sah.",
+    wunsch: "Diesmal etwas Stilles und Kühles, das den Boden nie verlassen hat.",
     bedingungen: [
-      { typ: "verbiete_herkunft", wert: "himmel", grund: "Das kam von oben. Er schüttelt sich." },
-      { typ: "verbiete_waerme_ueber", wert: 0, grund: "Zu warm zwischen den Bäumen." },
-      { typ: "verlange_klang", wert: "stumm", grund: "Ein Geräusch — die Vögel stieben auf." },
+      { typ: "verbiete_herkunft", wert: "himmel", grund: "Das ist nicht vom Boden. Er schüttelt sich." },
+      { typ: "verbiete_waerme_ueber", wert: 0, grund: "Zu warm ist nicht gut für den Wald." },
+      { typ: "verlange_klang", wert: "stumm", grund: "Ein Geräusch, Waldtiere mögen das nicht." },
     ],
-    belohnung: "Moos wächst zufrieden über die Kante. Ganz still.",
+    belohnung: "Moos wächst um sein Geweih. Neues Grün überall.",
   }],
   herzchendrache: [{
-    wunsch: "Etwas Warmes, das aus dem Himmel zu mir fiel.",
+    wunsch: "Etwas Warmes, das aus dem Himmel in mein Herz kam.",
     bedingungen: [
-      { typ: "verbiete_waerme_unter", wert: 1, grund: "Zu kalt. Sein Herz stockt." },
-      { typ: "verlange_herkunft", wert: "himmel", grund: "Das kam nicht von oben." },
+      { typ: "verbiete_waerme_unter", wert: 1, grund: "Zu kalt. Sein Herz setzt aus." },
+      { typ: "verlange_herkunft", wert: "himmel", grund: "Das kam nicht aus dem Himmel." },
     ],
-    belohnung: "Der ganze Schlitz glüht warm und rosig auf.",
+    belohnung: "Herzen fliegen und große Freude macht sich breit.",
   }],
   rosendrache: [{
-    wunsch: "Etwas ganz Glattes, das nicht vom Himmel kam.",
+    wunsch: "Etwas ganz Glattes, das nicht aus dem Himmel kam.",
     bedingungen: [
-      { typ: "verlange_oberflaeche", wert: "glatt", grund: "Etwas Rauhes kratzt die Blüten." },
-      { typ: "verbiete_herkunft", wert: "himmel", grund: "Zu luftig. Er wendet sich ab." },
+      { typ: "verlange_oberflaeche", wert: "glatt", grund: "Das Rauhe macht die Blüten kaputt." },
+      { typ: "verbiete_herkunft", wert: "himmel", grund: "Zu luftig. Sie wendet sich ab." },
     ],
-    belohnung: "Neue Knospen öffnen sich rund um den Schlitz, eine nach der anderen.",
+    belohnung: "Neue Knospen öffnen sich an ihrer Krone, sie seufzt zufrieden.",
   }],
   schneckendrache: [{
     wunsch: "Etwas Kühles vom Wasser. Der Klang ist mir diesmal gleich.",
     bedingungen: [
       { typ: "verlange_herkunft", wert: "wasser", grund: "Das kam nicht vom Wasser." },
-      { typ: "verbiete_waerme_ueber", wert: 0, grund: "Zu warm. Er zieht die Fühler ein." },
+      { typ: "verbiete_waerme_ueber", wert: 0, grund: "Zu warm. Das verträgt er nicht." },
     ],
-    belohnung: "Er zieht sich gemächlich zurück, eine glänzende Spur bleibt.",
+    belohnung: "Er zieht sich entspannt und gemächlich zurück.",
   }],
   monddrache: [{
-    wunsch: "Etwas Kühles und Stilles, das den Boden nie berührt hat.",
+    wunsch: "Etwas Kühles und Stilles, das die Luft gut kennt.",
     bedingungen: [
-      { typ: "verbiete_herkunft", wert: "erde", grund: "Das kam aus dem Boden." },
-      { typ: "verbiete_waerme_ueber", wert: 0, grund: "Zu warm. Sein Licht flackert." },
-      { typ: "verlange_klang", wert: "stumm", grund: "Ein Laut stört das Mondlicht." },
+      { typ: "verbiete_herkunft", wert: "erde", grund: "Das kam vom Boden." },
+      { typ: "verbiete_waerme_ueber", wert: 0, grund: "Zu warm. Ihr Schein schwächt sich ab." },
+      { typ: "verlange_klang", wert: "stumm", grund: "Ein Laut stört das Mondlicht beim Scheinen." },
     ],
-    belohnung: "Das Licht im Schlitz wird ruhig und silbern.",
+    belohnung: "Das Licht im Schlitz wird ruhig, silbern und zufrieden.",
   }],
   feuerschlangendrache: [{
-    wunsch: "Etwas vom Himmel, das nicht schweigt.",
+    wunsch: "Etwas aus dem Himmel, das man hört.",
     bedingungen: [
       { typ: "verlange_herkunft", wert: "himmel", grund: "Das kam nicht von oben." },
-      { typ: "verbiete_klang", wert: "stumm", grund: "Es schweigt. Er will es zischen hören." },
+      { typ: "verbiete_klang", wert: "stumm", grund: "Es schweigt. Sie will es zischen hören." },
     ],
-    belohnung: "Er züngelt zufrieden und verschwindet zurück ins Dunkel.",
+    belohnung: "Sie züngelt zufrieden und verschwindet zurück ins Dunkel.",
   }],
   wasserschlangendrache: [{
     wunsch: "Etwas ganz Stilles und Kaltes.",
     bedingungen: [
       { typ: "verlange_klang", wert: "stumm", grund: "Ein Geräusch. Er zuckt zurück." },
-      { typ: "verbiete_waerme_ueber", wert: -1, grund: "Zu warm. Er weicht ins Dunkel." },
+      { typ: "verbiete_waerme_ueber", wert: -1, grund: "Zu warm." },
     ],
-    belohnung: "Er kringelt sich zufrieden und gleitet lautlos davon.",
+    belohnung: "Er kringelt sich zufrieden ein und gleitet davon.",
   }],
   zweikopfdrache: [{
-    wunsch: "Diesmal etwas Stilles und Kühles. Wir beide, wie immer.",
+    wunsch: "Diesmal etwas Stilles und Kühles. Für uns beide, wie immer.",
     bedingungen: [
-      { typ: "verlange_klang", wert: "stumm", grund: "Beide Köpfe zucken beim Geräusch." },
+      { typ: "verlange_klang", wert: "stumm", grund: "Beide Köpfe zucken bei dem Geräusch." },
       { typ: "verbiete_waerme_ueber", wert: 0, grund: "Zu warm. Beide schütteln sich." },
     ],
-    belohnung: "Beide Köpfe nicken, kurz versetzt, und ziehen sich zurück.",
+    belohnung: "Beide Köpfe nicken anerkennend und ziehen sich schnell zurück.",
   }],
 };
 
@@ -979,26 +906,26 @@ export const DRACHEN_ALT = {
 // Aufbau sorgt dafür, dass der Geber immer im ersten Kapitel erscheint —
 // und da man einen Drachen nur mit Erfolg abschließt, ist die Zutat dann da.
 //   Herzchendrache  braucht  Wüstenglas    (vom Staubdrachen)
-//   Rosendrache     braucht  Sonnentränen  (vom Sonnendrachen)
-//   Zweikopfdrache  braucht  Tannenharz    (vom Walddrachen)
+//   Rosendrachin    braucht  Sonnentränen  (vom Sonnendrachen)
+//   Zweikopfdrache  braucht  Harzhannes    (vom Walddrachen)
 export const DRACHEN_ABHAENGIG = {
   herzchendrache: {
     braucht: "wuestenglas",
     wunsch: "Gib mir etwas Warmes und Glattes vom Boden — wie ein Stein, der noch die Sonne hält.",
     bedingungen: [
       { typ: "verbiete_waerme_unter", wert: 1, grund: "Es fühlt sich kalt an. Sein Herzschlag stockt kurz." },
-      { typ: "verlange_herkunft", wert: "erde", grund: "Es schmeckt nach Himmel oder Teich. Es will Bodenständiges." },
-      { typ: "verlange_oberflaeche", wert: "glatt", grund: "Etwas kratzt. Es presst das Herz zusammen." },
+      { typ: "verlange_herkunft", wert: "erde", grund: "Es schmeckt nach Wolken oder Wasser." },
+      { typ: "verlange_oberflaeche", wert: "glatt", grund: "Etwas kratzt. Sein Herzmuskel spannt sich an." },
     ],
-    belohnung: "Der Herzschlag wird ruhig und satt. Für einen Moment glüht der ganze Schlitz rosig.",
+    belohnung: "Der Herzdrache wird ruhig. Für einen Augenblick glüht der ganze Baum rosig.",
   },
   rosendrache: {
     braucht: "sonnentraenen",
-    wunsch: "Gib mir etwas Stilles und Glattes, das nie den Boden berührt hat — sanft wie ein Blütenblatt.",
+    wunsch: "Gib mir etwas, das lautlos und glatt ist und nie den Boden berührt hat — so wie ein frisches Blütenblatt.",
     bedingungen: [
-      { typ: "verlange_klang", wert: "stumm", grund: "Ein Geräusch, und die Blütenblätter fallen erschrocken ab." },
-      { typ: "verbiete_herkunft", wert: "erde", grund: "Es riecht nach Erde, nicht nach Blüte. Er wendet sich ab." },
-      { typ: "verlange_oberflaeche", wert: "glatt", grund: "Etwas Rauhes kratzt über die Blüten. Er schaudert." },
+      { typ: "verlange_klang", wert: "stumm", grund: "Ein Geräusch, ihre Blütenblätter zittern." },
+      { typ: "verbiete_herkunft", wert: "erde", grund: "Es riecht nach Erde, nicht nach Blüte. Sie wendet sich ab." },
+      { typ: "verlange_oberflaeche", wert: "glatt", grund: "Etwas Rauhes kratzt über die Blüten. Sie schaudert." },
     ],
     belohnung: "Neue Knospen öffnen sich rund um den Schlitz, eine nach der anderen.",
   },
@@ -1006,10 +933,10 @@ export const DRACHEN_ABHAENGIG = {
     braucht: "tannenharz",
     wunsch: "Wir wollen etwas Rauhes und Kaltes, das nicht vom Himmel kam. Wir beide.",
     bedingungen: [
-      { typ: "verlange_oberflaeche", wert: "rauh", grund: "Zu glatt. Beide Köpfe schütteln sich gleichzeitig." },
-      { typ: "verbiete_herkunft", wert: "himmel", grund: "Das kam von oben. Keiner der beiden traut dem Himmel." },
-      { typ: "verbiete_waerme_ueber", wert: -1, grund: "Zu warm. Beide ziehen sich zurück." },
+      { typ: "verlange_oberflaeche", wert: "rauh", grund: "Zu glatt. Beide Köpfe schütteln sich." },
+      { typ: "verbiete_herkunft", wert: "himmel", grund: "Das kam von weit oben. Keiner der beiden mag den Himmel." },
+      { typ: "verbiete_waerme_ueber", wert: -1, grund: "Zu warm. Beide verziehen ihr Gesicht." },
     ],
-    belohnung: "Beide Köpfe nicken zufrieden, kurz versetzt, und ziehen sich dann zurück.",
+    belohnung: "Beide Köpfe nicken zufrieden und ziehen sich dann zurück.",
   },
 };

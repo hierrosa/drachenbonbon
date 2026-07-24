@@ -1,4 +1,4 @@
-import { BINDER, ZUTATEN, DRACHEN, DRACHEN_ALT, DRACHEN_ABHAENGIG, BUCHWISSEN, MAUSREAKTIONEN, EINHORN } from './data.js';
+import { BINDER, ZUTATEN, DRACHEN, DRACHEN_ALT, DRACHEN_ABHAENGIG, BUCHWISSEN, EINHORN } from './data.js';
 import { DRACHEN_SVG, EINHORN_SVG, kringel } from './drachen-grafik.js';
 import { glasSVG, FARBEN } from './glaeser.js';
 import { wandSVG, LOCH_PFAD } from './holz.js';
@@ -346,16 +346,22 @@ const VOGEL = `<svg viewBox="0 0 78 84" preserveAspectRatio="xMidYMid meet">
     <path d="M55 23 l9 -1 l-9 5 z" fill="#f0a028"/>
     <circle cx="49" cy="22" r="2.3" fill="#14243a"/>
     <circle cx="49.8" cy="21.2" r=".8" fill="#fff"/>
-    <!-- Körbchen direkt am Schnabel (5px nach rechts, 30% größer um den Schnabelanker) -->
+    <!-- Körbchen direkt am Schnabel (5px nach rechts, 30% größer um den Schnabelanker).
+         Das Bonbon liegt HINTER dem Korbkörper und schaut oben >50% heraus. -->
     <g transform="translate(5 0) translate(54 33) scale(1.3) translate(-54 -33)">
-      <path d="M44 35 Q53 24 61 32" fill="none" stroke="#7a5326" stroke-width="1.8"/>
-      <path d="M41 35 h22 l-3 20 h-16 z" fill="#c99a5a"/>
+      <!-- Henkel — beide Füße sitzen auf dem Korbrand (y=35) -->
+      <path d="M44 35 Q53 23 61 35" fill="none" stroke="#7a5326" stroke-width="1.8"/>
+      <!-- Bonbon liegt im offenen Gitterkorb (Gitter davor) -->
+      <g class="vogel-bonbon"></g>
+      <!-- Umriss des Korbs — keine Füllfläche, nur Rand -->
+      <path d="M41 35 h22 l-3 20 h-16 z" fill="none" stroke="#7a5326" stroke-width="1.6" stroke-linejoin="round"/>
+      <!-- oberer Rand -->
       <path d="M39 35 h26" stroke="#7a5326" stroke-width="2.6" stroke-linecap="round"/>
-      <g stroke="#a67c40" stroke-width="1" opacity=".55">
+      <!-- breitmaschiges Gitter -->
+      <g stroke="#7a5326" stroke-width="1.3" opacity=".85">
         <path d="M43 42 h18 M44 49 h16"/>
         <path d="M47 36 v18 M52 36 v19 M57 36 v18"/>
       </g>
-      <g class="vogel-bonbon"></g>
     </g>
   </g>
 </svg>`;
@@ -396,7 +402,9 @@ function vogelLeg(nach, dauer, flip = false) {
 
 function vogelBonbonZeigen() {
   const ziel = $('#vogel .vogel-bonbon');
-  if (ziel) ziel.innerHTML = `<g transform="translate(32 78) scale(.8)">${getBonbon().markup}</g>`;
+  // Bonbon (Ursprung 0,0, Radius ~17) mittig über den Korbrand (y≈35) legen,
+  // sodass die obere Hälfte herausschaut. scale ~0.75 → passt in den Korb.
+  if (ziel) ziel.innerHTML = `<g transform="translate(52 38) scale(.75)">${getBonbon().markup}</g>`;
 }
 function vogelBonbonVerstecken() {
   const ziel = $('#vogel .vogel-bonbon');
@@ -437,9 +445,9 @@ const state = {
   mausHatZahn: false,      // trägt die Maus den Wackelzahn des Jungdrachen?
   zahnZeremonieAusstehend: false,  // Kette-Einblendung läuft noch
   gesehen: new Set(),      // schon untersuchte Zutaten
-  // Drei Kapitel à 5 Drachen (zufällige Auswahl) — als flache Sequenz.
+  // Drei Kapitel (10 + 10 + 9 = 29 Auftritte) — flache Sequenz, siehe kapitelBauen.
   sequenz: [],
-  kapitelGrenzen: [5, 10], // vor diesen Indizes geht die Maus schlafen
+  kapitelGrenzen: [10, 20], // vor diesen Indizes geht die Maus schlafen
   auftritte: {},           // wie oft jeder Drache schon dran war → Variantenwahl
   aktVariante: null,       // { wunsch, bedingungen, belohnung } des aktuellen Auftritts
   index: 0,
@@ -458,57 +466,51 @@ function mischeArray(a) {
   return a;
 }
 
-// Baut die drei Kapitel als flache Liste von Einträgen { id, dep }.
-// Feste Platzierungen:
-//   Kapitel 1: Jungdrache (nicht unter den ersten zwei) + die drei Geber
-//              Sonnen-, Staub- und Walddrache.
-//   Kapitel 2: Schneckendrache + Herzchendrache (braucht Wüstenglas).
-//   Kapitel 3: Rosendrache (braucht Sonnentränen) + Zweikopfdrache (Tannenharz).
-// Die restlichen Plätze füllt eine zufällige Auswahl der übrigen Drachen.
+// Baut drei Kapitel (10 + 10 + 9 = 29 Auftritte) als flache Liste von
+// Einträgen { id, dep }. Jeder Drache tritt mit seinem Grund- UND seinem
+// Zweitwunsch (DRACHEN_ALT) auf; die drei Story-Drachen zusätzlich mit ihrem
+// Geschenk-Anliegen (dep → DRACHEN_ABHAENGIG). Reihenfolge je Drache:
+//   Grundwunsch < (Story: Geschenk-Anliegen <) Zweitwunsch.
+// Kein Drache erscheint zweimal im selben Kapitel, damit die Variantenwahl
+// (über den Auftritts-Zähler) sauber Grund→Geschenk→Zweit durchläuft.
+// Abhängigkeiten: die Geber (Sonnen-/Staub-/Walddrache) treten mit Grundwunsch
+// in Kapitel 1 auf — also vor dem Geschenk-Anliegen ihrer abhängigen
+// Story-Drachen in Kapitel 2.
 function kapitelBauen() {
-  const K = [Array(5).fill(null), Array(5).fill(null), Array(5).fill(null)];
+  const story = ['herzchendrache', 'rosendrache', 'zweikopfdrache'];
+  const geber = ['sonnendrache', 'staubdrache', 'walddrache'];
+  const regulaerRest = mischeArray(
+    Object.keys(DRACHEN).filter((id) => !story.includes(id) && !geber.includes(id)),
+  );                                   // 7 „gewöhnliche“ Drachen
+  const frueh = regulaerRest.slice(0, 4);   // Grundwunsch in Kap 1, Zweit in Kap 2
+  const spaet = regulaerRest.slice(4);      // Grundwunsch in Kap 2, Zweit in Kap 3 (3 Stück)
 
-  const setze = (kap, id, dep = false, posErlaubt = null) => {
-    const frei = [];
-    for (let i = 0; i < 5; i++) {
-      if (!K[kap][i] && (!posErlaubt || posErlaubt.includes(i))) frei.push(i);
-    }
-    const i = frei[Math.floor(Math.random() * frei.length)];
-    K[kap][i] = { id, dep };
-  };
+  const grund = (id) => ({ id, dep: false });
+  const zweit = (id) => ({ id, dep: false });   // Zweitwunsch = Auftritt Nr. 2/3
+  const gabe  = (id) => ({ id, dep: true });    // Geschenk-Anliegen der Story-Drachen
 
-  setze(0, 'jungdrache', false, [2, 3, 4]);
-  setze(0, 'sonnendrache');
-  setze(0, 'staubdrache');
-  setze(0, 'walddrache');
-  setze(1, 'schneckendrache');
-  setze(1, 'herzchendrache', true);   // braucht Wüstenglas (Staubdrache, Kap1)
-  setze(2, 'rosendrache', true);      // braucht Sonnentränen (Sonnendrache, Kap1)
-  setze(2, 'zweikopfdrache', true);   // braucht Tannenharz (Walddrache, Kap1)
+  // Kapitel 1 (10): Grundwünsche der Geber, Story-Drachen und vier weiterer.
+  const kap1 = mischeArray([
+    ...geber.map(grund),
+    ...story.map(grund),
+    ...frueh.map(grund),
+  ]);
+  // Kapitel 2 (10): Grundwünsche der drei „späten“ Drachen, die Geschenk-
+  // Anliegen der Story-Drachen (Geber sind aus Kap 1 versorgt) und die
+  // Zweitwünsche der vier frühen Drachen.
+  const kap2 = mischeArray([
+    ...spaet.map(grund),
+    ...story.map(gabe),
+    ...frueh.map(zweit),
+  ]);
+  // Kapitel 3 (9): die verbleibenden Zweitwünsche — Geber, späte, Story.
+  const kap3 = mischeArray([
+    ...geber.map(zweit),
+    ...spaet.map(zweit),
+    ...story.map(zweit),
+  ]);
 
-  const fest = new Set(['jungdrache', 'sonnendrache', 'staubdrache', 'walddrache',
-    'schneckendrache', 'herzchendrache', 'rosendrache', 'zweikopfdrache']);
-  const pool = Object.keys(DRACHEN).filter((id) => !fest.has(id));
-  let beutel = mischeArray(pool.slice());
-  const zieh = (verbraucht) => {
-    for (let versuch = 0; versuch < 2; versuch++) {
-      const i = beutel.findIndex((id) => !verbraucht.has(id));
-      if (i !== -1) return beutel.splice(i, 1)[0];
-      beutel = mischeArray(pool.slice());   // Beutel leer/blockiert → neu mischen
-    }
-    return beutel.pop();
-  };
-
-  for (let c = 0; c < 3; c++) {
-    const verbraucht = new Set(K[c].filter(Boolean).map((e) => e.id));
-    for (let i = 0; i < 5; i++) {
-      if (K[c][i]) continue;
-      const id = zieh(verbraucht);
-      K[c][i] = { id, dep: false };
-      verbraucht.add(id);
-    }
-  }
-  return K.flat();
+  return [...kap1, ...kap2, ...kap3];
 }
 
 // Welchen Satz / welche Anforderung sagt der Drache bei diesem Auftritt?
@@ -568,17 +570,33 @@ function regalBauen() {
   });
 }
 
+// Story-Pflichtzutaten: die verlangt ein späterer Drache zwingend. Sie dürfen
+// nie am 6er-Limit des rechten Regals scheitern — sonst wäre ein Rätsel
+// unlösbar. (Alle anderen Geschenke sind reine Sammelstücke.)
+const PFLICHT_ZUTATEN = new Set(
+  Object.values(DRACHEN_ABHAENGIG).map((d) => d.braucht),
+);
+
 // Ein Drache lässt beim Verschwinden eine seltene Zutat da.
+// Gibt true zurück, wenn sie tatsächlich ins Regal wandert. Das rechte Regal
+// fasst höchstens sechs Zutaten; darüber hinaus kommen nur noch Pflichtzutaten
+// dazu. Kommt nichts ins Regal, soll auch keine „dagelassen“-Karte erscheinen.
 function zutatFreischalten(id) {
   const z = ZUTATEN[id];
-  if (!z) return;
+  if (!z) return false;
   const bZLinks = $('#brett-zutaten-links');
   const bZRechts = $('#brett-zutaten-rechts');
   const ziel = bZLinks.children.length < ZUTATEN_PRO_REGAL ? bZLinks : bZRechts;
+  if (ziel === bZRechts
+      && bZRechts.children.length >= ZUTATEN_PRO_REGAL
+      && !PFLICHT_ZUTATEN.has(id)) {
+    return false;   // rechtes Regal voll — Sammelstück fällt aus
+  }
   const fach = glasElement(id, z, 'zutat');
   fach.classList.add('neu');
   ziel.appendChild(fach);
   setTimeout(() => fach.classList.remove('neu'), 4000);
+  return true;
 }
 
 
@@ -763,11 +781,14 @@ async function einhornBesuch() {
   const seltenerFund = !ersterBesuch && Math.random() < 0.12 && geheimeZutaten.length > 0;
 
   let text;
-  if (seltenerFund) {
-    const id = geheimeZutaten[Math.floor(Math.random() * geheimeZutaten.length)];
-    state.freigeschaltet.add(id);
-    zutatFreischalten(id);
-    await zeigeGeschenk(id, 'Das Einhorn');
+  const fundId = seltenerFund
+    ? geheimeZutaten[Math.floor(Math.random() * geheimeZutaten.length)]
+    : null;
+  // zutatFreischalten liefert false, wenn das rechte Regal (6) voll ist —
+  // dann keinen Fund vorgaukeln, sondern normal Deko dalassen.
+  if (fundId && zutatFreischalten(fundId)) {
+    state.freigeschaltet.add(fundId);
+    await zeigeGeschenk(fundId, 'Das Einhorn');
     text = EINHORN.abschiedSelten;
   } else {
     zufaelligeDeko();
@@ -1050,36 +1071,6 @@ function schaleZeichnen() {
 }
 
 // ============================================================
-//  Mausreaktionen — konsistent, aber nicht die Lösung
-// ============================================================
-function mausReagieren(zutatId) {
-  const r = MAUSREAKTIONEN.zutat[zutatId];
-  if (!r) return;
-  const n = $('#maus-notiz');
-  n.textContent = r.text;
-  n.style.opacity = '1';
-  clearTimeout(n._t);
-  n._t = setTimeout(() => { n.style.opacity = '0'; }, 2600);
-}
-
-const ALLE_POSEN = [
-  'pose-zittern', 'pose-leise', 'pose-entspannt', 'pose-strahlt',
-  'pose-duckt', 'pose-schnuppert', 'pose-kuschelt', 'pose-knickst',
-  'pose-wartet', 'pose-staunt',
-];
-
-function mausDrachenNotiz() {
-  const r = MAUSREAKTIONEN.drache[state.drache];
-  if (!r || !r.pose) return;
-  const m = $('#maus');
-  if (m.classList.contains('sitzt')) return;   // sitzt gemütlich im Sessel
-  m.classList.remove(...ALLE_POSEN);
-  void m.offsetWidth;
-  m.classList.add(`pose-${r.pose}`);
-  setTimeout(() => m.classList.remove(`pose-${r.pose}`), 5200);
-}
-
-// ============================================================
 //  Drache auftreten lassen
 // ============================================================
 // Bücher rechts: nur die, die dieser Drache braucht — steht unabhängig
@@ -1280,15 +1271,14 @@ $('#schnecke').addEventListener('click', (e) => {
 
   if (kannSchleimGeben()) {                       // Schleim dem Drachen reichen — kein Text
     const d = DRACHEN[state.drache];
-    state.freigeschaltet.add(d.extraSchleim);
-    zutatFreischalten(d.extraSchleim);
+    if (zutatFreischalten(d.extraSchleim)) state.freigeschaltet.add(d.extraSchleim);
     schneckenHintAktualisieren();
     return;
   }
 
   if (state.freigeschaltet.has('schneckenschleim')) return;   // schon abgestrichen
+  if (!zutatFreischalten('schneckenschleim')) return;          // rechtes Regal voll
   state.freigeschaltet.add('schneckenschleim');
-  zutatFreischalten('schneckenschleim');
   zeigeGeschenk('schneckenschleim', 'Die Schnecke');
   schneckenHintAktualisieren();
 });
@@ -1319,8 +1309,10 @@ $('#mischen').addEventListener('click', async () => {
   $('#maus').classList.remove('ruehrt');
   // Der Topf bleibt vor der Maus stehen, bis der Vogel bei ihr war.
 
-  // 0b. Der Vogel fliegt aus dem Käfig zur Maus und sammelt das Bonbon ein
+  // 0b. Der Vogel fliegt aus dem Käfig zur Maus und sammelt das Bonbon ein —
+  // es liegt ab jetzt sichtbar in seinem Körbchen und reist so mit.
   await vogelHolt();
+  vogelBonbonZeigen();
 
   // 1. Umdrehen — die Maus dreht sich um und schaut dem Boten nach
   $('#maus').innerHTML = MAUS_HINTEN;
@@ -1336,15 +1328,15 @@ $('#mischen').addEventListener('click', async () => {
   $('#topf').classList.remove('aktiv');   // leer → zurück an die Seite
   await bringt;
 
-  // 2. Das Bonbon wird groß vor dem Drachen präsentiert (Übergabe aus dem Körbchen)
-  vogelBonbonVerstecken();
-  $('#zunge-svg').innerHTML = bonbonSVG();
-  $('#zunge-svg').classList.add('raus');
-  await warte(1500);   // Bonbon liegt einen Moment sichtbar da, bevor das Urteil kommt
+  // 2. Übergabe: das Bonbon glüht im Körbchen vor dem Drachen auf
+  $('#vogel').classList.add('uebergabe');
+  await warte(1500);   // Bonbon glüht einen Moment, bevor das Urteil kommt
+  $('#vogel').classList.remove('uebergabe');
 
   // 3. Urteil
   const e = pruefen();
   if (e.erfolg) {
+    vogelBonbonVerstecken();          // der Drache nimmt das Bonbon an
     // Beim Jungdrachen fällt der Wackelzahn auf die Platte — die Maus
     // hebt ihn danach auf und trägt ihn als Kette.
     let fallZahn = null;
@@ -1357,13 +1349,12 @@ $('#mischen').addEventListener('click', async () => {
     if (fallZahn) fallZahn.remove();   // die Maus nimmt ihn an sich
   } else {
     rueckschlag();
-    $('#zunge-svg').classList.remove('raus');   // Zunge samt Bonbon weg, bevor der Text kommt
+    vogelBonbonVerstecken();          // Bonbon weg, bevor der Text kommt
     await warte(500);   // kurz die Wucht des Rucks spüren lassen
     await zeigeFehlschlag(e.text);              // rote Karte, gleiche Machart wie der Abschied
   }
 
   // 4. Aufräumen
-  $('#zunge-svg').classList.remove('raus');
   vogelHeim();                        // der Vogel fliegt zurück in seinen Käfig
   mausVornZeichnen();                 // Maus dreht sich um (Kette folgt gleich)
   $('#maus').classList.remove('gedreht');
@@ -1393,9 +1384,8 @@ $('#mischen').addEventListener('click', async () => {
 
   if (e.erfolg) {
     const geschenk = DRACHEN[state.drache].geschenk;
-    if (geschenk && !state.freigeschaltet.has(geschenk)) {
+    if (geschenk && !state.freigeschaltet.has(geschenk) && zutatFreischalten(geschenk)) {
       state.freigeschaltet.add(geschenk);
-      zutatFreischalten(geschenk);
       await zeigeGeschenk(geschenk, DRACHEN[state.drache].name);
     }
     state.index++;
@@ -1487,8 +1477,8 @@ $('#schlitz').style.clipPath = `path("${LOCH_PFAD}")`;
 $('#loch-glut').innerHTML =
   `<path d="${LOCH_PFAD}" fill="none" stroke="rgba(255,255,255,.10)" stroke-width="3"/>`;
 
-// Drei Kapitel à 5 Drachen zufällig zusammenstellen (Jungdrache in Kapitel 1,
-// Schneckendrache in Kapitel 2 — siehe kapitelBauen).
+// Drei Kapitel (10 + 10 + 9 = 29 Auftritte) — alle Drachen mit Grund- und
+// Zweitwunsch, Story-Drachen zusätzlich mit Geschenk-Anliegen; siehe kapitelBauen.
 state.sequenz = kapitelBauen();
 
 // Sternenhimmel für die Schlaf-Übergänge vorbereiten.
