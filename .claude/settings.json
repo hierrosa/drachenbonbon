@@ -10,7 +10,15 @@
       "Bash(node --check data.js)",
       "Bash(node --check spiel.js)",
       "Bash(node --check glaeser.js)",
-      "PowerShell($node = \\(Get-Command node -ErrorAction SilentlyContinue\\); if \\($node\\) { node --check data.js; if \\($?\\) { \"data.js OK\" }; node --check spiel.js; if \\($?\\) { \"spiel.js OK\" } } else { \"node nicht installiert\" })"
+      "PowerShell($node = \\(Get-Command node -ErrorAction SilentlyContinue\\); if \\($node\\) { node --check data.js; if \\($?\\) { \"data.js OK\" }; node --check spiel.js; if \\($?\\) { \"spiel.js OK\" } } else { \"node nicht installiert\" })",
+      "Bash(sed 's/[ :]//g')",
+      "Bash(awk '/export const DRACHEN_ALT/,/^};/' data.js)",
+      "Bash(sed 's/[ :[]//g')",
+      "Bash(awk '/FARBEN\\\\s*=/,/};/' glaeser.js)",
+      "Bash(awk '/export const BUCHWISSEN/,0' data.js)",
+      "Bash(awk '/export const ZUTATEN/,/^};/' data.js)",
+      "Bash(sed 's/=== /\\\\n/g')",
+      "Bash(awk 'NR>=685 && NR<=720' index.html)"
     ]
   }
 }

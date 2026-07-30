@@ -342,8 +342,8 @@ export const DRACHEN = {
     ],
     loesung: ["sirup", "nebelbeere", "eiszahnminze"],
     belohnung:
-      "Nichts passiert aber der Nebel wird etwas dichter. Das ist alles, was " +
-      "der Schläfer zu geben hat und es reicht.",
+      "Nichts passiert nur der Nebel wird etwas dichter. Das ist alles, was " +
+      "der Schläfer zu geben hat aber das ist ok.",
   },
 
   jungdrache: {
@@ -473,7 +473,6 @@ export const DRACHEN = {
     bild: "herzchendrache",
     farbe: "232,120,150",
     stimme: "dunkel",
-    voraussetzung: "wuestenglas",
     wunsch: "Gib mir etwas ganz und gar Warmes, das sicher nie im Wasser lag.",
     buecher: ["zutatenkunde", "binderkunde", "herzchendrachen"],
     bedingungen: [
@@ -499,7 +498,6 @@ export const DRACHEN = {
     bild: "rosendrache",
     farbe: "214,90,120",
     stimme: "dunkel",
-    voraussetzung: "sonnentraenen",
     wunsch: "Gib mir etwas vollkommen Stilles und Glattes, so zart wie ein junges Blütenblatt.",
     buecher: ["zutatenkunde", "binderkunde", "rosendrachen"],
     bedingungen: [
@@ -806,7 +804,7 @@ export const DRACHEN_ALT = {
       { typ: "verbiete_waerme_ueber", wert: 0, grund: "Warm mag er nicht, der Nebel dünnt dann aus." },
       { typ: "verlange_klang", wert: "stumm", grund: "Ein Laut? Seine Lider zucken." },
     ],
-    belohnung: "Der Nebel schwallt über die Kante. Er schläft und schwebt weiter.",
+    belohnung: "Etwas Nebel zieht über die Kante aber er schläft und schwebt weiter.",
   }],
   jungdrache: [{
     wunsch: "Diesmal was richtig Eisiges mit großem Knall!",
@@ -842,10 +840,10 @@ export const DRACHEN_ALT = {
     belohnung: "Moos wächst um sein Geweih. Neues Grün überall.",
   }],
   herzchendrache: [{
-    wunsch: "Etwas Warmes, das aus dem Himmel in mein Herz kam.",
+    wunsch: "Diesmal etwas Warmes vom Boden, das mein Herz wärmt.",
     bedingungen: [
-      { typ: "verbiete_waerme_unter", wert: 1, grund: "Zu kalt. Sein Herz setzt aus." },
-      { typ: "verlange_herkunft", wert: "himmel", grund: "Das kam nicht aus dem Himmel." },
+      { typ: "verbiete_waerme_unter", wert: 0, grund: "Zu kalt. Sein Herz setzt aus." },
+      { typ: "verlange_herkunft", wert: "erde", grund: "Das kam nicht aus dem Boden. Sein Herz mag nur Erdiges." },
     ],
     belohnung: "Herzen fliegen und große Freude macht sich breit.",
   }],
